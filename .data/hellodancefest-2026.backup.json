@@ -1,0 +1,3076 @@
+{
+  "id": "hellodancefest-2026",
+  "name": "Hello! Dance Fest 2026",
+  "slug": "hello-dance-fest-2026",
+  "dates": {
+    "start": "2026-07-24",
+    "end": "2026-07-26"
+  },
+  "rooms": [
+    "Peninsula D-G",
+    "Peninsula A-B",
+    "Harbour",
+    "Regency",
+    "Peninsula C",
+    "Sandpebble A-C",
+    "Sandpebble D-E"
+  ],
+  "days": [
+    "2026-07-24",
+    "2026-07-25",
+    "2026-07-26"
+  ],
+  "artists": [
+    {
+      "id": "yXETxBLO",
+      "eventId": "hellodancefest-2026",
+      "name": "Alan & Cristina",
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2025/alan-cristina1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/alan-cristina",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "i6-EI_9c",
+      "eventId": "hellodancefest-2026",
+      "name": "Alana and Esteban",
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2024/alan-esteban1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/alana-esteban",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/alanayestebanbachata",
+          "label": "Alana",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "cFY6xM-Q",
+      "eventId": "hellodancefest-2026",
+      "name": "Anastasia & Jovanny",
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2026/anastasia-jovanny1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/anastasia-jovanny",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "ZSqlZv-u",
+      "eventId": "hellodancefest-2026",
+      "name": "Bryon and Sammanatha",
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2024/bryon-sammanatha3.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/bryon-sammantha",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/airbryon",
+          "label": "Bryon",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/sammstroud",
+          "label": "Sammantha's Instagram",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/inessencedanceco",
+          "label": "Instagram",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-20T18:52:18.507Z"
+    },
+    {
+      "id": "t6fDwbs2",
+      "eventId": "hellodancefest-2026",
+      "name": "Carlitos & Cece",
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2025/carlitos-cece1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/carlitos-cece",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "FNFuOQ3j",
+      "eventId": "hellodancefest-2026",
+      "name": "Jose Santamaria JAS and Hailie Patton",
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2024/jas-hailie1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/jas-hailie",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "5Y-O-qtH",
+      "eventId": "hellodancefest-2026",
+      "name": "Javier Campines and Kiki Amanno",
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2024/javier-kiki1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/javier-kiki",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "ed__gzDt",
+      "eventId": "hellodancefest-2026",
+      "name": "Jeff & Mayra",
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2026/jeff-mayra1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/jeff-mayra",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "FxL-TPhY",
+      "eventId": "hellodancefest-2026",
+      "name": "Jhonatan Parco",
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2024/jhonatan-parco1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/jhonatan-parco",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "KT6tWWyw",
+      "eventId": "hellodancefest-2026",
+      "name": "Jim & Jess",
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2026/jim-jess1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/jim-jess",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/jimyjess",
+          "label": "Joint account",
+          "kind": "joint"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-20T19:29:02.892Z"
+    },
+    {
+      "id": "xhf4Dfgc",
+      "eventId": "hellodancefest-2026",
+      "name": "Laisinha & Alexander",
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2026/alexander-laisinha1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/laisinha-alexander",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/axander_the_great",
+          "label": "Joint account",
+          "kind": "joint"
+        },
+        {
+          "url": "https://www.instagram.com/itslaisinhaa",
+          "label": "Laisinha",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-20T19:28:48.045Z"
+    },
+    {
+      "id": "PfoXBFYi",
+      "eventId": "hellodancefest-2026",
+      "name": "Luismi & Mariangela",
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2026/luismi-mariangela1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/luismi-mariangela",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "_px5KtE9",
+      "eventId": "hellodancefest-2026",
+      "name": "Mariah & Andrea",
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2024/mariah-andrea1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/mariah-andrea",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "pHhrxLfu",
+      "eventId": "hellodancefest-2026",
+      "name": "Maurizio Bollo & Serena",
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2026/maurizio-serena1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/maurizio-bollo-serena",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/mauriziobollo",
+          "label": "Maurizio",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/serenafummo",
+          "label": "Serena",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "6HEXZPgi",
+      "eventId": "hellodancefest-2026",
+      "name": "Ngoc Huynh & Tien Tran",
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2025/ngoc-tien1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/ngoc-tien",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/knockout_ngoc",
+          "label": "Ngoc",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-20T18:43:46.545Z"
+    },
+    {
+      "id": "YKDtcfic",
+      "eventId": "hellodancefest-2026",
+      "name": "Nick & Vivienne",
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2026/vivienne-nick1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/nick-vivienne",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/vividance_official",
+          "label": "Joint account",
+          "kind": "joint"
+        },
+        {
+          "url": "https://www.instagram.com/nickyvivi_bachata",
+          "label": "Nick",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/nicktang_jx",
+          "label": "Nick",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-20T19:28:56.262Z"
+    },
+    {
+      "id": "tzHEhKg3",
+      "eventId": "hellodancefest-2026",
+      "name": "Patrick and Johanna",
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2026/patrick-johanna1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/patrick-johanna",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/patrick.mozo",
+          "label": "Patrick",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/johannap.official",
+          "label": "Patrick",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/patrickyjohanna.official",
+          "label": "Patrick",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "ZQAEHYQr",
+      "eventId": "hellodancefest-2026",
+      "name": "Simon & Lolahontas",
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2026/simon-lolahontas1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/simon-lolahontas",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "gNKGrjZU",
+      "eventId": "hellodancefest-2026",
+      "name": "Vanessa & Guillermo",
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2024/vanessa-guillermo1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/vanessa-guillermo",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "8GbYSPkn",
+      "eventId": "hellodancefest-2026",
+      "name": "Cristian Vergari & Yolieyh",
+      "style": "salsa",
+      "photoUrl": "https://hellodancefest.com/images/lineup-salsa/2025/cristian-yolieth1.jpg",
+      "bioUrl": "https://hellodancefest.com/salsa/salsa-lineup/salsa-workshops/cristian-vergari",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/yolieth_barragan1",
+          "label": "Joint account",
+          "kind": "joint"
+        },
+        {
+          "url": "https://www.instagram.com/cristianvergari",
+          "label": "Cristian",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-20T18:52:24.499Z"
+    },
+    {
+      "id": "O2DCOI-6",
+      "eventId": "hellodancefest-2026",
+      "name": "Dimitris & Yolena",
+      "style": "salsa",
+      "photoUrl": "https://hellodancefest.com/images/lineup-salsa/2026/dimitris-yolena1.jpg",
+      "bioUrl": "https://hellodancefest.com/salsa/salsa-lineup/salsa-workshops/dimitris-yolena",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "LMXMoSPT",
+      "eventId": "hellodancefest-2026",
+      "name": "Fadi Fusion",
+      "style": "salsa",
+      "photoUrl": "https://hellodancefest.com/images/lineup-salsa/2026/fadi-fusion1.jpg",
+      "bioUrl": "https://hellodancefest.com/salsa/salsa-lineup/salsa-workshops/fadi-fusion",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T19:13:22.532Z"
+    },
+    {
+      "id": "iM9BfSD7",
+      "eventId": "hellodancefest-2026",
+      "name": "Hector Reyes and Annaliza Pena",
+      "style": "salsa",
+      "photoUrl": "https://hellodancefest.com/images/lineup-salsa/2024/hector-annaliza1.jpg",
+      "bioUrl": "https://hellodancefest.com/salsa/salsa-lineup/salsa-workshops/hector-annaliza",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/mambonova_dance_company",
+          "label": "Hector's Instagram",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/annaliza_cruz_pena",
+          "label": "Hector",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-20T19:28:39.570Z"
+    },
+    {
+      "id": "3YO6oDp3",
+      "eventId": "hellodancefest-2026",
+      "name": "Jacopo & Linda",
+      "style": "salsa",
+      "photoUrl": "https://hellodancefest.com/images/lineup-salsa/2025/jacopo-linda1.jpg",
+      "bioUrl": "https://hellodancefest.com/salsa/salsa-lineup/salsa-workshops/jacopo-linda",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "TUvoHUbg",
+      "eventId": "hellodancefest-2026",
+      "name": "Jarosky & Marika",
+      "style": "salsa",
+      "photoUrl": "https://hellodancefest.com/images/lineup-salsa/2026/jarosky-marika1.jpg",
+      "bioUrl": "https://hellodancefest.com/salsa/salsa-lineup/salsa-workshops/jarosky-cf",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "EpvxhX05",
+      "eventId": "hellodancefest-2026",
+      "name": "Joshua Barbosa & Yeni Lei",
+      "style": "salsa",
+      "photoUrl": "https://hellodancefest.com/images/lineup-salsa/2025/josh-yeny1.jpg",
+      "bioUrl": "https://hellodancefest.com/salsa/salsa-lineup/salsa-workshops/josh-yeny",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "DmVInkIK",
+      "eventId": "hellodancefest-2026",
+      "name": "Luis Aguilar",
+      "style": "salsa",
+      "photoUrl": "https://hellodancefest.com/images/lineup-salsa/2024/luis-aguilar1.jpg",
+      "bioUrl": "https://hellodancefest.com/salsa/salsa-lineup/salsa-workshops/luis-aguilar",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "zu3nE8cI",
+      "eventId": "hellodancefest-2026",
+      "name": "Oscar Castaneda",
+      "style": "salsa",
+      "photoUrl": "https://hellodancefest.com/images/lineup-salsa/2024/oscar-castaneda1.jpg",
+      "bioUrl": "https://hellodancefest.com/salsa/salsa-lineup/salsa-workshops/oscar-castaneda",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T18:52:21.614Z"
+    },
+    {
+      "id": "nE46V29W",
+      "eventId": "hellodancefest-2026",
+      "name": "Pamelita & Mike Ahombi",
+      "style": "kizomba",
+      "photoUrl": "https://hellodancefest.com/images/lineup-kizomba/2026/pam-mike1.jpg",
+      "bioUrl": "https://hellodancefest.com/kizomba/kizomba-lineup/kizomba-workshops/pam-mike",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/hellokizombafest",
+          "label": "Joint account",
+          "kind": "joint"
+        },
+        {
+          "url": "https://www.instagram.com/pamelita.all.love",
+          "label": "Pamelita",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/mr.ahombi",
+          "label": "Mike",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-20T18:52:33.900Z"
+    },
+    {
+      "id": "ijw1OPvQ",
+      "eventId": "hellodancefest-2026",
+      "name": "DJ Sink",
+      "style": "kizomba",
+      "photoUrl": "https://hellodancefest.com/images/lineup-kizomba/2024/dj-sink1.jpg",
+      "bioUrl": "https://hellodancefest.com/kizomba/kizomba-lineup/kizomba-workshops/dj-sink",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/dj_sink",
+          "label": "DJ",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/hellokizombafest",
+          "label": "@hellokizombafest",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-20T19:28:37.025Z"
+    },
+    {
+      "id": "4ap3QSdT",
+      "eventId": "hellodancefest-2026",
+      "name": "Tyler Crandall",
+      "style": "kizomba",
+      "photoUrl": "https://hellodancefest.com/images/lineup-kizomba/2024/tyler-crandall1.jpg",
+      "bioUrl": "https://hellodancefest.com/kizomba/kizomba-lineup/kizomba-workshops/tyler-crandall",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "Tru3Fhw7",
+      "eventId": "hellodancefest-2026",
+      "name": "Alain & Elijah",
+      "style": "zouk",
+      "photoUrl": "https://hellodancefest.com/images/lineup-zouk/2026/alain-elijah1.jpg",
+      "bioUrl": "https://hellodancefest.com/zouk/zouk-lineup/zouk-workshops/alain-elijah",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "Jw-0Izu6",
+      "eventId": "hellodancefest-2026",
+      "name": "Alexia Meirelles",
+      "style": "zouk",
+      "photoUrl": "https://hellodancefest.com/images/lineup-zouk/2024/alexia-meirelles1.jpg",
+      "bioUrl": "https://hellodancefest.com/zouk/zouk-lineup/zouk-workshops/alexia-meirelles",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "31NU0cp9",
+      "eventId": "hellodancefest-2026",
+      "name": "Ashe Jordan",
+      "style": "zouk",
+      "photoUrl": "https://hellodancefest.com/images/lineup-zouk/2026/ashe-jordan1.jpg",
+      "bioUrl": "https://hellodancefest.com/zouk/zouk-lineup/zouk-workshops/ashe-jordan",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "pLNUA7PU",
+      "eventId": "hellodancefest-2026",
+      "name": "Bruna Kazakevic",
+      "style": "zouk",
+      "photoUrl": "https://hellodancefest.com/images/lineup-zouk/2024/bruna-kazakevic1.jpg",
+      "bioUrl": "https://hellodancefest.com/zouk/zouk-lineup/zouk-workshops/bruna-kazakevic",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "fF70m68H",
+      "eventId": "hellodancefest-2026",
+      "name": "Cosan Caglayan",
+      "style": "zouk",
+      "photoUrl": "https://hellodancefest.com/images/lineup-zouk/2024/cosan1.jpg",
+      "bioUrl": "https://hellodancefest.com/zouk/zouk-lineup/zouk-workshops/cosan-caglayan",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "fCA1ROvb",
+      "eventId": "hellodancefest-2026",
+      "name": "Evelyn & Derrick",
+      "style": "zouk",
+      "photoUrl": "https://hellodancefest.com/images/lineup-zouk/2024/evelyn-derrick1.jpg",
+      "bioUrl": "https://hellodancefest.com/zouk/zouk-lineup/zouk-workshops/evelyn-derrick",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "R9pyD4zx",
+      "eventId": "hellodancefest-2026",
+      "name": "Gabriel de CB",
+      "style": "zouk",
+      "photoUrl": "https://hellodancefest.com/images/lineup-zouk/2026/gabriel-de-cb1.jpg",
+      "bioUrl": "https://hellodancefest.com/zouk/zouk-lineup/zouk-workshops/gabriel-de-cb",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T18:52:44.473Z"
+    },
+    {
+      "id": "7vGXnlQZ",
+      "eventId": "hellodancefest-2026",
+      "name": "Helen & Tony",
+      "style": "zouk",
+      "photoUrl": "https://hellodancefest.com/images/lineup-zouk/2026/helen-tony1.jpg",
+      "bioUrl": "https://hellodancefest.com/zouk/zouk-lineup/zouk-workshops/helen-tony",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "MxW3haIu",
+      "eventId": "hellodancefest-2026",
+      "name": "Leandro & Nayara",
+      "style": "zouk",
+      "photoUrl": "https://hellodancefest.com/images/lineup-zouk/2025/leandro-nayara1.jpg",
+      "bioUrl": "https://hellodancefest.com/zouk/zouk-lineup/zouk-workshops/leandro-nayara",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/leandroandnayara",
+          "label": "Joint account",
+          "kind": "joint"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-20T19:27:50.948Z"
+    },
+    {
+      "id": "peBStWYV",
+      "eventId": "hellodancefest-2026",
+      "name": "Marck & Melyssa",
+      "style": "zouk",
+      "photoUrl": "https://hellodancefest.com/images/lineup-zouk/2026/marck-melyssa1.jpg",
+      "bioUrl": "https://hellodancefest.com/zouk/zouk-lineup/zouk-workshops/marck-melyssa",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/marckemelyssa.oficial",
+          "label": "Joint account",
+          "kind": "joint"
+        },
+        {
+          "url": "https://www.instagram.com/mel_tamada",
+          "label": "Joint account",
+          "kind": "joint"
+        },
+        {
+          "url": "https://www.instagram.com/marcksilva20_",
+          "label": "Marck",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-20T18:52:47.445Z"
+    },
+    {
+      "id": "yBlcMeVR",
+      "eventId": "hellodancefest-2026",
+      "name": "Mikael Bozon & Ana Gomes",
+      "style": "zouk",
+      "photoUrl": "https://hellodancefest.com/images/lineup-zouk/2025/mikael-bozon1.jpg",
+      "bioUrl": "https://hellodancefest.com/zouk/zouk-lineup/zouk-workshops/mikael-bozon",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "LwFVI_Xu",
+      "eventId": "hellodancefest-2026",
+      "name": "Nelly Caldeira",
+      "style": "zouk",
+      "photoUrl": "https://hellodancefest.com/images/lineup-zouk/2024/nelly-caldeira1.jpg",
+      "bioUrl": "https://hellodancefest.com/zouk/zouk-lineup/zouk-workshops/nelly-caldeira",
+      "igLinks": [],
+      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+    },
+    {
+      "id": "7C2phgEc",
+      "eventId": "hellodancefest-2026",
+      "name": "Walter & Larissa",
+      "style": "zouk",
+      "photoUrl": "https://hellodancefest.com/images/lineup-zouk/2026/walter-larissa1.jpg",
+      "bioUrl": "https://hellodancefest.com/zouk/zouk-lineup/zouk-workshops/walter-larissa",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/walt.lari",
+          "label": "Joint account",
+          "kind": "joint"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-20T18:52:12.222Z"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "pCPHy1xt",
+      "eventId": "hellodancefest-2026",
+      "title": "Dominican Vibes Footworks",
+      "instructors": [
+        "Maurico & Serena"
+      ],
+      "style": "bachata",
+      "level": "Open Level",
+      "room": "Peninsula D-G",
+      "day": "2026-07-24",
+      "start": "12:00",
+      "end": "13:00",
+      "artistIds": [
+        "pHhrxLfu"
+      ]
+    },
+    {
+      "id": "4n7m99QR",
+      "eventId": "hellodancefest-2026",
+      "title": "Bachata Fuze - Improvisation",
+      "instructors": [
+        "Patrick & Johanna"
+      ],
+      "style": "bachata",
+      "level": "Intermedia-Advance",
+      "room": "Peninsula D-G",
+      "day": "2026-07-24",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": [
+        "tzHEhKg3"
+      ]
+    },
+    {
+      "id": "mqPO1hDL",
+      "eventId": "hellodancefest-2026",
+      "title": "Bachata Sensual Flow",
+      "instructors": [
+        "Vanessa & Guillermo"
+      ],
+      "style": "bachata",
+      "level": "Open Level",
+      "room": "Peninsula A-B",
+      "day": "2026-07-24",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": [
+        "gNKGrjZU"
+      ]
+    },
+    {
+      "id": "uq9GtlqF",
+      "eventId": "hellodancefest-2026",
+      "title": "Intro to Kizomba",
+      "instructors": [
+        "Tyler Crandall"
+      ],
+      "style": "kizomba",
+      "level": "Beginner",
+      "room": "Harbour",
+      "day": "2026-07-24",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": [
+        "4ap3QSdT"
+      ]
+    },
+    {
+      "id": "rE2mzVPL",
+      "eventId": "hellodancefest-2026",
+      "title": "Body Movement",
+      "instructors": [
+        "Yolena Kapoli"
+      ],
+      "style": "salsa",
+      "level": "Open Level",
+      "room": "Regency",
+      "day": "2026-07-24",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": [
+        "O2DCOI-6"
+      ]
+    },
+    {
+      "id": "UyCg7QMs",
+      "eventId": "hellodancefest-2026",
+      "title": "Salsa On2 Partnerwork",
+      "instructors": [
+        "Luis Aguilar"
+      ],
+      "style": "salsa",
+      "level": "Open Level",
+      "room": "Peninsula C",
+      "day": "2026-07-24",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": [
+        "DmVInkIK"
+      ]
+    },
+    {
+      "id": "fwpVsDL0",
+      "eventId": "hellodancefest-2026",
+      "title": "The Edge of Movement",
+      "instructors": [
+        "Mikael & Ana"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
+      "room": "Sandpebble A-C",
+      "day": "2026-07-24",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": [
+        "yBlcMeVR"
+      ]
+    },
+    {
+      "id": "pDRWKOpc",
+      "eventId": "hellodancefest-2026",
+      "title": "Bachata Fusion",
+      "instructors": [
+        "Luismi & Mariangela"
+      ],
+      "style": "bachata",
+      "level": "Intermediate-Advance Level",
+      "room": "Peninsula D-G",
+      "day": "2026-07-24",
+      "start": "14:00",
+      "end": "15:00",
+      "artistIds": [
+        "PfoXBFYi"
+      ]
+    },
+    {
+      "id": "Y06In9La",
+      "eventId": "hellodancefest-2026",
+      "title": "Modern Bachata Fusion",
+      "instructors": [
+        "Carlitos & Cece"
+      ],
+      "style": "bachata",
+      "level": "Open Level",
+      "room": "Peninsula A-B",
+      "day": "2026-07-24",
+      "start": "14:00",
+      "end": "15:00",
+      "artistIds": [
+        "t6fDwbs2"
+      ]
+    },
+    {
+      "id": "NMShxOB9",
+      "eventId": "hellodancefest-2026",
+      "title": "Tarraxo Connection",
+      "instructors": [
+        "Joe & Mariah"
+      ],
+      "style": "kizomba",
+      "level": "Beginner",
+      "room": "Harbour",
+      "day": "2026-07-24",
+      "start": "14:00",
+      "end": "15:00",
+      "artistIds": [
+        "_px5KtE9"
+      ]
+    },
+    {
+      "id": "Lamty7xK",
+      "eventId": "hellodancefest-2026",
+      "title": "Fadi's Signature: Chacha Musicality",
+      "instructors": [
+        "Fadi Fusion"
+      ],
+      "style": "salsa",
+      "level": "Intermediate-Advance",
+      "room": "Regency",
+      "day": "2026-07-24",
+      "start": "14:00",
+      "end": "15:00",
+      "artistIds": [
+        "LMXMoSPT"
+      ]
+    },
+    {
+      "id": "xFueVdD7",
+      "eventId": "hellodancefest-2026",
+      "title": "Salsa On2 Partnerwork",
+      "instructors": [
+        "SF Salsa Academy"
+      ],
+      "style": "salsa",
+      "level": "Open Level",
+      "room": "Peninsula C",
+      "day": "2026-07-24",
+      "start": "14:00",
+      "end": "15:00",
+      "artistIds": []
+    },
+    {
+      "id": "L5tnl7-u",
+      "eventId": "hellodancefest-2026",
+      "title": "Head Movement Found. & Var.",
+      "instructors": [
+        "Leandro & Nayara"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
+      "room": "Sandpebble A-C",
+      "day": "2026-07-24",
+      "start": "14:00",
+      "end": "15:00",
+      "artistIds": [
+        "MxW3haIu"
+      ]
+    },
+    {
+      "id": "Ho3cEwsA",
+      "eventId": "hellodancefest-2026",
+      "title": "Bachata Fusion with Zouk",
+      "instructors": [
+        "Melonito"
+      ],
+      "style": "bachata",
+      "level": "Intermediate-Advance Level",
+      "room": "Peninsula D-G",
+      "day": "2026-07-24",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": []
+    },
+    {
+      "id": "7BAfO6mf",
+      "eventId": "hellodancefest-2026",
+      "title": "Sensual Flow - Partnerwork",
+      "instructors": [
+        "Alexander & Laisinha"
+      ],
+      "style": "bachata",
+      "level": "Open Level",
+      "room": "Peninsula A-B",
+      "day": "2026-07-24",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": [
+        "xhf4Dfgc"
+      ]
+    },
+    {
+      "id": "bADDnSlU",
+      "eventId": "hellodancefest-2026",
+      "title": "Challenge Your Fundamentals",
+      "instructors": [
+        "Hovsep & Laura"
+      ],
+      "style": "kizomba",
+      "level": "Open Level",
+      "room": "Harbour",
+      "day": "2026-07-24",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": []
+    },
+    {
+      "id": "VFFlnFBI",
+      "eventId": "hellodancefest-2026",
+      "title": "J & L's style on2 Shines",
+      "instructors": [
+        "Jacopo & Linda"
+      ],
+      "style": "salsa",
+      "level": "Intermediate-Advance",
+      "room": "Regency",
+      "day": "2026-07-24",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": [
+        "3YO6oDp3"
+      ]
+    },
+    {
+      "id": "oJh8n4gq",
+      "eventId": "hellodancefest-2026",
+      "title": "Salsa On2 Fundamentals",
+      "instructors": [
+        "Nav & Kat"
+      ],
+      "style": "salsa",
+      "level": "Open Level",
+      "room": "Peninsula C",
+      "day": "2026-07-24",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": []
+    },
+    {
+      "id": "KbkC0ds4",
+      "eventId": "hellodancefest-2026",
+      "title": "6 Must-Have Fund. Moves",
+      "instructors": [
+        "Atom Cee"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
+      "room": "Sandpebble A-C",
+      "day": "2026-07-24",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": []
+    },
+    {
+      "id": "791tGa4I",
+      "eventId": "hellodancefest-2026",
+      "title": "3 Cambre Variations",
+      "instructors": [
+        "Walter & Larissa"
+      ],
+      "style": "zouk",
+      "level": "Intermediate-Advance",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-24",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": [
+        "7C2phgEc"
+      ]
+    },
+    {
+      "id": "LDQVdN-U",
+      "eventId": "hellodancefest-2026",
+      "title": "Traditional Swag",
+      "instructors": [
+        "Bryon & Sammantha"
+      ],
+      "style": "bachata",
+      "level": "Intermedia-Advance Level",
+      "room": "Peninsula D-G",
+      "day": "2026-07-24",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "ZSqlZv-u"
+      ]
+    },
+    {
+      "id": "Z_ZIecZE",
+      "eventId": "hellodancefest-2026",
+      "title": "Modern Bachata Shines",
+      "instructors": [
+        "Ngoc Knockout"
+      ],
+      "style": "bachata",
+      "level": "Open Level",
+      "room": "Peninsula A-B",
+      "day": "2026-07-24",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "6HEXZPgi"
+      ]
+    },
+    {
+      "id": "BaIdbwX_",
+      "eventId": "hellodancefest-2026",
+      "title": "Urban Kiz Connection",
+      "instructors": [
+        "Pamelita & Mike"
+      ],
+      "style": "kizomba",
+      "level": "Open Level",
+      "room": "Harbour",
+      "day": "2026-07-24",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "nE46V29W"
+      ]
+    },
+    {
+      "id": "hGHRUd-L",
+      "eventId": "hellodancefest-2026",
+      "title": "Footwork",
+      "instructors": [
+        "Cristian Vergari"
+      ],
+      "style": "salsa",
+      "level": "Intermediate-Advance",
+      "room": "Regency",
+      "day": "2026-07-24",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "8GbYSPkn"
+      ]
+    },
+    {
+      "id": "1t7GtT9M",
+      "eventId": "hellodancefest-2026",
+      "title": "Mambo Footwork",
+      "instructors": [
+        "Oscar Castaneda"
+      ],
+      "style": "salsa",
+      "level": "Open Level",
+      "room": "Peninsula C",
+      "day": "2026-07-24",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "zu3nE8cI"
+      ]
+    },
+    {
+      "id": "bx6WCnpo",
+      "eventId": "hellodancefest-2026",
+      "title": "Simple Turn & Soltinho Variat.",
+      "instructors": [
+        "Gabriel de CB"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
+      "room": "Sandpebble A-C",
+      "day": "2026-07-24",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "R9pyD4zx"
+      ]
+    },
+    {
+      "id": "3fvHSEI-",
+      "eventId": "hellodancefest-2026",
+      "title": "The CODE: M&M Mastery",
+      "instructors": [
+        "Marck & Melyssa"
+      ],
+      "style": "zouk",
+      "level": "Intermediate-Advance",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-24",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "peBStWYV"
+      ]
+    },
+    {
+      "id": "BMeGbCEn",
+      "eventId": "hellodancefest-2026",
+      "title": "Bachata Flow Connection",
+      "instructors": [
+        "Jeff & Mayra"
+      ],
+      "style": "bachata",
+      "level": "Open Level",
+      "room": "Peninsula D-G",
+      "day": "2026-07-24",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": [
+        "ed__gzDt"
+      ]
+    },
+    {
+      "id": "1EKnmCwf",
+      "eventId": "hellodancefest-2026",
+      "title": "NV Style Bachata Fusion",
+      "instructors": [
+        "Nick & Vivi"
+      ],
+      "style": "bachata",
+      "level": "Open Level",
+      "room": "Peninsula A-B",
+      "day": "2026-07-24",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": [
+        "YKDtcfic"
+      ]
+    },
+    {
+      "id": "E3y9GqXW",
+      "eventId": "hellodancefest-2026",
+      "title": "Urban Kiz Foundation",
+      "instructors": [
+        "Sink & Masha"
+      ],
+      "style": "kizomba",
+      "level": "Open Level",
+      "room": "Harbour",
+      "day": "2026-07-24",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": [
+        "ijw1OPvQ"
+      ]
+    },
+    {
+      "id": "z8eSdomW",
+      "eventId": "hellodancefest-2026",
+      "title": "Mambo Shines & Footwork",
+      "instructors": [
+        "Hector & Analiza"
+      ],
+      "style": "salsa",
+      "level": "Intermediate",
+      "room": "Regency",
+      "day": "2026-07-24",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": [
+        "iM9BfSD7"
+      ]
+    },
+    {
+      "id": "F-B7pNwL",
+      "eventId": "hellodancefest-2026",
+      "title": "Zouk Flavor & Turn Variations",
+      "instructors": [
+        "Nelly Caldeira"
+      ],
+      "style": "zouk",
+      "level": "Intermediate-Advance",
+      "room": "Sandpebble A-C",
+      "day": "2026-07-24",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": [
+        "LwFVI_Xu"
+      ]
+    },
+    {
+      "id": "ubLsuwAu",
+      "eventId": "hellodancefest-2026",
+      "title": "Circularity: Flow & Rotation",
+      "instructors": [
+        "Leandro & Nayara"
+      ],
+      "style": "zouk",
+      "level": "Intermediate-Advance",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-24",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": [
+        "MxW3haIu"
+      ]
+    },
+    {
+      "id": "7Pu91xsd",
+      "eventId": "hellodancefest-2026",
+      "title": "Lady Styling",
+      "instructors": [
+        "Johanna Pellerin"
+      ],
+      "style": "bachata",
+      "level": "Open Level",
+      "room": "Peninsula D-G",
+      "day": "2026-07-24",
+      "start": "18:00",
+      "end": "19:00",
+      "artistIds": [
+        "tzHEhKg3"
+      ]
+    },
+    {
+      "id": "ZcyD8cHJ",
+      "eventId": "hellodancefest-2026",
+      "title": "The Convo, Not the Combo",
+      "instructors": [
+        "Jim & Jess"
+      ],
+      "style": "bachata",
+      "level": "Open Level",
+      "room": "Peninsula A-B",
+      "day": "2026-07-24",
+      "start": "18:00",
+      "end": "19:00",
+      "artistIds": [
+        "KT6tWWyw"
+      ]
+    },
+    {
+      "id": "MPnnoA7t",
+      "eventId": "hellodancefest-2026",
+      "title": "Counter Balance",
+      "instructors": [
+        "Carlito & Cece"
+      ],
+      "style": "bachata",
+      "level": "Open Level",
+      "room": "Peninsula D-G",
+      "day": "2026-07-25",
+      "start": "11:00",
+      "end": "12:00",
+      "artistIds": [
+        "t6fDwbs2"
+      ]
+    },
+    {
+      "id": "OdrK7E-Q",
+      "eventId": "hellodancefest-2026",
+      "title": "Zoukchata movement with Flow",
+      "instructors": [
+        "John & Suci"
+      ],
+      "style": "bachata",
+      "level": "Open Level",
+      "room": "Peninsula A-B",
+      "day": "2026-07-25",
+      "start": "11:00",
+      "end": "12:00",
+      "artistIds": []
+    },
+    {
+      "id": "04tKR2YU",
+      "eventId": "hellodancefest-2026",
+      "title": "Empire Style's Lady Styling",
+      "instructors": [
+        "Empire Mambo Ladies"
+      ],
+      "style": "salsa",
+      "level": "Intermediate-Advance",
+      "room": "Regency",
+      "day": "2026-07-25",
+      "start": "11:00",
+      "end": "12:00",
+      "artistIds": []
+    },
+    {
+      "id": "fZ2g0x5a",
+      "eventId": "hellodancefest-2026",
+      "title": "Bachata Fusion - Partnerwork",
+      "instructors": [
+        "Alan & Cristina"
+      ],
+      "style": "bachata",
+      "level": "Intermediate-Advance",
+      "room": "Peninsula D-G",
+      "day": "2026-07-25",
+      "start": "12:00",
+      "end": "13:00",
+      "artistIds": [
+        "yXETxBLO"
+      ]
+    },
+    {
+      "id": "y6y-dXmb",
+      "eventId": "hellodancefest-2026",
+      "title": "Urban Sensual Ladies Styling",
+      "instructors": [
+        "Ali Loo"
+      ],
+      "style": "bachata",
+      "level": "Open Level",
+      "room": "Peninsula A-B",
+      "day": "2026-07-25",
+      "start": "12:00",
+      "end": "13:00",
+      "artistIds": []
+    },
+    {
+      "id": "eBhcpkr8",
+      "eventId": "hellodancefest-2026",
+      "title": "Kizomba Fundamental Patterns",
+      "instructors": [
+        "Tyler Crandall"
+      ],
+      "style": "kizomba",
+      "level": "Open Level",
+      "room": "Harbour",
+      "day": "2026-07-25",
+      "start": "12:00",
+      "end": "13:00",
+      "artistIds": [
+        "4ap3QSdT"
+      ]
+    },
+    {
+      "id": "Za_8Eq27",
+      "eventId": "hellodancefest-2026",
+      "title": "Creative Partnerwork",
+      "instructors": [
+        "Dimitris & Yolena"
+      ],
+      "style": "salsa",
+      "level": "Intermediate-Advance",
+      "room": "Regency",
+      "day": "2026-07-25",
+      "start": "12:00",
+      "end": "13:00",
+      "artistIds": [
+        "O2DCOI-6"
+      ]
+    },
+    {
+      "id": "pbOWdpzl",
+      "eventId": "hellodancefest-2026",
+      "title": "Alignment & Posture",
+      "instructors": [
+        "Marisa Craig"
+      ],
+      "style": "salsa",
+      "level": "Open Level",
+      "room": "Peninsula C",
+      "day": "2026-07-25",
+      "start": "12:00",
+      "end": "13:00",
+      "artistIds": []
+    },
+    {
+      "id": "BChnC8kb",
+      "eventId": "hellodancefest-2026",
+      "title": "Smooth Bachata Footwork & Ptrwork",
+      "instructors": [
+        "Bryon & Sammantha"
+      ],
+      "style": "bachata",
+      "level": "Intermediate-Advance",
+      "room": "Peninsula D-G",
+      "day": "2026-07-25",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": [
+        "ZSqlZv-u"
+      ]
+    },
+    {
+      "id": "TGcWAx9u",
+      "eventId": "hellodancefest-2026",
+      "title": "Urban Bachata Partnerwork",
+      "instructors": [
+        "Mariah & Andrea"
+      ],
+      "style": "bachata",
+      "level": "Open Level-Intermediate",
+      "room": "Peninsula A-B",
+      "day": "2026-07-25",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": [
+        "_px5KtE9"
+      ]
+    },
+    {
+      "id": "W46CgBbI",
+      "eventId": "hellodancefest-2026",
+      "title": "Technical Turns",
+      "instructors": [
+        "Hovsep & Laura"
+      ],
+      "style": "kizomba",
+      "level": "Intermediate",
+      "room": "Harbour",
+      "day": "2026-07-25",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": []
+    },
+    {
+      "id": "0hiCXu9M",
+      "eventId": "hellodancefest-2026",
+      "title": "Fadi's Signature: Chacha Musicality",
+      "instructors": [
+        "Fadi Fusion"
+      ],
+      "style": "salsa",
+      "level": "Intermediate-Advance",
+      "room": "Regency",
+      "day": "2026-07-25",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": [
+        "LMXMoSPT"
+      ]
+    },
+    {
+      "id": "L1S7DM9J",
+      "eventId": "hellodancefest-2026",
+      "title": "On2 Footwork",
+      "instructors": [
+        "Joshua Barbosa"
+      ],
+      "style": "salsa",
+      "level": "Open Level",
+      "room": "Peninsula C",
+      "day": "2026-07-25",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": [
+        "EpvxhX05"
+      ]
+    },
+    {
+      "id": "31lZ661a",
+      "eventId": "hellodancefest-2026",
+      "title": "Bonus & Inverted Bonus",
+      "instructors": [
+        "Cosan & Helen"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
+      "room": "Sandpebble A-C",
+      "day": "2026-07-25",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": [
+        "fF70m68H"
+      ]
+    },
+    {
+      "id": "bTZMvc0W",
+      "eventId": "hellodancefest-2026",
+      "title": "Creativity & Flow",
+      "instructors": [
+        "Evelyn Lopez"
+      ],
+      "style": "zouk",
+      "level": "Intermediate-Advance",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-25",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": [
+        "fCA1ROvb"
+      ]
+    },
+    {
+      "id": "z_R638xT",
+      "eventId": "hellodancefest-2026",
+      "title": "Bachata Infinity",
+      "instructors": [
+        "Jovanny & Anatasia"
+      ],
+      "style": "bachata",
+      "level": "Intermediate-Advance",
+      "room": "Peninsula D-G",
+      "day": "2026-07-25",
+      "start": "14:00",
+      "end": "15:00",
+      "artistIds": [
+        "cFY6xM-Q"
+      ]
+    },
+    {
+      "id": "m2eQTumu",
+      "eventId": "hellodancefest-2026",
+      "title": "Extreme Bachata",
+      "instructors": [
+        "Nick & Vivi"
+      ],
+      "style": "bachata",
+      "level": "Intermediate",
+      "room": "Peninsula A-B",
+      "day": "2026-07-25",
+      "start": "14:00",
+      "end": "15:00",
+      "artistIds": [
+        "YKDtcfic"
+      ]
+    },
+    {
+      "id": "7iM6el1p",
+      "eventId": "hellodancefest-2026",
+      "title": "Saturday Muscality",
+      "instructors": [
+        "Sink & Masha"
+      ],
+      "style": "kizomba",
+      "level": "Open Level",
+      "room": "Harbour",
+      "day": "2026-07-25",
+      "start": "14:00",
+      "end": "15:00",
+      "artistIds": [
+        "ijw1OPvQ"
+      ]
+    },
+    {
+      "id": "3j5KfMHD",
+      "eventId": "hellodancefest-2026",
+      "title": "Empire Style Partnerwork",
+      "instructors": [
+        "Empire Mambo Pro"
+      ],
+      "style": "salsa",
+      "level": "Intermediate-Advance",
+      "room": "Regency",
+      "day": "2026-07-25",
+      "start": "14:00",
+      "end": "15:00",
+      "artistIds": []
+    },
+    {
+      "id": "i2UBmOus",
+      "eventId": "hellodancefest-2026",
+      "title": "Intro to Counterbalance",
+      "instructors": [
+        "Alain & Elijah"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
+      "room": "Sandpebble A-C",
+      "day": "2026-07-25",
+      "start": "14:00",
+      "end": "15:00",
+      "artistIds": [
+        "Tru3Fhw7"
+      ]
+    },
+    {
+      "id": "rATAyfpZ",
+      "eventId": "hellodancefest-2026",
+      "title": "Gostosinho 3 Variations",
+      "instructors": [
+        "Ashe Jordan"
+      ],
+      "style": "zouk",
+      "level": "Intermediate-Advance",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-25",
+      "start": "14:00",
+      "end": "15:00",
+      "artistIds": [
+        "31NU0cp9"
+      ]
+    },
+    {
+      "id": "ug1x3f5L",
+      "eventId": "hellodancefest-2026",
+      "title": "Sensual Bachata Connection",
+      "instructors": [
+        "Luismi & Mariangela"
+      ],
+      "style": "bachata",
+      "level": "Intermediate-Advance",
+      "room": "Peninsula D-G",
+      "day": "2026-07-25",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": [
+        "PfoXBFYi"
+      ]
+    },
+    {
+      "id": "00uf5K6h",
+      "eventId": "hellodancefest-2026",
+      "title": "Dominican - Shines/Footwork",
+      "instructors": [
+        "Cassandra Villasenor"
+      ],
+      "style": "bachata",
+      "level": "Intermediate",
+      "room": "Peninsula A-B",
+      "day": "2026-07-25",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": []
+    },
+    {
+      "id": "IjjWZynU",
+      "eventId": "hellodancefest-2026",
+      "title": "Musicality vs. Flow",
+      "instructors": [
+        "Mike & Pamelita"
+      ],
+      "style": "kizomba",
+      "level": "Open Level",
+      "room": "Harbour",
+      "day": "2026-07-25",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": [
+        "nE46V29W"
+      ]
+    },
+    {
+      "id": "rJmXIwLo",
+      "eventId": "hellodancefest-2026",
+      "title": "On2 Partnerwork",
+      "instructors": [
+        "Jacopo & Linda"
+      ],
+      "style": "salsa",
+      "level": "Intermediate-Advance",
+      "room": "Regency",
+      "day": "2026-07-25",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": [
+        "3YO6oDp3"
+      ]
+    },
+    {
+      "id": "H4bwfZFO",
+      "eventId": "hellodancefest-2026",
+      "title": "Body Waves to Head Motion Flo.",
+      "instructors": [
+        "Nelly Caldeira"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
+      "room": "Sandpebble A-C",
+      "day": "2026-07-25",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": [
+        "LwFVI_Xu"
+      ]
+    },
+    {
+      "id": "86GFoCoL",
+      "eventId": "hellodancefest-2026",
+      "title": "Organic Trans. & Movemnt Cont.",
+      "instructors": [
+        "Leandro & Nayara"
+      ],
+      "style": "zouk",
+      "level": "Intermediate-Advance",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-25",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": [
+        "MxW3haIu"
+      ]
+    },
+    {
+      "id": "bxTH89E8",
+      "eventId": "hellodancefest-2026",
+      "title": "Traditional Footwork and Pterwork",
+      "instructors": [
+        "Javier & Kiki"
+      ],
+      "style": "bachata",
+      "level": "Intermediate",
+      "room": "Peninsula D-G",
+      "day": "2026-07-25",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "5Y-O-qtH"
+      ]
+    },
+    {
+      "id": "y8-wX9c5",
+      "eventId": "hellodancefest-2026",
+      "title": "Sensual Bachata",
+      "instructors": [
+        "Ngoc & Tien"
+      ],
+      "style": "bachata",
+      "level": "Open Level-Intermediate",
+      "room": "Peninsula A-B",
+      "day": "2026-07-25",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "6HEXZPgi"
+      ]
+    },
+    {
+      "id": "z2qg1Loo",
+      "eventId": "hellodancefest-2026",
+      "title": "Tarraxo Vibes",
+      "instructors": [
+        "Joe & Mariah"
+      ],
+      "style": "kizomba",
+      "level": "Open Level",
+      "room": "Harbour",
+      "day": "2026-07-25",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "_px5KtE9"
+      ]
+    },
+    {
+      "id": "DZdG-KHf",
+      "eventId": "hellodancefest-2026",
+      "title": "On2 Partnerwork",
+      "instructors": [
+        "Cristian & Yolieth"
+      ],
+      "style": "salsa",
+      "level": "Intermediate-Advance",
+      "room": "Regency",
+      "day": "2026-07-25",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "8GbYSPkn"
+      ]
+    },
+    {
+      "id": "w2w38cgD",
+      "eventId": "hellodancefest-2026",
+      "title": "Mambo Fusion",
+      "instructors": [
+        "Jay Lee"
+      ],
+      "style": "salsa",
+      "level": "Open Level",
+      "room": "Peninsula C",
+      "day": "2026-07-25",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": []
+    },
+    {
+      "id": "FQlYe69c",
+      "eventId": "hellodancefest-2026",
+      "title": "Mastering the Dragon State",
+      "instructors": [
+        "Bruna K. & Leandro"
+      ],
+      "style": "zouk",
+      "level": "Advance",
+      "room": "Sandpebble A-C",
+      "day": "2026-07-25",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "pLNUA7PU"
+      ]
+    },
+    {
+      "id": "-As-y99E",
+      "eventId": "hellodancefest-2026",
+      "title": "Raising Momentum",
+      "instructors": [
+        "Mikael & Ana"
+      ],
+      "style": "zouk",
+      "level": "Advamce",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-25",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "yBlcMeVR"
+      ]
+    },
+    {
+      "id": "BChPrPoK",
+      "eventId": "hellodancefest-2026",
+      "title": "Bachata Elegancia: 3 Styles on 1",
+      "instructors": [
+        "Simon & Lolahontas"
+      ],
+      "style": "bachata",
+      "level": "Intermediate",
+      "room": "Peninsula D-G",
+      "day": "2026-07-25",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": [
+        "ZQAEHYQr"
+      ]
+    },
+    {
+      "id": "xfnsmojp",
+      "eventId": "hellodancefest-2026",
+      "title": "Urban Fusion: The Art of,",
+      "instructors": [
+        "Julian Zhu"
+      ],
+      "style": "bachata",
+      "level": "Intermediate",
+      "room": "Peninsula A-B",
+      "day": "2026-07-25",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": []
+    },
+    {
+      "id": "Q0QeQRST",
+      "eventId": "hellodancefest-2026",
+      "title": "Daytime Dancing",
+      "instructors": [
+        "5:00 - 8:00pm"
+      ],
+      "style": "kizomba",
+      "level": "Kizomba, Urban Kiz DJ OLU, DJ SINK",
+      "room": "Harbour",
+      "day": "2026-07-25",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": []
+    },
+    {
+      "id": "McI3eo4V",
+      "eventId": "hellodancefest-2026",
+      "title": "Body Movement Foundation",
+      "instructors": [
+        "Guest"
+      ],
+      "style": "salsa",
+      "level": "Intermediate-Advance",
+      "room": "Regency",
+      "day": "2026-07-25",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": []
+    },
+    {
+      "id": "IKiAVFoO",
+      "eventId": "hellodancefest-2026",
+      "title": "On2 Footwork & Partnerwork",
+      "instructors": [
+        "Diego Jarosky & Marika"
+      ],
+      "style": "salsa",
+      "level": "Open Level",
+      "room": "Peninsula C",
+      "day": "2026-07-25",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": [
+        "TUvoHUbg"
+      ]
+    },
+    {
+      "id": "xAi9yrWG",
+      "eventId": "hellodancefest-2026",
+      "title": "Bonus Viarations",
+      "instructors": [
+        "Kakah & Guest"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
+      "room": "Sandpebble A-C",
+      "day": "2026-07-25",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": []
+    },
+    {
+      "id": "2UrtDcHi",
+      "eventId": "hellodancefest-2026",
+      "title": "The CODE: M&M Signature",
+      "instructors": [
+        "Marck & Melyssa"
+      ],
+      "style": "zouk",
+      "level": "Intermediate-Advance",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-25",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": [
+        "peBStWYV"
+      ]
+    },
+    {
+      "id": "Y0nh3mDq",
+      "eventId": "hellodancefest-2026",
+      "title": "BTO Style Footwork",
+      "instructors": [
+        "Jonathan Parco"
+      ],
+      "style": "bachata",
+      "level": "Open Level",
+      "room": "Peninsula D-G",
+      "day": "2026-07-25",
+      "start": "18:00",
+      "end": "19:00",
+      "artistIds": [
+        "FxL-TPhY"
+      ]
+    },
+    {
+      "id": "NUMVtDaH",
+      "eventId": "hellodancefest-2026",
+      "title": "Battle Royale",
+      "instructors": [
+        "6:30 - 7:30pm"
+      ],
+      "style": "bachata",
+      "level": "Bachata Competition Open Level",
+      "room": "Peninsula A-B",
+      "day": "2026-07-25",
+      "start": "18:00",
+      "end": "19:00",
+      "artistIds": []
+    },
+    {
+      "id": "PEvujhCm",
+      "eventId": "hellodancefest-2026",
+      "title": "Sarrada Variation",
+      "instructors": [
+        "Walter & Larissa"
+      ],
+      "style": "salsa",
+      "level": "Open Level",
+      "room": "Regency",
+      "day": "2026-07-25",
+      "start": "18:00",
+      "end": "19:00",
+      "artistIds": [
+        "7C2phgEc"
+      ]
+    },
+    {
+      "id": "q2xZ12Fm",
+      "eventId": "hellodancefest-2026",
+      "title": "Zouk",
+      "instructors": [
+        "Practica & Dancing"
+      ],
+      "style": "salsa",
+      "level": "DJ TBA",
+      "room": "Regency",
+      "day": "2026-07-25",
+      "start": "19:00",
+      "end": "20:00",
+      "artistIds": []
+    },
+    {
+      "id": "is_yj71a",
+      "eventId": "hellodancefest-2026",
+      "title": "Zouk",
+      "instructors": [
+        "JnJ Competition"
+      ],
+      "style": "salsa",
+      "level": "Novice-intermediate-Advance",
+      "room": "Regency",
+      "day": "2026-07-25",
+      "start": "20:00",
+      "end": "21:00",
+      "artistIds": []
+    },
+    {
+      "id": "pnoZTPdU",
+      "eventId": "hellodancefest-2026",
+      "title": "Head Movement Technique",
+      "instructors": [
+        "Jovanny & Anatasia"
+      ],
+      "style": "bachata",
+      "level": "Intermedia-Advance",
+      "room": "Peninsula D-G",
+      "day": "2026-07-26",
+      "start": "11:00",
+      "end": "12:00",
+      "artistIds": [
+        "cFY6xM-Q"
+      ]
+    },
+    {
+      "id": "Getol-Vk",
+      "eventId": "hellodancefest-2026",
+      "title": "Sensual Movement - Social Ptrwork",
+      "instructors": [
+        "Jeff & Mayra"
+      ],
+      "style": "bachata",
+      "level": "Intermediate",
+      "room": "Peninsula A-B",
+      "day": "2026-07-26",
+      "start": "11:00",
+      "end": "12:00",
+      "artistIds": [
+        "ed__gzDt"
+      ]
+    },
+    {
+      "id": "Cs1Y7A18",
+      "eventId": "hellodancefest-2026",
+      "title": "Bachata Soft Connection",
+      "instructors": [
+        "Melonito"
+      ],
+      "style": "bachata",
+      "level": "Intermediate-Advance",
+      "room": "Peninsula D-G",
+      "day": "2026-07-26",
+      "start": "12:00",
+      "end": "13:00",
+      "artistIds": []
+    },
+    {
+      "id": "woUa6vOe",
+      "eventId": "hellodancefest-2026",
+      "title": "Euro-Style Bachata Flow",
+      "instructors": [
+        "JAS & Hailie"
+      ],
+      "style": "bachata",
+      "level": "Intermediate",
+      "room": "Peninsula A-B",
+      "day": "2026-07-26",
+      "start": "12:00",
+      "end": "13:00",
+      "artistIds": [
+        "FNFuOQ3j"
+      ]
+    },
+    {
+      "id": "eG69PQVy",
+      "eventId": "hellodancefest-2026",
+      "title": "Salsa On2 Styling & Technique",
+      "instructors": [
+        "Hector & Annaliza"
+      ],
+      "style": "salsa",
+      "level": "Open Level",
+      "room": "Regency",
+      "day": "2026-07-26",
+      "start": "12:00",
+      "end": "13:00",
+      "artistIds": [
+        "iM9BfSD7"
+      ]
+    },
+    {
+      "id": "hOcd7hCn",
+      "eventId": "hellodancefest-2026",
+      "title": "Bachata Elegancia",
+      "instructors": [
+        "Simon & Lolahontas"
+      ],
+      "style": "bachata",
+      "level": "Open Level",
+      "room": "Peninsula D-G",
+      "day": "2026-07-26",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": [
+        "ZQAEHYQr"
+      ]
+    },
+    {
+      "id": "jsMCAf3j",
+      "eventId": "hellodancefest-2026",
+      "title": "Aloha Musicality Lab",
+      "instructors": [
+        "Ali Loo"
+      ],
+      "style": "bachata",
+      "level": "Open Level",
+      "room": "Peninsula A-B",
+      "day": "2026-07-26",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": []
+    },
+    {
+      "id": "FbQrDUd7",
+      "eventId": "hellodancefest-2026",
+      "title": "On2 Footwork",
+      "instructors": [
+        "Fadi Fusion"
+      ],
+      "style": "salsa",
+      "level": "Intermedia-Advance",
+      "room": "Regency",
+      "day": "2026-07-26",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": [
+        "LMXMoSPT"
+      ]
+    },
+    {
+      "id": "vmXWXueI",
+      "eventId": "hellodancefest-2026",
+      "title": "Lady Styling",
+      "instructors": [
+        "Yolieth Barragan"
+      ],
+      "style": "salsa",
+      "level": "Intermedia-Advance",
+      "room": "Peninsula C",
+      "day": "2026-07-26",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": []
+    },
+    {
+      "id": "pYa-wWmG",
+      "eventId": "hellodancefest-2026",
+      "title": "Lat. & Viradninha and Simp.Turn",
+      "instructors": [
+        "Alexia & Zohra"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
+      "room": "Sandpebble A-C",
+      "day": "2026-07-26",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": [
+        "Jw-0Izu6"
+      ]
+    },
+    {
+      "id": "4DaQBvit",
+      "eventId": "hellodancefest-2026",
+      "title": "Balanco Variations w/ Head Mov",
+      "instructors": [
+        "Alain & Elijah"
+      ],
+      "style": "zouk",
+      "level": "Open-Beginner-Intermediate",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-26",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": [
+        "Tru3Fhw7"
+      ]
+    },
+    {
+      "id": "kjfR89IA",
+      "eventId": "hellodancefest-2026",
+      "title": "Bachata Social Tricks",
+      "instructors": [
+        "Mauricio & Serena"
+      ],
+      "style": "bachata",
+      "level": "Intermedia-Advance",
+      "room": "Peninsula D-G",
+      "day": "2026-07-26",
+      "start": "14:00",
+      "end": "15:00",
+      "artistIds": [
+        "pHhrxLfu"
+      ]
+    },
+    {
+      "id": "1o5yKjyR",
+      "eventId": "hellodancefest-2026",
+      "title": "Bachata Heels",
+      "instructors": [
+        "Alana Puerto"
+      ],
+      "style": "bachata",
+      "level": "Open Level",
+      "room": "Peninsula A-B",
+      "day": "2026-07-26",
+      "start": "14:00",
+      "end": "15:00",
+      "artistIds": [
+        "i6-EI_9c"
+      ]
+    },
+    {
+      "id": "DIkE5gTZ",
+      "eventId": "hellodancefest-2026",
+      "title": "Kizomba Combos",
+      "instructors": [
+        "Tyler Crandall"
+      ],
+      "style": "kizomba",
+      "level": "Intermediate",
+      "room": "Harbour",
+      "day": "2026-07-26",
+      "start": "14:00",
+      "end": "15:00",
+      "artistIds": [
+        "4ap3QSdT"
+      ]
+    },
+    {
+      "id": "qWHgwUfj",
+      "eventId": "hellodancefest-2026",
+      "title": "Chiara's Fusion",
+      "instructors": [
+        "Guest"
+      ],
+      "style": "salsa",
+      "level": "Intermedia-Advance",
+      "room": "Regency",
+      "day": "2026-07-26",
+      "start": "14:00",
+      "end": "15:00",
+      "artistIds": []
+    },
+    {
+      "id": "ROX6pjuw",
+      "eventId": "hellodancefest-2026",
+      "title": "Lambada Intro and Intensive",
+      "instructors": [
+        "Tony & Helen"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
+      "room": "Sandpebble A-C",
+      "day": "2026-07-26",
+      "start": "14:00",
+      "end": "15:00",
+      "artistIds": [
+        "7vGXnlQZ"
+      ]
+    },
+    {
+      "id": "Ili-Zyxc",
+      "eventId": "hellodancefest-2026",
+      "title": "Techniques: Upper Body Flow",
+      "instructors": [
+        "Evelyn Lopez"
+      ],
+      "style": "zouk",
+      "level": "Followers: Intermediate-Advance",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-26",
+      "start": "14:00",
+      "end": "15:00",
+      "artistIds": [
+        "fCA1ROvb"
+      ]
+    },
+    {
+      "id": "1J5vmwqd",
+      "eventId": "hellodancefest-2026",
+      "title": "Bachata Fuze - Body Movement",
+      "instructors": [
+        "Patrick & Johanna"
+      ],
+      "style": "bachata",
+      "level": "Intermedia-Advance",
+      "room": "Peninsula D-G",
+      "day": "2026-07-26",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": [
+        "tzHEhKg3"
+      ]
+    },
+    {
+      "id": "v4sBZZse",
+      "eventId": "hellodancefest-2026",
+      "title": "Bachata Fusion Partnerwork",
+      "instructors": [
+        "Gino & Ania"
+      ],
+      "style": "bachata",
+      "level": "Open Level",
+      "room": "Peninsula A-B",
+      "day": "2026-07-26",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": []
+    },
+    {
+      "id": "4DIZAR7_",
+      "eventId": "hellodancefest-2026",
+      "title": "Urban Kiz Connection",
+      "instructors": [
+        "Masha & Sink"
+      ],
+      "style": "kizomba",
+      "level": "Open Level",
+      "room": "Harbour",
+      "day": "2026-07-26",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": [
+        "ijw1OPvQ"
+      ]
+    },
+    {
+      "id": "mQjReU46",
+      "eventId": "hellodancefest-2026",
+      "title": "Empire Mambo's Style",
+      "instructors": [
+        "Empire Mambo"
+      ],
+      "style": "salsa",
+      "level": "Intermedia-Advance",
+      "room": "Regency",
+      "day": "2026-07-26",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": []
+    },
+    {
+      "id": "DZYA1usk",
+      "eventId": "hellodancefest-2026",
+      "title": "Freedom of Expression",
+      "instructors": [
+        "Marisa Craig"
+      ],
+      "style": "salsa",
+      "level": "Open Level",
+      "room": "Peninsula C",
+      "day": "2026-07-26",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": []
+    },
+    {
+      "id": "UPN9KEBr",
+      "eventId": "hellodancefest-2026",
+      "title": "Rhythm/Flow/Swag (Musicality)",
+      "instructors": [
+        "Kakah"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
+      "room": "Sandpebble A-C",
+      "day": "2026-07-26",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": []
+    },
+    {
+      "id": "QC0mhI6_",
+      "eventId": "hellodancefest-2026",
+      "title": "Signature Move",
+      "instructors": [
+        "Mikael & Ana"
+      ],
+      "style": "zouk",
+      "level": "Advance",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-26",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": [
+        "yBlcMeVR"
+      ]
+    },
+    {
+      "id": "cTjEtTgW",
+      "eventId": "hellodancefest-2026",
+      "title": "Sensual - Social Ptrwork",
+      "instructors": [
+        "Alan & Cristina"
+      ],
+      "style": "bachata",
+      "level": "Level",
+      "room": "Peninsula D-G",
+      "day": "2026-07-26",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "yXETxBLO"
+      ]
+    },
+    {
+      "id": "JFLa7l3X",
+      "eventId": "hellodancefest-2026",
+      "title": "Lead & Follow with Your Hips",
+      "instructors": [
+        "Alana & Esteban"
+      ],
+      "style": "bachata",
+      "level": "Open Level",
+      "room": "Peninsula A-B",
+      "day": "2026-07-26",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "i6-EI_9c"
+      ]
+    },
+    {
+      "id": "qWFExVzX",
+      "eventId": "hellodancefest-2026",
+      "title": "Micro Tarraxo",
+      "instructors": [
+        "Joe & Mariah"
+      ],
+      "style": "kizomba",
+      "level": "Open Level",
+      "room": "Harbour",
+      "day": "2026-07-26",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "_px5KtE9"
+      ]
+    },
+    {
+      "id": "wjhxj9vP",
+      "eventId": "hellodancefest-2026",
+      "title": "Lady Styling",
+      "instructors": [
+        "Linda Tavana"
+      ],
+      "style": "salsa",
+      "level": "Intermedia-Advance",
+      "room": "Regency",
+      "day": "2026-07-26",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "3YO6oDp3"
+      ]
+    },
+    {
+      "id": "4xfGHw9P",
+      "eventId": "hellodancefest-2026",
+      "title": "Embody the Warrior: Choreo Ch.",
+      "instructors": [
+        "Bruna Kazakevic"
+      ],
+      "style": "zouk",
+      "level": "Advance",
+      "room": "Sandpebble A-C",
+      "day": "2026-07-26",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "pLNUA7PU"
+      ]
+    },
+    {
+      "id": "BkVScPtM",
+      "eventId": "hellodancefest-2026",
+      "title": "Cuts & Chicotes",
+      "instructors": [
+        "Walter & Larissa"
+      ],
+      "style": "zouk",
+      "level": "Intermediate-Advance",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-26",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "7C2phgEc"
+      ]
+    },
+    {
+      "id": "2r_X3h2Z",
+      "eventId": "hellodancefest-2026",
+      "title": "Daytime Dancing",
+      "instructors": [
+        "5:00 - 8:00pm"
+      ],
+      "style": "bachata",
+      "level": "Bachata and Salsa DJ WHOMAN DJ KRIS KROS",
+      "room": "Peninsula A-B",
+      "day": "2026-07-26",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": []
+    },
+    {
+      "id": "1LbOvmV4",
+      "eventId": "hellodancefest-2026",
+      "title": "Playfulness is Fun",
+      "instructors": [
+        "Hovsep & Laura"
+      ],
+      "style": "kizomba",
+      "level": "Intermediate",
+      "room": "Harbour",
+      "day": "2026-07-26",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": []
+    },
+    {
+      "id": "uqdUD_WO",
+      "eventId": "hellodancefest-2026",
+      "title": "Salsa Fusion Shine",
+      "instructors": [
+        "Dimitris & Yolena"
+      ],
+      "style": "salsa",
+      "level": "Intermedia-Advance",
+      "room": "Regency",
+      "day": "2026-07-26",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": [
+        "O2DCOI-6"
+      ]
+    },
+    {
+      "id": "bo-xpVoL",
+      "eventId": "hellodancefest-2026",
+      "title": "Yoyo & Elastico Variations",
+      "instructors": [
+        "Ashe Jordan"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
+      "room": "Sandpebble A-C",
+      "day": "2026-07-26",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": [
+        "31NU0cp9"
+      ]
+    },
+    {
+      "id": "8WBPsl4g",
+      "eventId": "hellodancefest-2026",
+      "title": "Head Move.: Rotisserie X Tilted",
+      "instructors": [
+        "Leandro & Nayara"
+      ],
+      "style": "zouk",
+      "level": "Intermediate-Advance",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-26",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": [
+        "MxW3haIu"
+      ]
+    },
+    {
+      "id": "koEqEVQo",
+      "eventId": "hellodancefest-2026",
+      "title": "Practical Combinations",
+      "instructors": [
+        "Pamelita & Mike"
+      ],
+      "style": "kizomba",
+      "level": "Intermediate",
+      "room": "Harbour",
+      "day": "2026-07-26",
+      "start": "18:00",
+      "end": "19:00",
+      "artistIds": [
+        "nE46V29W"
+      ]
+    },
+    {
+      "id": "mlHrtk5S",
+      "eventId": "hellodancefest-2026",
+      "title": "Traveling Head Movements",
+      "instructors": [
+        "Marck & Melyssa"
+      ],
+      "style": "salsa",
+      "level": "Open Level",
+      "room": "Regency",
+      "day": "2026-07-26",
+      "start": "18:00",
+      "end": "19:00",
+      "artistIds": [
+        "peBStWYV"
+      ]
+    },
+    {
+      "id": "UQYbVBQp",
+      "eventId": "hellodancefest-2026",
+      "title": "Zouk",
+      "instructors": [
+        "Practica & Day Dancing"
+      ],
+      "style": "salsa",
+      "level": "DJ TBA",
+      "room": "Regency",
+      "day": "2026-07-26",
+      "start": "19:00",
+      "end": "20:00",
+      "artistIds": []
+    },
+    {
+      "id": "NlJrUr7z",
+      "eventId": "hellodancefest-2026",
+      "title": "Zouk",
+      "instructors": [
+        "JnJ Competition"
+      ],
+      "style": "salsa",
+      "level": "Novice-intermediate-Advance",
+      "room": "Regency",
+      "day": "2026-07-26",
+      "start": "20:00",
+      "end": "21:00",
+      "artistIds": []
+    }
+  ],
+  "theme": {
+    "accent": "#111111",
+    "background": "#ffffff",
+    "eventName": "Hello! Dance Fest 2026"
+  },
+  "sourceUrl": "https://hellodancefest.com/event-program",
+  "createdAt": "2026-07-20T18:26:56.415Z",
+  "createdBy": null,
+  "parties": [
+    {
+      "id": "n5_U0l30",
+      "eventId": "hellodancefest-2026",
+      "day": "2026-07-24",
+      "name": "Tropical White Party",
+      "dressCode": "Fresh and elegant tropical whites.",
+      "image": "https://hellodancefest.com/images/program/2026-friday-hellofest-theme.jpg",
+      "sets": [
+        {
+          "start": "23:00",
+          "room": "Harbour",
+          "style": "kizomba",
+          "dj": "MKiZ",
+          "igHandle": "mashakizz"
+        },
+        {
+          "start": "23:00",
+          "room": "Regency",
+          "style": "zouk",
+          "dj": "FAB"
+        },
+        {
+          "start": "00:00",
+          "room": "Main Ballroom",
+          "style": "bachata",
+          "dj": "KRIS"
+        },
+        {
+          "start": "00:00",
+          "room": "Peninsula A-B",
+          "style": "salsa",
+          "dj": "X"
+        },
+        {
+          "start": "00:00",
+          "room": "Regency",
+          "style": "zouk",
+          "dj": "TZOUL",
+          "igHandle": "tzoul4soul"
+        },
+        {
+          "start": "01:00",
+          "room": "Main Ballroom",
+          "style": "bachata",
+          "dj": "RELLEO"
+        },
+        {
+          "start": "01:00",
+          "room": "Harbour",
+          "style": "kizomba",
+          "dj": "SINK",
+          "igHandle": "dj_sink"
+        },
+        {
+          "start": "01:00",
+          "room": "Peninsula A-B",
+          "style": "salsa",
+          "dj": "ALEXIO",
+          "igHandle": "dj_alexio"
+        },
+        {
+          "start": "01:00",
+          "room": "Regency",
+          "style": "zouk",
+          "dj": "FAB"
+        },
+        {
+          "start": "02:00",
+          "room": "Main Ballroom",
+          "style": "bachata",
+          "dj": "TREY-Z"
+        },
+        {
+          "start": "02:00",
+          "room": "Peninsula A-B",
+          "style": "salsa",
+          "dj": "ALEXIO",
+          "igHandle": "dj_alexio"
+        },
+        {
+          "start": "02:00",
+          "room": "Regency",
+          "style": "zouk",
+          "dj": "FAB"
+        },
+        {
+          "start": "03:00",
+          "room": "Main Ballroom",
+          "style": "bachata",
+          "dj": "KRIS"
+        },
+        {
+          "start": "03:00",
+          "room": "Harbour",
+          "style": "kizomba",
+          "dj": "OLU"
+        },
+        {
+          "start": "03:00",
+          "room": "Peninsula A-B",
+          "style": "salsa",
+          "dj": "BORI"
+        },
+        {
+          "start": "03:00",
+          "room": "Regency",
+          "style": "zouk",
+          "dj": "KAKAH",
+          "igHandle": "djkakah"
+        },
+        {
+          "start": "04:00",
+          "room": "Main Ballroom",
+          "style": "bachata",
+          "dj": "MANGO"
+        },
+        {
+          "start": "04:00",
+          "room": "Peninsula A-B",
+          "style": "salsa",
+          "dj": "MUNDO",
+          "photoUrl": "https://www.salsavida.com/wp-content/uploads/2025/05/dj-mundo.jpg"
+        },
+        {
+          "start": "04:00",
+          "room": "Regency",
+          "style": "zouk",
+          "dj": "MBRACE",
+          "igHandle": "existential_elijah"
+        },
+        {
+          "start": "05:00",
+          "room": "Main Ballroom",
+          "style": "bachata",
+          "dj": "THIENCITO"
+        },
+        {
+          "start": "06:00",
+          "room": "Main Ballroom",
+          "style": "bachata",
+          "dj": "FIFI"
+        }
+      ]
+    },
+    {
+      "id": "jEhg8kQf",
+      "eventId": "hellodancefest-2026",
+      "day": "2026-07-25",
+      "name": "The Prestige Gala",
+      "dressCode": "Glamorous dresses, heels, sharp suits, and stylish evening outfits.",
+      "image": "https://hellodancefest.com/images/program/2026-saturday-hellofest-theme.jpg",
+      "sets": [
+        {
+          "start": "23:00",
+          "room": "Harbour",
+          "style": "kizomba",
+          "dj": "MKiZ",
+          "igHandle": "mashakizz"
+        },
+        {
+          "start": "23:00",
+          "room": "Regency",
+          "style": "salsa",
+          "dj": "X"
+        },
+        {
+          "start": "23:00",
+          "room": "Peninsula A-B",
+          "style": "zouk",
+          "dj": "FAB"
+        },
+        {
+          "start": "00:00",
+          "room": "Main Ballroom",
+          "style": "bachata",
+          "dj": "TRONKY",
+          "igHandle": "djtronky",
+          "photoUrl": "/dj/djtronky.jpg"
+        },
+        {
+          "start": "00:00",
+          "room": "Regency",
+          "style": "salsa",
+          "dj": "EDGE"
+        },
+        {
+          "start": "00:00",
+          "room": "Peninsula A-B",
+          "style": "zouk",
+          "dj": "TZOUL",
+          "igHandle": "tzoul4soul"
+        },
+        {
+          "start": "01:00",
+          "room": "Main Ballroom",
+          "style": "bachata",
+          "dj": "SHAMA",
+          "igHandle": "alessioshama"
+        },
+        {
+          "start": "01:00",
+          "room": "Regency",
+          "style": "salsa",
+          "dj": "BORI"
+        },
+        {
+          "start": "01:00",
+          "room": "Peninsula A-B",
+          "style": "zouk",
+          "dj": "KAKAH",
+          "igHandle": "djkakah"
+        },
+        {
+          "start": "01:30",
+          "room": "Harbour",
+          "style": "kizomba",
+          "dj": "OLU"
+        },
+        {
+          "start": "02:00",
+          "room": "Main Ballroom",
+          "style": "bachata",
+          "dj": "TRONKY",
+          "igHandle": "djtronky",
+          "photoUrl": "/dj/djtronky.jpg"
+        },
+        {
+          "start": "02:00",
+          "room": "Regency",
+          "style": "salsa",
+          "dj": "BORIQUA",
+          "igHandle": "dj.boriqua",
+          "photoUrl": "https://www.salsavida.com/wp-content/uploads/2025/05/dj-boriqua-orlando-felix.jpg"
+        },
+        {
+          "start": "02:00",
+          "room": "Peninsula A-B",
+          "style": "zouk",
+          "dj": "FAB"
+        },
+        {
+          "start": "03:00",
+          "room": "Regency",
+          "style": "salsa",
+          "dj": "ELDELACLAVESF",
+          "igHandle": "eldelaclavesf",
+          "photoUrl": "https://www.salsavida.com/wp-content/uploads/2025/05/dj-el-de-la-clave.jpg"
+        },
+        {
+          "start": "03:00",
+          "room": "Peninsula A-B",
+          "style": "zouk",
+          "dj": "MBRACE",
+          "igHandle": "existential_elijah"
+        },
+        {
+          "start": "04:00",
+          "room": "Main Ballroom",
+          "style": "bachata",
+          "dj": "RELLEO"
+        },
+        {
+          "start": "04:00",
+          "room": "Harbour",
+          "style": "kizomba",
+          "dj": "SINK",
+          "igHandle": "dj_sink"
+        },
+        {
+          "start": "04:00",
+          "room": "Regency",
+          "style": "salsa",
+          "dj": "ALEXIO",
+          "igHandle": "dj_alexio"
+        },
+        {
+          "start": "04:00",
+          "room": "Peninsula A-B",
+          "style": "zouk",
+          "dj": "FAB"
+        },
+        {
+          "start": "05:00",
+          "room": "Main Ballroom",
+          "style": "bachata",
+          "dj": "TREYZ"
+        },
+        {
+          "start": "05:00",
+          "room": "Regency",
+          "style": "salsa",
+          "dj": "ALEXIO",
+          "igHandle": "dj_alexio"
+        },
+        {
+          "start": "06:00",
+          "room": "Main Ballroom",
+          "style": "bachata",
+          "dj": "KRIS"
+        }
+      ]
+    },
+    {
+      "id": "k4dTENFe",
+      "eventId": "hellodancefest-2026",
+      "day": "2026-07-26",
+      "name": "Wild Paradise Closing Party",
+      "dressCode": "Wild, creative animal prints, tropical, jungle, and paradise-inspired looks.",
+      "image": "https://hellodancefest.com/images/program/2026-sunday-hellofest-theme.jpg",
+      "sets": [
+        {
+          "start": "23:00",
+          "room": "Regency",
+          "style": "bachata",
+          "dj": "MANGO"
+        },
+        {
+          "start": "23:00",
+          "room": "Harbour",
+          "style": "kizomba",
+          "dj": "SINK",
+          "igHandle": "dj_sink"
+        },
+        {
+          "start": "23:00",
+          "room": "Peninsula A-B",
+          "style": "salsa",
+          "dj": "X"
+        },
+        {
+          "start": "23:00",
+          "room": "Peninsula C",
+          "style": "zouk",
+          "dj": "FAB"
+        },
+        {
+          "start": "00:00",
+          "room": "Regency",
+          "style": "bachata",
+          "dj": "RELLEO"
+        },
+        {
+          "start": "00:00",
+          "room": "Peninsula A-B",
+          "style": "salsa",
+          "dj": "BORIQUA",
+          "igHandle": "dj.boriqua",
+          "photoUrl": "https://www.salsavida.com/wp-content/uploads/2025/05/dj-boriqua-orlando-felix.jpg"
+        },
+        {
+          "start": "00:00",
+          "room": "Peninsula C",
+          "style": "zouk",
+          "dj": "FAB"
+        },
+        {
+          "start": "01:00",
+          "room": "Regency",
+          "style": "bachata",
+          "dj": "FIFI"
+        },
+        {
+          "start": "01:00",
+          "room": "Harbour",
+          "style": "kizomba",
+          "dj": "OLU"
+        },
+        {
+          "start": "01:00",
+          "room": "Peninsula A-B",
+          "style": "salsa",
+          "dj": "ALEXIO",
+          "igHandle": "dj_alexio"
+        },
+        {
+          "start": "01:00",
+          "room": "Peninsula C",
+          "style": "zouk",
+          "dj": "FAB"
+        },
+        {
+          "start": "02:00",
+          "room": "Regency",
+          "style": "bachata",
+          "dj": "TRONKY",
+          "igHandle": "djtronky",
+          "photoUrl": "/dj/djtronky.jpg"
+        },
+        {
+          "start": "02:00",
+          "room": "Peninsula A-B",
+          "style": "salsa",
+          "dj": "ALEXIO",
+          "igHandle": "dj_alexio"
+        },
+        {
+          "start": "02:00",
+          "room": "Peninsula C",
+          "style": "zouk",
+          "dj": "KAKAH",
+          "igHandle": "djkakah"
+        },
+        {
+          "start": "03:00",
+          "room": "Regency",
+          "style": "bachata",
+          "dj": "TRONKY",
+          "igHandle": "djtronky",
+          "photoUrl": "/dj/djtronky.jpg"
+        },
+        {
+          "start": "03:00",
+          "room": "Harbour",
+          "style": "kizomba",
+          "dj": "MKiZ",
+          "igHandle": "mashakizz"
+        },
+        {
+          "start": "03:00",
+          "room": "Peninsula A-B",
+          "style": "salsa",
+          "dj": "BORI"
+        },
+        {
+          "start": "03:00",
+          "room": "Peninsula C",
+          "style": "zouk",
+          "dj": "MBRACE",
+          "igHandle": "existential_elijah"
+        },
+        {
+          "start": "04:00",
+          "room": "Regency",
+          "style": "bachata",
+          "dj": "THIENCITO"
+        },
+        {
+          "start": "04:00",
+          "room": "Peninsula A-B",
+          "style": "salsa",
+          "dj": "MUNDO",
+          "photoUrl": "https://www.salsavida.com/wp-content/uploads/2025/05/dj-mundo.jpg"
+        },
+        {
+          "start": "04:00",
+          "room": "Peninsula C",
+          "style": "zouk",
+          "dj": "TZOUL",
+          "igHandle": "tzoul4soul"
+        },
+        {
+          "start": "05:00",
+          "room": "Regency",
+          "style": "bachata",
+          "dj": "TREY-Z"
+        }
+      ]
+    }
+  ]
+}

@@ -1,26 +1,125 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
+/* ------------------------------------------------------------------ *
+ * Design tokens — cool slate aesthetic.
+ * shadcn/ui variable convention, Tailwind v4 (@theme inline).
+ * ------------------------------------------------------------------ */
 :root {
+  --radius: 1rem;
+
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f1419;
+
+  --card: #ffffff;
+  --card-foreground: #0f1419;
+
+  --popover: #ffffff;
+  --popover-foreground: #0f1419;
+
+  /* Near-black primary — cool slate. */
+  --primary: #0f1419;
+  --primary-foreground: #f0f4f8;
+
+  --secondary: #ecf0f6;
+  --secondary-foreground: #0f1419;
+
+  --muted: #ecf0f6;
+  --muted-foreground: #5e7ba0;
+
+  --accent: #ecf0f6;
+  --accent-foreground: #0f1419;
+
+  --destructive: #dc2626;
+  --destructive-foreground: #fafaf9;
+
+  --border: #d6dce5;
+  --input: #cdd5e0;
+  --ring: #0f1419;
+
+  /* Session state accent (overridden per-event at runtime). */
+  --event-accent: #0f1419;
+  --event-bg: #ffffff;
+}
+
+.dark {
+  --background: #17161a;
+  --foreground: #f4f3f1;
+  --card: #201f24;
+  --card-foreground: #f4f3f1;
+  --popover: #201f24;
+  --popover-foreground: #f4f3f1;
+  --primary: #f4f3f1;
+  --primary-foreground: #17161a;
+  --secondary: #2a292f;
+  --secondary-foreground: #f4f3f1;
+  --muted: #2a292f;
+  --muted-foreground: #a5a29b;
+  --accent: #2a292f;
+  --accent-foreground: #f4f3f1;
+  --destructive: #f87171;
+  --destructive-foreground: #17161a;
+  --border: #302f36;
+  --input: #302f36;
+  --ring: #d6d3cd;
+  --event-bg: #17161a;
 }
 
 @theme inline {
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display-face), ui-serif, Georgia, serif;
+  --font-condensed: var(--font-condensed-face), "Helvetica Neue Condensed", "Arial Narrow", ui-sans-serif, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 0.5rem);
+  --radius-md: calc(var(--radius) - 0.25rem);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 0.25rem);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 }
 
 body {
+  font-family: var(--font-sans);
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overscroll-behavior-y: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Editorial wordmark — the "sweetjuice*"-style logotype. */
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+@keyframes spin-smooth {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-smooth {
+  animation: spin-smooth 0.9s linear infinite;
 }
