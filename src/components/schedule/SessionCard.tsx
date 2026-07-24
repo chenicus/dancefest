@@ -454,20 +454,29 @@ export function SessionCard({
         )}
       </div>
 
-      {/* Artist photo — fixed top-right, purely decorative. Picking is the
-          whole tile's job now; the caret below is the only other control.
+      {/* Artist photo — fixed top-right. Opens the details sheet directly (the
+          same action as the corner caret below), since a photo reads as
+          tappable on its own — making it inert and burying the real control
+          in an invisible hover-only caret was the unintuitive part on touch.
+          stopPropagation so the tap doesn't also bubble to the tile's own
+          onClick (toggling the pick in schedule mode).
           Inset to match the card's own padding (non-dense px-4 py-3 → 16px
           right / 12px top; dense px-2.5 py-1.5) so it reads as evenly
           bordered per axis, not just hugging the left/bottom of its content. */}
-      <span
-        aria-hidden
+      <button
+        type="button"
+        aria-label={`View info for ${name}`}
+        onClick={(e) => {
+          e.stopPropagation();
+          onArtistTap();
+        }}
         className={cn(
           "absolute shrink-0 overflow-hidden rounded-full ring-2 ring-card",
           dense ? "right-2.5 top-1.5 size-6" : "right-4 top-3 size-11",
         )}
       >
         <Avatar artist={artist} name={name} size={avatarPx} tint={anchor} />
-      </span>
+      </button>
 
       {/* Bottom-right corner control, clear of the photo. Two modes:
           - Remove mode (My Picks): a persistent × that removes the pick. It
