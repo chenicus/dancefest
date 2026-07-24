@@ -90,6 +90,11 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
     () => allSessions.filter((s) => pickedIds.has(s.id)),
     [allSessions, pickedIds],
   );
+  // pickedIds includes stale/orphaned sessionIds too (see orphanedPicks
+  // below) — the nav badge and "anything picked?" checks should only ever
+  // count picks that still match a real session, so a schedule change never
+  // makes the badge overcount.
+  const validPickedCount = pickedSessions.length;
 
   // Picks whose session id no longer matches anything — the class moved,
   // changed, or got dropped since it was picked (session ids are a content
@@ -119,7 +124,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
   const prevPickCount = useRef<number | null>(null);
   useEffect(() => {
     if (!mounted) return;
-    const count = pickedIds.size;
+    const count = validPickedCount;
     // The first post-hydration run only seeds the baseline: picks restored
     // from localStorage aren't new, so without this the badge would pop on
     // every single page load.
@@ -127,7 +132,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
       setPickBump((b) => b + 1);
     }
     prevPickCount.current = count;
-  }, [mounted, pickedIds.size]);
+  }, [mounted, validPickedCount]);
 
   function setParam(key: string, value: string | null) {
     const params = new URLSearchParams(search.toString());
@@ -238,7 +243,10 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
     // Anything within this of the top counts as "at the top" and always shows
     // the full header, whichever way the last movement went.
     const TOP_ZONE = 48;
+    const maxScroll = () =>
+      Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
     let lastY = window.scrollY;
+    let lastMax = maxScroll();
     const read = () => {
       queued = false;
       // Desktop never collapses: <main> scrolls inside a fixed-height shell
@@ -246,11 +254,28 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
       // to — and vertical space isn't scarce on a laptop anyway.
       if (window.matchMedia("(min-width: 768px)").matches) return setCollapsed(false);
       const y = window.scrollY;
+      const max = maxScroll();
+      // How far the scroll ceiling just dropped. The header is in flow, so
+      // collapsing it shortens the document — and at the bottom of the page
+      // there's no slack, so the browser drags the scroll position down to
+      // keep it in range.
+      const ceilingDrop = Math.max(0, lastMax - max);
+      lastMax = max;
       if (y <= TOP_ZONE) {
         lastY = y;
         return setCollapsed(false);
       }
       const dy = y - lastY;
+      // That drag looks exactly like an upward scroll, and reacting to it
+      // expands the header, which lengthens the document, which lets the next
+      // frame scroll down again — a loop that strobes the header for as long
+      // as you sit near the bottom. A downward move no larger than the
+      // ceiling drop is the document moving under the viewport, not a finger
+      // moving on it: take the new position, but don't read intent into it.
+      if (dy < 0 && -dy <= ceilingDrop + 1) {
+        lastY = y;
+        return;
+      }
       if (Math.abs(dy) < DIRECTION_DELTA) return;
       lastY = y;
       setCollapsed(dy > 0);
@@ -395,7 +420,12 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
         )}
       </header>
 
-      <main className="mx-auto w-full flex-1 bg-neutral-100 px-4 pt-4 md:min-h-0 md:overflow-y-auto">
+      {/* The nav pill is fixed, so it floats over the end of the feed — without
+          this the last card is permanently half-covered. Clearing the pill
+          (~5rem incl. its own bottom offset) plus a card's worth of slack also
+          gives the collapsing header somewhere to give back the height it
+          takes, so reaching the bottom doesn't fight the scroll ceiling. */}
+      <main className="mx-auto w-full flex-1 bg-neutral-100 px-4 pb-[calc(env(safe-area-inset-bottom)+9rem)] pt-4 md:min-h-0 md:overflow-y-auto">
         {view === "all" && (
           <>
             <MobileDayList
@@ -428,7 +458,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
                   onClick={() => setChangesOpen(true)}
                   className="flex-1 py-1.5 text-left font-semibold underline underline-offset-2"
                 >
-                  {visibleOrphanedPicks.length} pick{visibleOrphanedPicks.length > 1 ? "s" : ""} changed
+                  {visibleOrphanedPicks.length} pick{visibleOrphanedPicks.length > 1 ? "s" : ""} no longer scheduled
                 </button>
                 <button
                   type="button"
@@ -444,7 +474,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
               event={scheduleEvent}
               day={day}
               pickedSessions={pickedSessions.filter((s) => s.day === day)}
-              hasAnyPicks={pickedIds.size > 0}
+              hasAnyPicks={validPickedCount > 0}
               onRemove={commitRemove}
               onArtistTap={openSheet}
             />
@@ -500,7 +530,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
                 view === "my" ? "text-foreground" : "text-muted-foreground group-hover:text-foreground",
               )}
             />
-            {mounted && pickedIds.size > 0 && (
+            {mounted && validPickedCount > 0 && (
               <span
                 // Remount on every added pick so the pop replays (see pickBump).
                 key={pickBump}
@@ -516,7 +546,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
                 )}
               >
                 <span className={cn(pickBump > 0 && "animate-badge-digit")}>
-                  {pickedIds.size}
+                  {validPickedCount}
                 </span>
               </span>
             )}
@@ -572,6 +602,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
         <PickChangesSheet
           changes={visibleOrphanedPicks}
           onDismiss={removePick}
+          onClearAll={() => visibleOrphanedPicks.forEach((p) => removePick(p.sessionId))}
           onClose={() => setChangesOpen(false)}
         />
       )}

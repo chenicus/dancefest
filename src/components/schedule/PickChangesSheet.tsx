@@ -14,11 +14,13 @@ import { Icon } from "@/components/ui/icon";
 export function PickChangesSheet({
   changes,
   onDismiss,
+  onClearAll,
   onClose,
 }: {
   /** Orphaned picks — each guaranteed to carry a `snapshot`. */
   changes: SchedulePick[];
   onDismiss: (sessionId: string) => void;
+  onClearAll: () => void;
   onClose: () => void;
 }) {
   return (
@@ -35,9 +37,20 @@ export function PickChangesSheet({
         </button>
 
         <h2 className="wordmark pr-10 text-lg leading-tight">Picks that changed</h2>
-        <p className="mt-1 text-sm text-muted-foreground">
-          The schedule changed since you picked these, so they&rsquo;re no longer on it as picked.
-        </p>
+        <div className="mt-1 flex items-start justify-between gap-3">
+          <p className="text-sm text-muted-foreground">
+            The schedule changed since you picked these, so they&rsquo;re no longer on it as picked.
+          </p>
+          {changes.length > 1 && (
+            <button
+              type="button"
+              onClick={onClearAll}
+              className="shrink-0 whitespace-nowrap pt-0.5 text-xs font-semibold text-muted-foreground underline underline-offset-2 hover:text-foreground"
+            >
+              Clear all
+            </button>
+          )}
+        </div>
 
         <div className="mt-4 space-y-2">
           {changes.map((p) => {
