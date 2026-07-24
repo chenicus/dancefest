@@ -214,20 +214,24 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
     return () => observer.disconnect();
   }, []);
 
-  // Condensed header, iOS large-title style: past a threshold the wordmark
-  // row (and the style chips, when nothing is filtered) collapse away and the
-  // day tabs drop to a single line, reclaiming ~110px — over a full session
-  // card on a phone.
+  // Condensed header: scrolling down drops the wordmark row and folds the day
+  // tabs onto one line, reclaiming ~104px — over a full session card on a
+  // phone. Any upward scroll brings the full header straight back.
   //
-  // Deliberately position-based, not scroll-direction-based: a schedule gets
-  // scanned up and down constantly, and a direction trigger would slam the
-  // full-height header back over the content on every small upward flick.
-  // The two thresholds (collapse at 48, expand at 8) are a dead zone —
-  // collapsing shortens the document, which nudges scrollY, and a single
-  // threshold would let that nudge oscillate the header across it.
+  // Direction-driven, so the header is never more than a flick away. The 4px
+  // DIRECTION_DELTA is what keeps that from thrashing: rubber-banding and
+  // sub-pixel scroll noise both emit a constant dribble of tiny deltas, and
+  // reacting to those would strobe the header. Deltas below the threshold
+  // don't reset the baseline, so slow deliberate scrolling still accumulates
+  // past it and registers.
   const [collapsed, setCollapsed] = useState(false);
   useEffect(() => {
     let queued = false;
+    const DIRECTION_DELTA = 4;
+    // Anything within this of the top counts as "at the top" and always shows
+    // the full header, whichever way the last movement went.
+    const TOP_ZONE = 48;
+    let lastY = window.scrollY;
     const read = () => {
       queued = false;
       // Desktop never collapses: <main> scrolls inside a fixed-height shell
@@ -235,7 +239,14 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
       // to — and vertical space isn't scarce on a laptop anyway.
       if (window.matchMedia("(min-width: 768px)").matches) return setCollapsed(false);
       const y = window.scrollY;
-      setCollapsed((c) => (c ? y > 8 : y > 48));
+      if (y <= TOP_ZONE) {
+        lastY = y;
+        return setCollapsed(false);
+      }
+      const dy = y - lastY;
+      if (Math.abs(dy) < DIRECTION_DELTA) return;
+      lastY = y;
+      setCollapsed(dy > 0);
     };
     const onScroll = () => {
       if (queued) return;
@@ -251,10 +262,6 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
     };
   }, []);
 
-  // Filters stay on screen even when condensed: a hidden style with a hidden
-  // chip row reads as "the festival has no salsa today", not "you filtered it
-  // out". Only the majority case — nothing excluded — buys back the space.
-  const chipsCollapsed = collapsed && excludedStyles.size === 0;
 
   return (
     <div
@@ -294,14 +301,18 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
           </div>
         </div>
 
+        {/* Condensed, this row is the whole header: just the day tabs. Info
+            goes with the wordmark rather than relocating here — a flick up
+            brings the full header back, so it's never more than a gesture
+            away, and a lone icon beside the tabs would only reintroduce
+            clutter the collapse exists to remove. */}
         <div
           className={cn(
-            "mx-auto flex w-full max-w-[400px] items-center gap-2 px-4 transition-[padding] duration-200 ease-out md:max-w-[800px]",
+            "mx-auto w-full max-w-[400px] px-4 transition-[padding] duration-200 ease-out md:max-w-[800px]",
             collapsed ? "pb-2 pt-2" : "pb-3 pt-3",
           )}
         >
           <Segmented
-            className="min-w-0 flex-1"
             fullWidth
             rounded="md"
             tone="neutral"
@@ -312,10 +323,11 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
               "aria-label": `${dayLabel(d)}, ${dayDateLabel(d)}`,
               label: (
                 <span className="flex flex-col items-center gap-0.5 py-0.5">
-                  {/* Condensed, the date rejoins the weekday on one line as a
-                      bare number — losing it entirely would strand anyone who
-                      navigates by date rather than by day name. */}
-                  <span>{collapsed ? `${dayLabel(d)} ${dayNumLabel(d)}` : dayLabel(d)}</span>
+                  {/* Condensed, the date rejoins the weekday on one line —
+                      losing it entirely would strand anyone who navigates by
+                      date rather than by day name. The middot keeps "Fri" and
+                      "24" reading as two facts rather than one odd token. */}
+                  <span>{collapsed ? `${dayLabel(d)} · ${dayNumLabel(d)}` : dayLabel(d)}</span>
                   <span
                     className={cn(
                       "block overflow-hidden text-xs font-normal transition-[max-height,opacity] duration-200 ease-out",
@@ -329,28 +341,13 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
               ),
             }))}
           />
-          {/* With the wordmark row gone the day row has spare width, so info
-              moves here rather than becoming unreachable mid-scroll. Mobile
-              only — desktop never condenses, so its copy up top always shows. */}
-          {collapsed && (
-            <button
-              type="button"
-              onClick={() => setInfoOpen(true)}
-              aria-label="Festival info"
-              className="-mr-1 flex size-9 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground md:hidden"
-            >
-              <Icon icon={InformationCircleIcon} size={22} strokeWidth={1.8} />
-            </button>
-          )}
         </div>
 
+        {/* The style chips stay put through the collapse. They're the only
+            on-screen record of what's been filtered out, and a hidden chip row
+            plus a missing style reads as "no salsa today" rather than "you
+            filtered it out". */}
         {view === "all" && stylesPresent.length > 1 && (
-          <div
-            className={cn(
-              "overflow-hidden transition-[max-height,opacity] duration-200 ease-out",
-              chipsCollapsed ? "max-h-0 opacity-0" : "max-h-[52px] opacity-100",
-            )}
-          >
           <div className="mx-auto w-full max-w-[800px] overflow-x-auto overflow-y-hidden px-4 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             <div className="flex items-center justify-center gap-1.5">
               {stylesPresent.map((st) => {
@@ -387,7 +384,6 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
                 );
               })}
             </div>
-          </div>
           </div>
         )}
       </header>
