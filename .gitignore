@@ -40,6 +40,14 @@ yarn-error.log*
 .data/*.pre-sheet-sync-*.json
 .data/*.pre-media-backfill-*.json
 
+# raw Instagram scrape and its logged-in browser session (scripts/collect-ig-handles.mjs).
+# Candidates get promoted by hand into .data/ig-handles.json, which IS committed.
+.data/ig-candidates.json
+.data/.ig-session/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# python bytecode from the scripts/ helpers
+__pycache__/

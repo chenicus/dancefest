@@ -19,11 +19,14 @@ Instagram. This script fills those in from sources the sync can't reach:
      saved picks resolve against. Instead the short name inherits the full
      record's photo, bio page, and links.
 
-  3. RESEARCHED — handles confirmed by name-and-context web search for artists
-     the festival site has no bio page for. Only unambiguous matches are listed
-     (right person, right dance, right scene); a plausible-looking account for
-     a same-named stranger is worse than an empty card, so when research came
-     back thin the artist is left alone and listed in UNRESOLVED below.
+  3. .data/ig-handles.json — hand-approved handles for artists the festival
+     site has no bio page for, each carrying the `source` that ties it to the
+     right person. Only unambiguous matches belong there (right person, right
+     dance, right scene); a plausible-looking account for a same-named stranger
+     is worse than an empty card. scripts/collect-ig-handles.mjs proposes
+     candidates for it by reading the festival's own lineup posts in a browser
+     you're logged into — that's the one source that can't be reached from a
+     cloud session.
 
 Only ever fills a field that is empty — re-running after a sheet sync is safe,
 and hand-edits to .data survive. Without --apply it just prints what it would
@@ -38,6 +41,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / ".data" / "hellodancefest-2026.json"
+HANDLES_FILE = ROOT / ".data" / "ig-handles.json"
 
 # Short schedule name -> the roster record that is the same act. `handles`
 # narrows which of that record's links carry over, for a schedule name that is
@@ -80,26 +84,6 @@ SAME_ARTIST = {
     "Evelyn Lopez": {"from": ["Evelyn & Derrick"], "handles": ["evelynmagyari"]},
 }
 
-# handle -> (display label, kind). Confirmed by web search on the artist's name
-# plus their dance/scene; see the module docstring on what "confirmed" means.
-RESEARCHED = {
-    # Bay Area bachata/heels instructor, director of @ampdanceco — distinct
-    # from the "Alana and Esteban" already in the roster.
-    "Alana Puerto": [("alanapuerto_", "Alana", "individual")],
-    # Half of the Jacopo & Linda (J&L) sibling duo already in the roster.
-    "Linda Tavana": [("linda.tavana", "Linda", "individual")],
-    # The SF salsa-on2 school of the same name (Alonzo King LINES Ballet Center).
-    "SF Salsa Academy": [("sfsalsaacademy", "SF Salsa Academy", "individual")],
-    # John Manego, who coined "Zoukchata" — the name of the pair's slot here.
-    # Suci has no account we could pin down.
-    "John & Suci": [("zoukchata", "John", "individual")],
-    # The NYC mambo company behind the "Empire Style" material, listed here
-    # once per team level.
-    "Empire Mambo": [("empiremambonyc", "Empire Mambo", "individual")],
-    "Empire Mambo Ladies": [("empiremambonyc", "Empire Mambo", "individual")],
-    "Empire Mambo Pro": [("empiremambonyc", "Empire Mambo", "individual")],
-}
-
 # Placeholders in the sheet rather than people — never fill these in.
 PLACEHOLDERS = {"Guest", "DJ TBA"}
 
@@ -117,6 +101,19 @@ def is_couple(name):
 
 def handle_of(url):
     return url.rstrip("/").rsplit("/", 1)[-1].lower()
+
+
+def approved_handles():
+    """Artist name -> igLinks, from .data/ig-handles.json (see its _note)."""
+    if not HANDLES_FILE.exists():
+        return {}
+    entries = json.loads(HANDLES_FILE.read_text()).get("artists", {})
+    out = {}
+    for name, links in entries.items():
+        out[name] = [{"url": IG + l["handle"],
+                      "label": l.get("label") or name.split()[0],
+                      "kind": l.get("kind", "individual")} for l in links]
+    return out
 
 
 def dj_media(event):
@@ -200,14 +197,13 @@ def main():
         fill(artist, photo=photo, bio=bio, links=links or None,
              source="same as " + " + ".join(spec["from"]))
 
-    # 3. Handles found by research, for artists with no bio page to scrape.
-    for name, handles in RESEARCHED.items():
+    # 3. Hand-approved handles for artists with no bio page to scrape.
+    for name, links in approved_handles().items():
         artist = by_name.get(name)
         if not artist:
+            print(f"  ! ig-handles.json lists {name!r}, who isn't in the schedule")
             continue
-        fill(artist,
-             links=[{"url": IG + h, "label": label, "kind": kind} for h, label, kind in handles],
-             source="researched")
+        fill(artist, links=links, source=HANDLES_FILE.name)
 
     for name, added, source in filled:
         print(f"  {name:26} {added:12} <- {source}")

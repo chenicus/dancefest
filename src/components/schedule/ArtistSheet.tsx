@@ -81,10 +81,22 @@ export function ArtistSheet({
                     </span>
                   </a>
                 ))}
+                {/* No handle we can stand behind — the festival's spreadsheet is
+                    the only place some of these names appear (see
+                    scripts/backfill-artist-media.py). Rather than guess an
+                    account and risk pointing at a stranger, hand the name to
+                    Instagram's own search, which is what someone would type
+                    next anyway. */}
                 {igLinks.length === 0 && (
-                  <p className="text-sm text-muted-foreground">
-                    {artist?.bioUrl ? "No Instagram found on their bio page." : "No bio page for this artist yet."}
-                  </p>
+                  <a
+                    href={`https://www.instagram.com/explore/search/keyword/?q=${encodeURIComponent(name)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mb-2 flex items-center gap-3 rounded-xl border border-dashed border-border px-4 py-3 text-muted-foreground transition-colors hover:bg-secondary/60"
+                  >
+                    <Icon icon={InstagramIcon} size={20} />
+                    <span className="min-w-0 flex-1 truncate text-sm">Search Instagram for {name}</span>
+                  </a>
                 )}
               </div>
             </div>

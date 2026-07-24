@@ -1,0 +1,61 @@
+{
+  "_note": "Hand-approved Instagram handles for artists the festival site has no bio page for. scripts/backfill-artist-media.py reads `artists` and writes them into hellodancefest-2026.json. Add an entry only when something ties the handle to the right person (a festival lineup post naming them, their own site, a scene directory) — record that in `source`. JSON has no comments, which is what `source` is for. scripts/collect-ig-handles.mjs proposes candidates to put here.",
+  "artists": {
+    "Alana Puerto": [
+      {
+        "handle": "alanapuerto_",
+        "label": "Alana",
+        "kind": "individual",
+        "source": "Web search: Bay Area bachata/heels instructor, director of @ampdanceco. Distinct from the 'Alana and Esteban' already in the roster."
+      }
+    ],
+    "Linda Tavana": [
+      {
+        "handle": "linda.tavana",
+        "label": "Linda",
+        "kind": "individual",
+        "source": "Web search: half of the Jacopo & Linda (J&L) sibling duo already in the roster; @jacopoylinda is their joint account."
+      }
+    ],
+    "SF Salsa Academy": [
+      {
+        "handle": "sfsalsaacademy",
+        "label": "SF Salsa Academy",
+        "kind": "individual",
+        "source": "Web search: the SF salsa-on2 school of the same name, at the Alonzo King LINES Ballet Center."
+      }
+    ],
+    "John & Suci": [
+      {
+        "handle": "zoukchata",
+        "label": "John",
+        "kind": "individual",
+        "source": "Web search: John Manego, who coined 'Zoukchata' — the name of this pair's slot here. Suci has no account we could pin down."
+      }
+    ],
+    "Empire Mambo": [
+      {
+        "handle": "empiremambonyc",
+        "label": "Empire Mambo",
+        "kind": "individual",
+        "source": "Web search: the NYC mambo company behind the 'Empire Style' material, listed here once per team level."
+      }
+    ],
+    "Empire Mambo Ladies": [
+      {
+        "handle": "empiremambonyc",
+        "label": "Empire Mambo",
+        "kind": "individual",
+        "source": "Web search: same company as the 'Empire Mambo' entry."
+      }
+    ],
+    "Empire Mambo Pro": [
+      {
+        "handle": "empiremambonyc",
+        "label": "Empire Mambo",
+        "kind": "individual",
+        "source": "Web search: same company as the 'Empire Mambo' entry."
+      }
+    ]
+  }
+}
