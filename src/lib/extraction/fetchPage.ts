@@ -163,7 +163,7 @@ export async function fetchArtistSocials(bioUrl: string): Promise<{ label: strin
   const html = await fetchText(bioUrl);
   const out: { label: string; url: string }[] = [];
   const seen = new Set<string>();
-  for (const m of html.matchAll(/<a[^>]+href=["'](https?:\/\/(?:www\.)?instagram\.com\/[^"'/?]+)\/?["'][^>]*>([\s\S]{0,200}?)<\/a>/gi)) {
+  for (const m of html.matchAll(/<a[^>]+href=["'](https?:\/\/(?:www\.)?instagram\.com\/[^"'/?]+)\/?(?:\?[^"']*)?["'][^>]*>([\s\S]{0,200}?)<\/a>/gi)) {
     const url = m[1].replace(/\/$/, "");
     const handle = url.split("/").pop() ?? "";
     if (!handle || seen.has(url.toLowerCase())) continue;

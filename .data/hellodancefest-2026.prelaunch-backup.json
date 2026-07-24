@@ -4264,154 +4264,134 @@
           "room": "Harbour",
           "style": "kizomba",
           "dj": "MKiZ",
-          "igHandle": "mashakizz",
-          "photoUrl": "/dj/djmkiz.jpg"
+          "igHandle": "mashakizz"
         },
         {
           "start": "23:00",
           "room": "Regency",
           "style": "zouk",
-          "dj": "FAB",
-          "photoUrl": "/dj/djfab.jpg"
+          "dj": "FAB"
         },
         {
           "start": "00:00",
           "room": "Main Ballroom",
           "style": "bachata",
-          "dj": "KRIS",
-          "photoUrl": "/dj/djkris.jpg"
+          "dj": "KRIS"
         },
         {
           "start": "00:00",
           "room": "Peninsula A-B",
           "style": "salsa",
-          "dj": "X",
-          "photoUrl": "/dj/djx.jpg"
+          "dj": "X"
         },
         {
           "start": "00:00",
           "room": "Regency",
           "style": "zouk",
           "dj": "TZOUL",
-          "igHandle": "tzoul4soul",
-          "photoUrl": "/dj/djtzoul.jpg"
+          "igHandle": "tzoul4soul"
         },
         {
           "start": "01:00",
           "room": "Main Ballroom",
           "style": "bachata",
-          "dj": "RELLEO",
-          "photoUrl": "/dj/djrelleo.jpg"
+          "dj": "RELLEO"
         },
         {
           "start": "01:00",
           "room": "Harbour",
           "style": "kizomba",
           "dj": "SINK",
-          "igHandle": "dj_sink",
-          "photoUrl": "/dj/djsink.jpg"
+          "igHandle": "dj_sink"
         },
         {
           "start": "01:00",
           "room": "Peninsula A-B",
           "style": "salsa",
           "dj": "ALEXIO",
-          "igHandle": "dj_alexio",
-          "photoUrl": "/dj/djalexio.jpg"
+          "igHandle": "dj_alexio"
         },
         {
           "start": "01:00",
           "room": "Regency",
           "style": "zouk",
-          "dj": "FAB",
-          "photoUrl": "/dj/djfab.jpg"
+          "dj": "FAB"
         },
         {
           "start": "02:00",
           "room": "Main Ballroom",
           "style": "bachata",
-          "dj": "TREY-Z",
-          "photoUrl": "/dj/djtreyz.jpg"
+          "dj": "TREY-Z"
         },
         {
           "start": "02:00",
           "room": "Peninsula A-B",
           "style": "salsa",
           "dj": "ALEXIO",
-          "igHandle": "dj_alexio",
-          "photoUrl": "/dj/djalexio.jpg"
+          "igHandle": "dj_alexio"
         },
         {
           "start": "02:00",
           "room": "Regency",
           "style": "zouk",
-          "dj": "FAB",
-          "photoUrl": "/dj/djfab.jpg"
+          "dj": "FAB"
         },
         {
           "start": "03:00",
           "room": "Main Ballroom",
           "style": "bachata",
-          "dj": "KRIS",
-          "photoUrl": "/dj/djkris.jpg"
+          "dj": "KRIS"
         },
         {
           "start": "03:00",
           "room": "Harbour",
           "style": "kizomba",
-          "dj": "OLU",
-          "photoUrl": "/dj/djolu.jpg"
+          "dj": "OLU"
         },
         {
           "start": "03:00",
           "room": "Peninsula A-B",
           "style": "salsa",
-          "dj": "BORI",
-          "photoUrl": "/dj/djbori.jpg"
+          "dj": "BORI"
         },
         {
           "start": "03:00",
           "room": "Regency",
           "style": "zouk",
           "dj": "KAKAH",
-          "igHandle": "djkakah",
-          "photoUrl": "/dj/djkakah.jpg"
+          "igHandle": "djkakah"
         },
         {
           "start": "04:00",
           "room": "Main Ballroom",
           "style": "bachata",
-          "dj": "MANGO",
-          "photoUrl": "/dj/djmango.jpg"
+          "dj": "MANGO"
         },
         {
           "start": "04:00",
           "room": "Peninsula A-B",
           "style": "salsa",
           "dj": "MUNDO",
-          "photoUrl": "/dj/djmundo.jpg"
+          "photoUrl": "https://www.salsavida.com/wp-content/uploads/2025/05/dj-mundo.jpg"
         },
         {
           "start": "04:00",
           "room": "Regency",
           "style": "zouk",
           "dj": "MBRACE",
-          "igHandle": "existential_elijah",
-          "photoUrl": "/dj/djmbrace.jpg"
+          "igHandle": "existential_elijah"
         },
         {
           "start": "05:00",
           "room": "Main Ballroom",
           "style": "bachata",
-          "dj": "THIENCITO",
-          "photoUrl": "/dj/djthiencito.jpg"
+          "dj": "THIENCITO"
         },
         {
           "start": "06:00",
           "room": "Main Ballroom",
           "style": "bachata",
-          "dj": "FIFI",
-          "photoUrl": "/dj/djfifi.jpg"
+          "dj": "FIFI"
         }
       ]
     },
@@ -4428,22 +4408,19 @@
           "room": "Harbour",
           "style": "kizomba",
           "dj": "MKiZ",
-          "igHandle": "mashakizz",
-          "photoUrl": "/dj/djmkiz.jpg"
+          "igHandle": "mashakizz"
         },
         {
           "start": "23:00",
           "room": "Regency",
           "style": "salsa",
-          "dj": "X",
-          "photoUrl": "/dj/djx.jpg"
+          "dj": "X"
         },
         {
           "start": "23:00",
           "room": "Peninsula A-B",
           "style": "zouk",
-          "dj": "FAB",
-          "photoUrl": "/dj/djfab.jpg"
+          "dj": "FAB"
         },
         {
           "start": "00:00",
@@ -4457,46 +4434,40 @@
           "start": "00:00",
           "room": "Regency",
           "style": "salsa",
-          "dj": "EDGE",
-          "photoUrl": "/dj/djedge.jpg"
+          "dj": "EDGE"
         },
         {
           "start": "00:00",
           "room": "Peninsula A-B",
           "style": "zouk",
           "dj": "TZOUL",
-          "igHandle": "tzoul4soul",
-          "photoUrl": "/dj/djtzoul.jpg"
+          "igHandle": "tzoul4soul"
         },
         {
           "start": "01:00",
           "room": "Main Ballroom",
           "style": "bachata",
           "dj": "SHAMA",
-          "igHandle": "alessioshama",
-          "photoUrl": "/dj/djshama.jpg"
+          "igHandle": "alessioshama"
         },
         {
           "start": "01:00",
           "room": "Regency",
           "style": "salsa",
-          "dj": "BORI",
-          "photoUrl": "/dj/djbori.jpg"
+          "dj": "BORI"
         },
         {
           "start": "01:00",
           "room": "Peninsula A-B",
           "style": "zouk",
           "dj": "KAKAH",
-          "igHandle": "djkakah",
-          "photoUrl": "/dj/djkakah.jpg"
+          "igHandle": "djkakah"
         },
         {
           "start": "01:30",
           "room": "Harbour",
           "style": "kizomba",
-          "dj": "OLU",
-          "photoUrl": "/dj/djolu.jpg"
+          "dj": "OLU"
         },
         {
           "start": "02:00",
@@ -4512,14 +4483,13 @@
           "style": "salsa",
           "dj": "BORIQUA",
           "igHandle": "dj.boriqua",
-          "photoUrl": "/dj/djboriqua.jpg"
+          "photoUrl": "https://www.salsavida.com/wp-content/uploads/2025/05/dj-boriqua-orlando-felix.jpg"
         },
         {
           "start": "02:00",
           "room": "Peninsula A-B",
           "style": "zouk",
-          "dj": "FAB",
-          "photoUrl": "/dj/djfab.jpg"
+          "dj": "FAB"
         },
         {
           "start": "03:00",
@@ -4527,67 +4497,59 @@
           "style": "salsa",
           "dj": "ELDELACLAVESF",
           "igHandle": "eldelaclavesf",
-          "photoUrl": "/dj/djeldelaclavesf.jpg"
+          "photoUrl": "https://www.salsavida.com/wp-content/uploads/2025/05/dj-el-de-la-clave.jpg"
         },
         {
           "start": "03:00",
           "room": "Peninsula A-B",
           "style": "zouk",
           "dj": "MBRACE",
-          "igHandle": "existential_elijah",
-          "photoUrl": "/dj/djmbrace.jpg"
+          "igHandle": "existential_elijah"
         },
         {
           "start": "04:00",
           "room": "Main Ballroom",
           "style": "bachata",
-          "dj": "RELLEO",
-          "photoUrl": "/dj/djrelleo.jpg"
+          "dj": "RELLEO"
         },
         {
           "start": "04:00",
           "room": "Harbour",
           "style": "kizomba",
           "dj": "SINK",
-          "igHandle": "dj_sink",
-          "photoUrl": "/dj/djsink.jpg"
+          "igHandle": "dj_sink"
         },
         {
           "start": "04:00",
           "room": "Regency",
           "style": "salsa",
           "dj": "ALEXIO",
-          "igHandle": "dj_alexio",
-          "photoUrl": "/dj/djalexio.jpg"
+          "igHandle": "dj_alexio"
         },
         {
           "start": "04:00",
           "room": "Peninsula A-B",
           "style": "zouk",
-          "dj": "FAB",
-          "photoUrl": "/dj/djfab.jpg"
+          "dj": "FAB"
         },
         {
           "start": "05:00",
           "room": "Main Ballroom",
           "style": "bachata",
-          "dj": "TREYZ",
-          "photoUrl": "/dj/djtreyz.jpg"
+          "dj": "TREYZ"
         },
         {
           "start": "05:00",
           "room": "Regency",
           "style": "salsa",
           "dj": "ALEXIO",
-          "igHandle": "dj_alexio",
-          "photoUrl": "/dj/djalexio.jpg"
+          "igHandle": "dj_alexio"
         },
         {
           "start": "06:00",
           "room": "Main Ballroom",
           "style": "bachata",
-          "dj": "KRIS",
-          "photoUrl": "/dj/djkris.jpg"
+          "dj": "KRIS"
         }
       ]
     },
@@ -4603,37 +4565,32 @@
           "start": "23:00",
           "room": "Regency",
           "style": "bachata",
-          "dj": "MANGO",
-          "photoUrl": "/dj/djmango.jpg"
+          "dj": "MANGO"
         },
         {
           "start": "23:00",
           "room": "Harbour",
           "style": "kizomba",
           "dj": "SINK",
-          "igHandle": "dj_sink",
-          "photoUrl": "/dj/djsink.jpg"
+          "igHandle": "dj_sink"
         },
         {
           "start": "23:00",
           "room": "Peninsula A-B",
           "style": "salsa",
-          "dj": "X",
-          "photoUrl": "/dj/djx.jpg"
+          "dj": "X"
         },
         {
           "start": "23:00",
           "room": "Peninsula C",
           "style": "zouk",
-          "dj": "FAB",
-          "photoUrl": "/dj/djfab.jpg"
+          "dj": "FAB"
         },
         {
           "start": "00:00",
           "room": "Regency",
           "style": "bachata",
-          "dj": "RELLEO",
-          "photoUrl": "/dj/djrelleo.jpg"
+          "dj": "RELLEO"
         },
         {
           "start": "00:00",
@@ -4641,43 +4598,38 @@
           "style": "salsa",
           "dj": "BORIQUA",
           "igHandle": "dj.boriqua",
-          "photoUrl": "/dj/djboriqua.jpg"
+          "photoUrl": "https://www.salsavida.com/wp-content/uploads/2025/05/dj-boriqua-orlando-felix.jpg"
         },
         {
           "start": "00:00",
           "room": "Peninsula C",
           "style": "zouk",
-          "dj": "FAB",
-          "photoUrl": "/dj/djfab.jpg"
+          "dj": "FAB"
         },
         {
           "start": "01:00",
           "room": "Regency",
           "style": "bachata",
-          "dj": "FIFI",
-          "photoUrl": "/dj/djfifi.jpg"
+          "dj": "FIFI"
         },
         {
           "start": "01:00",
           "room": "Harbour",
           "style": "kizomba",
-          "dj": "OLU",
-          "photoUrl": "/dj/djolu.jpg"
+          "dj": "OLU"
         },
         {
           "start": "01:00",
           "room": "Peninsula A-B",
           "style": "salsa",
           "dj": "ALEXIO",
-          "igHandle": "dj_alexio",
-          "photoUrl": "/dj/djalexio.jpg"
+          "igHandle": "dj_alexio"
         },
         {
           "start": "01:00",
           "room": "Peninsula C",
           "style": "zouk",
-          "dj": "FAB",
-          "photoUrl": "/dj/djfab.jpg"
+          "dj": "FAB"
         },
         {
           "start": "02:00",
@@ -4692,16 +4644,14 @@
           "room": "Peninsula A-B",
           "style": "salsa",
           "dj": "ALEXIO",
-          "igHandle": "dj_alexio",
-          "photoUrl": "/dj/djalexio.jpg"
+          "igHandle": "dj_alexio"
         },
         {
           "start": "02:00",
           "room": "Peninsula C",
           "style": "zouk",
           "dj": "KAKAH",
-          "igHandle": "djkakah",
-          "photoUrl": "/dj/djkakah.jpg"
+          "igHandle": "djkakah"
         },
         {
           "start": "03:00",
@@ -4716,52 +4666,46 @@
           "room": "Harbour",
           "style": "kizomba",
           "dj": "MKiZ",
-          "igHandle": "mashakizz",
-          "photoUrl": "/dj/djmkiz.jpg"
+          "igHandle": "mashakizz"
         },
         {
           "start": "03:00",
           "room": "Peninsula A-B",
           "style": "salsa",
-          "dj": "BORI",
-          "photoUrl": "/dj/djbori.jpg"
+          "dj": "BORI"
         },
         {
           "start": "03:00",
           "room": "Peninsula C",
           "style": "zouk",
           "dj": "MBRACE",
-          "igHandle": "existential_elijah",
-          "photoUrl": "/dj/djmbrace.jpg"
+          "igHandle": "existential_elijah"
         },
         {
           "start": "04:00",
           "room": "Regency",
           "style": "bachata",
-          "dj": "THIENCITO",
-          "photoUrl": "/dj/djthiencito.jpg"
+          "dj": "THIENCITO"
         },
         {
           "start": "04:00",
           "room": "Peninsula A-B",
           "style": "salsa",
           "dj": "MUNDO",
-          "photoUrl": "/dj/djmundo.jpg"
+          "photoUrl": "https://www.salsavida.com/wp-content/uploads/2025/05/dj-mundo.jpg"
         },
         {
           "start": "04:00",
           "room": "Peninsula C",
           "style": "zouk",
           "dj": "TZOUL",
-          "igHandle": "tzoul4soul",
-          "photoUrl": "/dj/djtzoul.jpg"
+          "igHandle": "tzoul4soul"
         },
         {
           "start": "05:00",
           "room": "Regency",
           "style": "bachata",
-          "dj": "TREY-Z",
-          "photoUrl": "/dj/djtreyz.jpg"
+          "dj": "TREY-Z"
         }
       ]
     }

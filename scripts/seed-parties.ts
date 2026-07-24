@@ -96,13 +96,34 @@ const DJ_HANDLES: Record<string, string> = {
   ELDELACLAVESF: "eldelaclavesf",
 };
 
-// Real headshots. Local /dj/*.jpg files were captured from the DJ's Instagram
-// via the user's logged-in session; the rest come from the Salsa Vida directory.
+// Real headshots. TRONKY's local file was captured from Instagram via the
+// user's logged-in session (higher-res than the sheet's thumbnail); the rest
+// are the DJ tab's own embedded headshots, pulled from the festival's Google
+// Sheet and hosted locally under /dj/*.jpg.
 const DJ_PHOTOS: Record<string, string> = {
   TRONKY: "/dj/djtronky.jpg",
-  BORIQUA: "https://www.salsavida.com/wp-content/uploads/2025/05/dj-boriqua-orlando-felix.jpg",
-  MUNDO: "https://www.salsavida.com/wp-content/uploads/2025/05/dj-mundo.jpg",
-  ELDELACLAVESF: "https://www.salsavida.com/wp-content/uploads/2025/05/dj-el-de-la-clave.jpg",
+  ALEXIO: "/dj/djalexio.jpg",
+  BORI: "/dj/djbori.jpg",
+  BORIQUA: "/dj/djboriqua.jpg",
+  EDGE: "/dj/djedge.jpg",
+  ELDELACLAVESF: "/dj/djeldelaclavesf.jpg",
+  FAB: "/dj/djfab.jpg",
+  FIFI: "/dj/djfifi.jpg",
+  KAKAH: "/dj/djkakah.jpg",
+  KRIS: "/dj/djkris.jpg",
+  MANGO: "/dj/djmango.jpg",
+  MBRACE: "/dj/djmbrace.jpg",
+  MKiZ: "/dj/djmkiz.jpg",
+  MUNDO: "/dj/djmundo.jpg",
+  OLU: "/dj/djolu.jpg",
+  RELLEO: "/dj/djrelleo.jpg",
+  SHAMA: "/dj/djshama.jpg",
+  SINK: "/dj/djsink.jpg",
+  THIENCITO: "/dj/djthiencito.jpg",
+  "TREY-Z": "/dj/djtreyz.jpg",
+  TREYZ: "/dj/djtreyz.jpg",
+  TZOUL: "/dj/djtzoul.jpg",
+  X: "/dj/djx.jpg",
 };
 
 async function fetchCsv(gid: string): Promise<string> {

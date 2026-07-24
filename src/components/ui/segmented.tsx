@@ -20,6 +20,7 @@ export function Segmented<T extends string>({
   size = "default",
   fullWidth = false,
   rounded = "full",
+  tone = "accent",
   className,
 }: {
   options: SegmentedOption<T>[];
@@ -30,6 +31,13 @@ export function Segmented<T extends string>({
   fullWidth?: boolean;
   /** Corner style — "full" pill (default) or "md" for a squarer tab look. */
   rounded?: "full" | "md";
+  /**
+   * "accent" (default): one shared pill track (bg-secondary) with a solid
+   * thumb on the active segment — the theme's cool-slate tint.
+   * "neutral": each segment is its own plain grey/near-black box with a gap
+   * between, no shared track background — flat calendar-style day tiles.
+   */
+  tone?: "accent" | "neutral";
   className?: string;
 }) {
   const trackRadius = rounded === "full" ? "rounded-full" : "rounded-lg";
@@ -38,7 +46,8 @@ export function Segmented<T extends string>({
     <div
       role="tablist"
       className={cn(
-        "items-center gap-1 bg-secondary p-1",
+        "items-center gap-1",
+        tone === "neutral" ? "gap-1.5" : "bg-secondary p-1",
         fullWidth ? "flex" : "inline-flex",
         trackRadius,
         className,
@@ -57,10 +66,14 @@ export function Segmented<T extends string>({
               "font-medium transition-all outline-none focus-visible:ring-2 focus-visible:ring-ring/40",
               segmentRadius,
               fullWidth && "flex-1",
-              size === "sm" ? "px-3 py-1 text-[13px]" : "px-4 py-1.5 text-sm",
-              active
-                ? "bg-card text-foreground shadow-sm"
-                : "text-muted-foreground hover:text-foreground",
+              size === "sm" ? "px-3 py-1 text-xs" : "px-4 py-1.5 text-sm",
+              tone === "neutral"
+                ? active
+                  ? "bg-neutral-900 text-white shadow-sm dark:bg-white dark:text-neutral-900"
+                  : "bg-neutral-100 text-neutral-500 hover:text-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200"
+                : active
+                  ? "bg-primary text-primary-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-foreground",
             )}
           >
             {opt.label}

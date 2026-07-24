@@ -15,6 +15,11 @@ export interface Session {
   title: string;
   instructors: string[];
   style: DanceStyle;
+  /** Mixed-style sets (e.g. a salsa+bachata party room). When present it
+   * drives the tile's letter watermark; `style` stays the primary style for
+   * filtering/colors. Rendered in canonical S-B-K-Z order regardless of
+   * the order given here. */
+  styles?: DanceStyle[];
   level?: string;
   room: string;
   /** ISO date ("2026-07-25") or a label like "day-1" when dates are unknown. */

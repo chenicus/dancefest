@@ -44,10 +44,11 @@ function firstNameOf(part: string): string {
   return part.trim();
 }
 
-/** Shorten a display name to first names: "Ngoc Huynh & Tien Tran" → "Ngoc & Tien". */
+/** Shorten a display name to first names when two people are named together:
+ *  "Ngoc Huynh & Tien Tran" → "Ngoc & Tien". A single teacher keeps their
+ *  full name: "Julian Zhu" stays "Julian Zhu", not "Julian". */
 export function shortArtistName(name: string): string {
-  return name
-    .split(/\s+(?:&|and)\s+/i)
-    .map(firstNameOf)
-    .join(" & ");
+  const parts = name.split(/\s+(?:&|and)\s+/i);
+  if (parts.length < 2) return name.trim();
+  return parts.map(firstNameOf).join(" & ");
 }

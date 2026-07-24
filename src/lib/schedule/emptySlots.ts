@@ -29,12 +29,23 @@ export function fillEmptySlots(sessions: Session[], rooms: string[], day: string
   const rangeStart = Math.min(...dayHours.map((s) => toMinutes(s.start)));
   const rangeEnd = Math.max(...dayHours.map((s) => toMinutes(s.end)));
 
+  // Performances render as one bar spanning every room (see layoutDay), but
+  // the source data only tags one room against the session. Without this,
+  // every *other* room reads as truly empty during that stretch and gets its
+  // own "Empty" filler drawn right on top of the performance bar.
+  const performanceBusy = mergeIntervals(
+    dayHours.filter((s) => s.type === "performance").map((s): [number, number] => [toMinutes(s.start), toMinutes(s.end)]),
+  );
+
   const filler: Session[] = [];
   for (const room of rooms) {
     const roomHours = dayHours.filter((s) => s.room === room);
     if (!roomHours.length) continue;
 
-    const busy = mergeIntervals(roomHours.map((s): [number, number] => [toMinutes(s.start), toMinutes(s.end)]));
+    const busy = mergeIntervals([
+      ...roomHours.map((s): [number, number] => [toMinutes(s.start), toMinutes(s.end)]),
+      ...performanceBusy,
+    ]);
     let cursor = rangeStart;
     for (const [busyStart, busyEnd] of busy) {
       if (busyStart - cursor >= MIN_GAP_MINUTES) {
