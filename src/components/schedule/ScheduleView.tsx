@@ -223,7 +223,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
                       })
                     }
                     className={cn(
-                      "flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium capitalize transition-colors",
+                      "flex shrink-0 items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-medium capitalize transition-colors",
                       on
                         ? "text-foreground"
                         : "border-transparent text-muted-foreground hover:text-foreground",
@@ -237,8 +237,8 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
                     <Icon
                       icon={Tick01Icon}
                       aria-hidden
-                      size={13}
-                      strokeWidth={3}
+                      size={18}
+                      strokeWidth={2.5}
                       className={cn(
                         "shrink-0 transition-all",
                         on ? "opacity-100" : "scale-90 text-muted-foreground/70 opacity-70",
