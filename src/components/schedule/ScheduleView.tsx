@@ -6,6 +6,7 @@ import {
   Calendar03Icon,
   FavouriteIcon,
   MusicNote01Icon,
+  Tick01Icon,
 } from "@hugeicons/core-free-icons";
 import { fillEmptySlots } from "@/lib/schedule/emptySlots";
 import { layoutDay } from "@/lib/schedule/layout";
@@ -233,10 +234,16 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
                         : undefined
                     }
                   >
-                    <span
+                    <Icon
+                      icon={Tick01Icon}
                       aria-hidden
-                      className="size-2 rounded-full ring-1 ring-inset ring-black/10"
-                      style={{ background: color }}
+                      size={13}
+                      strokeWidth={3}
+                      className={cn(
+                        "shrink-0 transition-all",
+                        on ? "opacity-100" : "scale-90 text-muted-foreground/70 opacity-70",
+                      )}
+                      style={on ? { color } : undefined}
                     />
                     {st}
                   </button>
