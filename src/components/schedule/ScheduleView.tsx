@@ -237,7 +237,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
         )}
       </header>
 
-      <main className="mx-auto w-full flex-1 bg-neutral-100 px-4 pt-2 md:min-h-0 md:overflow-y-auto">
+      <main className="mx-auto w-full flex-1 bg-neutral-100 px-4 pt-4 md:min-h-0 md:overflow-y-auto">
         {view === "all" && (
           <>
             <MobileDayList
@@ -389,18 +389,22 @@ function MobileDayList({ sessions, event, pickedIds, onToggle, onArtistTap }: Li
     return <p className="py-16 text-center text-sm text-muted-foreground md:hidden">No sessions this day.</p>;
   }
   return (
-    <div className="md:hidden">
-      {sessions.map((s) => {
-        const heading = s.start !== lastStart ? s.start : null;
+    // Same time-gutter layout as My Picks (grid-cols-[44px_1fr]): the time
+    // sits in its own indented column instead of a full-width heading row,
+    // so both lists read as one consistent calendar shape.
+    <div className="relative mx-auto grid max-w-[400px] grid-cols-[44px_1fr] gap-x-3 overflow-x-hidden md:hidden">
+      {sessions.map((s, i) => {
+        const showTime = s.start !== lastStart;
         lastStart = s.start;
         return (
-          <div key={s.id}>
-            {heading && (
-              <p className="mb-2 mt-5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                {to12h(heading)}
-              </p>
+          <Fragment key={s.id}>
+            {showTime && i > 0 && (
+              <div aria-hidden className="relative z-0 col-start-2 border-t border-dashed border-border/60" />
             )}
-            <div className="mb-2">
+            <div className="relative z-10 pt-3 text-right text-xs font-medium text-muted-foreground">
+              {showTime ? to12h(s.start) : null}
+            </div>
+            <div className="relative z-10 mb-2 min-w-0">
               <SessionCard
                 session={s}
                 artists={event.artists}
@@ -410,7 +414,7 @@ function MobileDayList({ sessions, event, pickedIds, onToggle, onArtistTap }: Li
                 onArtistTap={() => onArtistTap(s)}
               />
             </div>
-          </div>
+          </Fragment>
         );
       })}
     </div>
