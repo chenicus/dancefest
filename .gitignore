@@ -36,8 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
-# local safety-net backups taken before each sheet sync
+# local safety-net backups taken before each sheet sync / media backfill
 .data/*.pre-sheet-sync-*.json
+.data/*.pre-media-backfill-*.json
 
 # typescript
 *.tsbuildinfo

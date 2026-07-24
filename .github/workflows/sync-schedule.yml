@@ -42,6 +42,13 @@ jobs:
         if: steps.check.outputs.changed == 'true'
         run: python3 scripts/sync-from-sheet.py --apply
 
+      # A schedule change can introduce artists the sheet gives no photo or
+      # Instagram for; this fills in the ones we can source. Only ever writes
+      # empty fields, so it's a no-op for everyone already complete.
+      - name: Backfill artist photos and Instagram links
+        if: steps.check.outputs.changed == 'true'
+        run: python3 scripts/backfill-artist-media.py --apply
+
       - name: Run tests
         if: steps.check.outputs.changed == 'true'
         run: npm run test

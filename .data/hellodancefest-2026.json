@@ -909,7 +909,8 @@
           "kind": "individual"
         }
       ],
-      "socialsFetchedAt": "2026-07-21T06:33:11.969Z"
+      "socialsFetchedAt": "2026-07-21T06:33:11.969Z",
+      "photoUrl": "/dj/djmkiz.jpg"
     },
     {
       "id": "R_mhiHgs",
@@ -923,7 +924,8 @@
           "kind": "individual"
         }
       ],
-      "socialsFetchedAt": "2026-07-21T06:33:11.971Z"
+      "socialsFetchedAt": "2026-07-21T06:33:11.971Z",
+      "photoUrl": "/dj/djsink.jpg"
     },
     {
       "id": "cSfc8ilm",
@@ -937,7 +939,8 @@
           "kind": "individual"
         }
       ],
-      "socialsFetchedAt": "2026-07-21T06:36:14.747Z"
+      "socialsFetchedAt": "2026-07-21T06:36:14.747Z",
+      "photoUrl": "/dj/djolu.jpg"
     },
     {
       "id": "yhAJB1DG",
@@ -945,7 +948,8 @@
       "name": "FAB",
       "style": "zouk",
       "igLinks": [],
-      "socialsFetchedAt": "2026-07-21T06:28:39.123Z"
+      "socialsFetchedAt": "2026-07-21T06:28:39.123Z",
+      "photoUrl": "/dj/djfab.jpg"
     },
     {
       "id": "Gk-SvxTG",
@@ -959,7 +963,8 @@
           "kind": "individual"
         }
       ],
-      "socialsFetchedAt": "2026-07-21T06:36:14.748Z"
+      "socialsFetchedAt": "2026-07-21T06:36:14.748Z",
+      "photoUrl": "/dj/djtzoul.jpg"
     },
     {
       "id": "Em2PrVbM",
@@ -973,7 +978,8 @@
           "kind": "individual"
         }
       ],
-      "socialsFetchedAt": "2026-07-21T06:36:14.748Z"
+      "socialsFetchedAt": "2026-07-21T06:36:14.748Z",
+      "photoUrl": "/dj/djkakah.jpg"
     },
     {
       "id": "2on4gD83",
@@ -987,7 +993,8 @@
           "kind": "individual"
         }
       ],
-      "socialsFetchedAt": "2026-07-21T06:36:14.748Z"
+      "socialsFetchedAt": "2026-07-21T06:36:14.748Z",
+      "photoUrl": "/dj/djmbrace.jpg"
     },
     {
       "id": "LZIuSMKx",
@@ -995,7 +1002,8 @@
       "name": "KRIS",
       "style": "bachata",
       "igLinks": [],
-      "socialsFetchedAt": "2026-07-21T06:28:40.729Z"
+      "socialsFetchedAt": "2026-07-21T06:28:40.729Z",
+      "photoUrl": "/dj/djkris.jpg"
     },
     {
       "id": "qBUQE7Le",
@@ -1003,7 +1011,8 @@
       "name": "RELLEO",
       "style": "bachata",
       "igLinks": [],
-      "socialsFetchedAt": "2026-07-21T06:28:41.131Z"
+      "socialsFetchedAt": "2026-07-21T06:28:41.131Z",
+      "photoUrl": "/dj/djrelleo.jpg"
     },
     {
       "id": "J_xro6Uj",
@@ -1011,7 +1020,8 @@
       "name": "TREY-Z",
       "style": "bachata",
       "igLinks": [],
-      "socialsFetchedAt": "2026-07-21T06:28:41.532Z"
+      "socialsFetchedAt": "2026-07-21T06:28:41.532Z",
+      "photoUrl": "/dj/djtreyz.jpg"
     },
     {
       "id": "FnYrcij_",
@@ -1019,7 +1029,8 @@
       "name": "MANGO",
       "style": "bachata",
       "igLinks": [],
-      "socialsFetchedAt": "2026-07-21T06:28:41.933Z"
+      "socialsFetchedAt": "2026-07-21T06:28:41.933Z",
+      "photoUrl": "/dj/djmango.jpg"
     },
     {
       "id": "rIfHzO3I",
@@ -1027,7 +1038,8 @@
       "name": "THIENCITO",
       "style": "bachata",
       "igLinks": [],
-      "socialsFetchedAt": "2026-07-21T06:28:42.339Z"
+      "socialsFetchedAt": "2026-07-21T06:28:42.339Z",
+      "photoUrl": "/dj/djthiencito.jpg"
     },
     {
       "id": "ZPUfPQeJ",
@@ -1035,7 +1047,8 @@
       "name": "FIFI",
       "style": "bachata",
       "igLinks": [],
-      "socialsFetchedAt": "2026-07-21T06:28:42.740Z"
+      "socialsFetchedAt": "2026-07-21T06:28:42.740Z",
+      "photoUrl": "/dj/djfifi.jpg"
     },
     {
       "id": "SxBLCuxf",
@@ -1043,15 +1056,23 @@
       "name": "X",
       "style": "salsa",
       "igLinks": [],
-      "socialsFetchedAt": "2026-07-21T06:28:43.142Z"
+      "socialsFetchedAt": "2026-07-21T06:28:43.142Z",
+      "photoUrl": "/dj/djx.jpg"
     },
     {
       "id": "gQTSycWA",
       "eventId": "hellodancefest-2026",
       "name": "ALEXIO",
       "style": "salsa",
-      "igLinks": [],
-      "socialsFetchedAt": "2026-07-21T06:28:43.546Z"
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/dj_alexio",
+          "label": "ALEXIO",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-21T06:28:43.546Z",
+      "photoUrl": "/dj/djalexio.jpg"
     },
     {
       "id": "oG-W8bdW",
@@ -1059,7 +1080,8 @@
       "name": "BORI",
       "style": "salsa",
       "igLinks": [],
-      "socialsFetchedAt": "2026-07-21T06:28:43.948Z"
+      "socialsFetchedAt": "2026-07-21T06:28:43.948Z",
+      "photoUrl": "/dj/djbori.jpg"
     },
     {
       "id": "CmliGsg7",
@@ -1076,7 +1098,8 @@
       "name": "EDGE",
       "style": "salsa",
       "igLinks": [],
-      "socialsFetchedAt": "2026-07-21T06:28:44.749Z"
+      "socialsFetchedAt": "2026-07-21T06:28:44.749Z",
+      "photoUrl": "/dj/djedge.jpg"
     },
     {
       "id": "Ux9wRwUc",
@@ -1099,7 +1122,13 @@
       "name": "ELDELACLAVESF",
       "style": "salsa",
       "photoUrl": "https://www.salsavida.com/wp-content/uploads/2025/05/dj-el-de-la-clave.jpg",
-      "igLinks": [],
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/eldelaclavesf",
+          "label": "ELDELACLAVESF",
+          "kind": "individual"
+        }
+      ],
       "socialsFetchedAt": "2026-07-21T06:28:45.553Z"
     },
     {
@@ -1122,8 +1151,15 @@
       "eventId": "hellodancefest-2026",
       "name": "SHAMA",
       "style": "bachata",
-      "igLinks": [],
-      "socialsFetchedAt": "2026-07-21T06:28:46.354Z"
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/alessioshama",
+          "label": "SHAMA",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-21T06:28:46.354Z",
+      "photoUrl": "/dj/djshama.jpg"
     },
     {
       "id": "6FKn6EwH",
@@ -1131,7 +1167,8 @@
       "name": "TREYZ",
       "style": "bachata",
       "igLinks": [],
-      "socialsFetchedAt": "2026-07-21T06:28:46.756Z"
+      "socialsFetchedAt": "2026-07-21T06:28:46.756Z",
+      "photoUrl": "/dj/djtreyz.jpg"
     },
     {
       "id": "87x9TxyH",
@@ -1152,25 +1189,75 @@
       "id": "MQIOr2FR",
       "eventId": "hellodancefest-2026",
       "name": "Maurico & Serena",
-      "style": "bachata"
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2026/maurizio-serena1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/maurizio-bollo-serena",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/mauriziobollo",
+          "label": "Maurizio",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/serenafummo",
+          "label": "Serena",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "6NVTYJLf",
       "eventId": "hellodancefest-2026",
       "name": "Yolena Kapoli",
-      "style": "salsa"
+      "style": "salsa",
+      "photoUrl": "https://hellodancefest.com/images/lineup-salsa/2026/dimitris-yolena1.jpg",
+      "bioUrl": "https://hellodancefest.com/salsa/salsa-lineup/salsa-workshops/dimitris-yolena",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/yolena.kapoli",
+          "label": "Yolena",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "6xSZXkm3",
       "eventId": "hellodancefest-2026",
       "name": "Mikael & Ana",
-      "style": "zouk"
+      "style": "zouk",
+      "photoUrl": "https://hellodancefest.com/images/lineup-zouk/2025/mikael-bozon1.jpg",
+      "bioUrl": "https://hellodancefest.com/zouk/zouk-lineup/zouk-workshops/mikael-bozon",
+      "igLinks": [
+        {
+          "label": "Mikael",
+          "url": "https://www.instagram.com/mikaboz",
+          "kind": "individual"
+        },
+        {
+          "label": "Ana",
+          "url": "https://www.instagram.com/anagomesdance",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "YHyvQU9H",
       "eventId": "hellodancefest-2026",
       "name": "Johanna Pellerin",
-      "style": "bachata"
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2026/patrick-johanna1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/patrick-johanna",
+      "igLinks": [
+        {
+          "label": "Johanna",
+          "url": "https://www.instagram.com/johannap.official",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "7EZ8Hkrf",
@@ -1182,7 +1269,15 @@
       "id": "EFlRFHmI",
       "eventId": "hellodancefest-2026",
       "name": "SF Salsa Academy",
-      "style": "salsa"
+      "style": "salsa",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/sfsalsaacademy",
+          "label": "SF Salsa Academy",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "GFwlpRvA",
@@ -1206,49 +1301,155 @@
       "id": "EUsOMtyc",
       "eventId": "hellodancefest-2026",
       "name": "Ngoc Knockout",
-      "style": "bachata"
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2025/ngoc-tien1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/ngoc-tien",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/knockout_ngoc",
+          "label": "Ngoc",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "J5C57KSt",
       "eventId": "hellodancefest-2026",
       "name": "Pamelita & Mike",
-      "style": "kizomba"
+      "style": "kizomba",
+      "photoUrl": "https://hellodancefest.com/images/lineup-kizomba/2026/pam-mike1.jpg",
+      "bioUrl": "https://hellodancefest.com/kizomba/kizomba-lineup/kizomba-workshops/pam-mike",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/hellokizombafest",
+          "label": "Joint account",
+          "kind": "joint"
+        },
+        {
+          "url": "https://www.instagram.com/pamelita.all.love",
+          "label": "Pamelita",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/mr.ahombi",
+          "label": "Mike",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "1THjFRbf",
       "eventId": "hellodancefest-2026",
       "name": "Cristian Vergari",
-      "style": "salsa"
+      "style": "salsa",
+      "photoUrl": "https://hellodancefest.com/images/lineup-salsa/2025/cristian-yolieth1.jpg",
+      "bioUrl": "https://hellodancefest.com/salsa/salsa-lineup/salsa-workshops/cristian-vergari",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/cristianvergari",
+          "label": "Cristian",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "e5NMbeVw",
       "eventId": "hellodancefest-2026",
       "name": "Nick & Vivi",
-      "style": "bachata"
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2026/vivienne-nick1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/nick-vivienne",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/vividance_official",
+          "label": "Joint account",
+          "kind": "joint"
+        },
+        {
+          "url": "https://www.instagram.com/nickyvivi_bachata",
+          "label": "Nick",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/nicktang_jx",
+          "label": "Nick",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "iQSHrhVO",
       "eventId": "hellodancefest-2026",
       "name": "Sink & Masha",
-      "style": "kizomba"
+      "style": "kizomba",
+      "photoUrl": "https://hellodancefest.com/images/lineup-kizomba/2024/dj-sink1.jpg",
+      "bioUrl": "https://hellodancefest.com/kizomba/kizomba-lineup/kizomba-workshops/dj-sink",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/dj_sink",
+          "label": "Sink",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/mashakizz",
+          "label": "Masha",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "moZxB7YM",
       "eventId": "hellodancefest-2026",
       "name": "Hector & Analiza",
-      "style": "salsa"
+      "style": "salsa",
+      "photoUrl": "https://hellodancefest.com/images/lineup-salsa/2024/hector-annaliza1.jpg",
+      "bioUrl": "https://hellodancefest.com/salsa/salsa-lineup/salsa-workshops/hector-annaliza",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/mambonova_dance_company",
+          "label": "Hector's Instagram",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/annaliza_cruz_pena",
+          "label": "Hector",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "CKLWajrQ",
       "eventId": "hellodancefest-2026",
       "name": "John & Suci",
-      "style": "bachata"
+      "style": "bachata",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/zoukchata",
+          "label": "John",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "nGqddrbq",
       "eventId": "hellodancefest-2026",
       "name": "Empire Mambo Ladies",
-      "style": "salsa"
+      "style": "salsa",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/empiremambonyc",
+          "label": "Empire Mambo",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "2FdP6UdC",
@@ -1266,31 +1467,76 @@
       "id": "CnxTPsNb",
       "eventId": "hellodancefest-2026",
       "name": "Joshua Barbosa",
-      "style": "salsa"
+      "style": "salsa",
+      "photoUrl": "https://hellodancefest.com/images/lineup-salsa/2025/josh-yeny1.jpg",
+      "bioUrl": "https://hellodancefest.com/salsa/salsa-lineup/salsa-workshops/josh-yeny"
     },
     {
       "id": "uHJ1RDtV",
       "eventId": "hellodancefest-2026",
       "name": "Evelyn Lopez",
-      "style": "zouk"
+      "style": "zouk",
+      "photoUrl": "https://hellodancefest.com/images/lineup-zouk/2024/evelyn-derrick1.jpg",
+      "bioUrl": "https://hellodancefest.com/zouk/zouk-lineup/zouk-workshops/evelyn-derrick",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/evelynmagyari",
+          "label": "Evelyn",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "WtG9MCW7",
       "eventId": "hellodancefest-2026",
       "name": "Cosan & Helen",
-      "style": "zouk"
+      "style": "zouk",
+      "photoUrl": "https://hellodancefest.com/images/lineup-zouk/2024/cosan1.jpg",
+      "bioUrl": "https://hellodancefest.com/zouk/zouk-lineup/zouk-workshops/cosan-caglayan",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/cosancaglayan",
+          "label": "Cosan",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/helentony.zouk",
+          "label": "Helen",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "RKNx0LiS",
       "eventId": "hellodancefest-2026",
       "name": "Empire Mambo Pro",
-      "style": "salsa"
+      "style": "salsa",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/empiremambonyc",
+          "label": "Empire Mambo",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "NKtdZ7lW",
       "eventId": "hellodancefest-2026",
       "name": "Yolieth Barragan",
-      "style": "salsa"
+      "style": "salsa",
+      "photoUrl": "https://hellodancefest.com/images/lineup-salsa/2025/cristian-yolieth1.jpg",
+      "bioUrl": "https://hellodancefest.com/salsa/salsa-lineup/salsa-workshops/cristian-vergari",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/yolieth_barragan1",
+          "label": "Yolieth",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "vtOyO8cp",
@@ -1308,13 +1554,53 @@
       "id": "EodZCNJF",
       "eventId": "hellodancefest-2026",
       "name": "Javier & Kiki",
-      "style": "bachata"
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2024/javier-kiki1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/javier-kiki",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/elemento_dance_company",
+          "label": "@elemento_dance_company",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/_javidance_",
+          "label": "Instagram",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/bqueenselite",
+          "label": "@bqueenselite",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/javierandkiki",
+          "label": "Javier",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/Kikidamanno",
+          "label": "Javier",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "aGynQ4zB",
       "eventId": "hellodancefest-2026",
       "name": "Ngoc & Tien",
-      "style": "bachata"
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2025/ngoc-tien1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/ngoc-tien",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/knockout_ngoc",
+          "label": "Ngoc",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "2zYojTyq",
@@ -1326,7 +1612,22 @@
       "id": "zJmE6JRs",
       "eventId": "hellodancefest-2026",
       "name": "Bruna K. & Leandro",
-      "style": "zouk"
+      "style": "zouk",
+      "photoUrl": "https://hellodancefest.com/images/lineup-zouk/2024/bruna-kazakevic1.jpg",
+      "bioUrl": "https://hellodancefest.com/zouk/zouk-lineup/zouk-workshops/bruna-kazakevic",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/brunakazakevic",
+          "label": "Bruna",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/leandroandnayara",
+          "label": "Leandro",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "6duD210q",
@@ -1344,31 +1645,83 @@
       "id": "KyQRmtK1",
       "eventId": "hellodancefest-2026",
       "name": "Diego Jarosky & Marika",
-      "style": "salsa"
+      "style": "salsa",
+      "photoUrl": "https://hellodancefest.com/images/lineup-salsa/2026/jarosky-marika1.jpg",
+      "bioUrl": "https://hellodancefest.com/salsa/salsa-lineup/salsa-workshops/jarosky-cf",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/jchachayma",
+          "label": "Joint account",
+          "kind": "joint"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "pcQ30lHj",
       "eventId": "hellodancefest-2026",
       "name": "Kakah & Guest",
-      "style": "zouk"
+      "style": "zouk",
+      "photoUrl": "/dj/djkakah.jpg",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/djkakah",
+          "label": "KAKAH",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "fBBgK6Di",
       "eventId": "hellodancefest-2026",
       "name": "JAS & Hailie",
-      "style": "bachata"
+      "style": "bachata",
+      "photoUrl": "https://hellodancefest.com/images/lineup-bachata/2024/jas-hailie1.jpg",
+      "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/jas-hailie",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/bachata_usa",
+          "label": "Instagram",
+          "kind": "individual"
+        },
+        {
+          "url": "https://www.instagram.com/hailie.brianna",
+          "label": "Jose",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "wS579XYh",
       "eventId": "hellodancefest-2026",
       "name": "Alexia & Zohra",
-      "style": "zouk"
+      "style": "zouk",
+      "photoUrl": "https://hellodancefest.com/images/lineup-zouk/2024/alexia-meirelles1.jpg",
+      "bioUrl": "https://hellodancefest.com/zouk/zouk-lineup/zouk-workshops/alexia-meirelles",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/lelemeirelles",
+          "label": "Alexia",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "A8OxJwl2",
       "eventId": "hellodancefest-2026",
       "name": "Alana Puerto",
-      "style": "bachata"
+      "style": "bachata",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/alanapuerto_",
+          "label": "Alana",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "sxSaq6vv",
@@ -1380,13 +1733,31 @@
       "id": "YQ8R9Y1r",
       "eventId": "hellodancefest-2026",
       "name": "Empire Mambo",
-      "style": "salsa"
+      "style": "salsa",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/empiremambonyc",
+          "label": "Empire Mambo",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "Gm5MzbuH",
       "eventId": "hellodancefest-2026",
       "name": "Linda Tavana",
-      "style": "salsa"
+      "style": "salsa",
+      "photoUrl": "https://hellodancefest.com/images/lineup-salsa/2025/jacopo-linda1.jpg",
+      "bioUrl": "https://hellodancefest.com/salsa/salsa-lineup/salsa-workshops/jacopo-linda",
+      "igLinks": [
+        {
+          "url": "https://www.instagram.com/linda.tavana",
+          "label": "Linda",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T20:25:34.201Z"
     },
     {
       "id": "p7UF61sR",
