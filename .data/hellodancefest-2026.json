@@ -1500,7 +1500,7 @@
       ]
     },
     {
-      "id": "6c41acb85fe4",
+      "id": "3c6566fffe37",
       "eventId": "hellodancefest-2026",
       "title": "The Edge of Movement",
       "instructors": [
@@ -1508,7 +1508,7 @@
       ],
       "style": "zouk",
       "level": "Open Level",
-      "room": "Sandpebble D-E",
+      "room": "Sandpebble A-C",
       "day": "2026-07-24",
       "start": "13:00",
       "end": "14:00",
@@ -1602,7 +1602,7 @@
       ]
     },
     {
-      "id": "2269be6c069a",
+      "id": "e3eb3b1f1264",
       "eventId": "hellodancefest-2026",
       "title": "Head Movement Found. & Var.",
       "instructors": [
@@ -1610,7 +1610,7 @@
       ],
       "style": "zouk",
       "level": "Open Level",
-      "room": "Sandpebble D-E",
+      "room": "Sandpebble A-C",
       "day": "2026-07-24",
       "start": "14:00",
       "end": "15:00",
@@ -5118,6 +5118,6 @@
       ]
     }
   ],
-  "scheduleSyncedAt": "2026-07-24T18:51:19.610844+00:00",
+  "scheduleSyncedAt": "2026-07-24T20:41:47.110875+00:00",
   "scheduleSourceUrl": "https://docs.google.com/spreadsheets/d/1Phzou1q71mdtwwct1EoKPW5q_8jDTQhLUEkhlA6_bqY/edit"
 }
