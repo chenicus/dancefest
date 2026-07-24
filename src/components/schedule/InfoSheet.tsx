@@ -5,6 +5,7 @@ import {
   CancelIcon,
   LinkSquare02Icon,
   Location01Icon,
+  RefreshIcon,
 } from "@hugeicons/core-free-icons";
 import { dayLabel } from "@/lib/schedule/time";
 import type { FestivalEvent } from "@/lib/types";
@@ -29,16 +30,17 @@ const VENUE = {
   ],
 } as const;
 
-// Open the venue in whatever maps app the device defaults to, rather than
-// forcing one provider: Apple Maps on iOS/macOS (the maps:// scheme, which iOS
-// routes to the user's default), the system maps chooser on Android (geo:),
-// and Google Maps in a new tab as the desktop/web fallback.
+// Open the venue in whatever maps app the device defaults to. Android's geo:
+// scheme genuinely triggers the OS "choose an app" chooser, so it's kept.
+// iOS/macOS have no such mechanism — the maps:// scheme is Apple Maps' own
+// private scheme and always opens Apple Maps.app regardless of what the user
+// has set as default, so it's *not* used here. The Google Maps web URL is a
+// universal link: iOS/macOS will route it to an installed Google Maps app if
+// one is registered for it, otherwise it opens in the browser.
 function openInMaps(query: string) {
   const q = encodeURIComponent(query);
   const ua = typeof navigator !== "undefined" ? navigator.userAgent : "";
-  if (/iPhone|iPad|iPod|Macintosh/.test(ua)) {
-    window.location.href = `maps://?q=${q}`;
-  } else if (/Android/.test(ua)) {
+  if (/Android/.test(ua)) {
     window.location.href = `geo:0,0?q=${q}`;
   } else {
     window.open(`https://www.google.com/maps/search/?api=1&query=${q}`, "_blank", "noopener,noreferrer");
@@ -106,6 +108,37 @@ export function InfoSheet({ event, onClose }: { event: FestivalEvent; onClose: (
       {/* Sized to fit without scrolling on a typical phone; overflow-y-auto is
           only a fallback for very short viewports. */}
       <div className="flex flex-1 flex-col gap-4 overflow-y-auto px-5 py-4 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        {/* Data provenance — sits above Venue since it's about the schedule
+            itself, not the festival's own program. */}
+        {event.scheduleSyncedAt && (
+          <div className="flex items-center gap-3 rounded-2xl border border-border p-3.5">
+            <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-secondary text-foreground">
+              <Icon icon={RefreshIcon} size={17} />
+            </span>
+            <p className="min-w-0 text-sm leading-snug text-muted-foreground">
+              Schedule last synced from{" "}
+              {event.scheduleSourceUrl ? (
+                <a
+                  href={event.scheduleSourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-foreground underline underline-offset-2 hover:text-muted-foreground"
+                >
+                  spreadsheet
+                </a>
+              ) : (
+                <span className="font-semibold text-foreground">spreadsheet</span>
+              )}{" "}
+              {new Date(event.scheduleSyncedAt).toLocaleString("en-US", {
+                month: "short",
+                day: "numeric",
+                hour: "numeric",
+                minute: "2-digit",
+              })}
+            </p>
+          </div>
+        )}
+
         {/* Venue + directions */}
         <section>
           <SectionLabel>Venue</SectionLabel>
