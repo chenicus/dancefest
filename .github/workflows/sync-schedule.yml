@@ -1,0 +1,56 @@
+name: Sync Schedule from Spreadsheet
+
+# Hourly, plus a manual button (workflow_dispatch) that shows up in GitHub's
+# own web UI and mobile app under Actions → this workflow → "Run workflow" —
+# that's the phone-trigger path, no extra infra needed. Runs independently of
+# any local machine: this is a public repo, so Actions minutes are free.
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+# Needed to push the updated .data file back to main when the sheet changed.
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-schedule
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Check the sheet for changes
+        id: check
+        run: |
+          python3 scripts/sync-from-sheet.py | tee /tmp/sync-dry-run.txt
+          if grep -q "CHANGES DETECTED" /tmp/sync-dry-run.txt; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Apply the sync
+        if: steps.check.outputs.changed == 'true'
+        run: python3 scripts/sync-from-sheet.py --apply
+
+      - name: Run tests
+        if: steps.check.outputs.changed == 'true'
+        run: npm run test
+
+      - name: Commit and push
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .data/hellodancefest-2026.json
+          git commit -m "Sync schedule from spreadsheet (automated)"
+          git push
