@@ -131,16 +131,20 @@ function StyleWatermark({
   // the text box the way light would, not clipped to the letter shapes.
   // Both party states glow: a soft halo on the pale unpicked gradient, and a
   // stronger one on the picked midnight fill, where it reads as actual neon.
+  // The taper is a multi-stop ramp that finishes well inside the blob's radius
+  // (fully transparent by 78%), so the light dies out on its own before the
+  // card's overflow-hidden bounds can slice it — no hard edge on the sides.
   const isPartyVariant = variant === "party" || variant === "partyFill";
   const halo = isPartyVariant
     ? letters
         .map((s, i) => {
           const x = ((i + 0.5) / letters.length) * 100;
           const c = variant === "partyFill" ? liftForDark(STYLE_COLORS[s]) : STYLE_COLORS[s];
-          return `radial-gradient(${Math.round(90 / letters.length)}% 70% at ${x}% 55%, ${hexAlpha(
+          const peak = variant === "partyFill" ? 0.5 : 0.38;
+          return `radial-gradient(${Math.round(60 / letters.length)}% 62% at ${x}% 52%, ${hexAlpha(
             c,
-            variant === "partyFill" ? 0.5 : 0.38,
-          )}, transparent 70%)`;
+            peak,
+          )} 0%, ${hexAlpha(c, peak * 0.4)} 38%, ${hexAlpha(c, peak * 0.12)} 60%, transparent 78%)`;
         })
         .join(",")
     : null;
@@ -158,7 +162,7 @@ function StyleWatermark({
     >
       {/* transform above makes this span a stacking context, so the halo's
           negative z-index stays behind the letters but inside this card. */}
-      {halo && <span className="absolute" style={{ inset: "-30% -20%", background: halo, zIndex: -1 }} />}
+      {halo && <span className="absolute" style={{ inset: "-45% -40%", background: halo, zIndex: -1 }} />}
       {letters.map((s, i) => (
         <span key={s} className="relative" style={{ color: watermarkLetterColor(variant, s), marginLeft: i ? "-0.04em" : 0 }}>
           {STYLE_INITIAL[s]}
@@ -190,7 +194,7 @@ export function SessionCard({
   /** My Picks list: every card here is picked, so the intense solid fill
    * (right for flagging a pick *among* the calendar's mostly-unpicked tiles)
    * would just make the whole list loud. Keep the calm tinted background
-   * instead and let the style pill alone carry the full-strength color. */
+   * instead — the watermark letter still carries the full-strength color. */
   softPicked?: boolean;
   /** Optional in the schedule (whole-tile tap toggles the pick); in remove
    * mode it's undefined and the card click does nothing destructive. */
@@ -218,7 +222,7 @@ export function SessionCard({
           dense ? "px-2.5 py-1.5" : "p-3",
         )}
       >
-        <span className={cn("text-muted-foreground/50", dense ? "text-[11px]" : "text-xs")}>Empty</span>
+        <span className="text-xs text-muted-foreground/50">Empty</span>
       </div>
     );
   }
@@ -329,7 +333,7 @@ export function SessionCard({
         // height, leaving dead space below it instead of visually filling
         // the time it actually occupies.
         "group relative h-full min-h-[54px] cursor-pointer overflow-hidden rounded-md transition-all",
-        dense ? "px-2.5 py-1.5" : "p-3",
+        dense ? "px-2.5 py-1.5" : "px-4 py-3",
         // ring-inset: the ring must draw inside the tile's own box, not as an
         // outward box-shadow — an outward ring on a tile flush against a
         // scrollable ancestor's edge (e.g. the desktop grid's last row) gets
@@ -373,30 +377,35 @@ export function SessionCard({
         <p
           className={cn(
             "truncate font-medium leading-none",
-            dense ? "text-xs" : "text-sm",
+            dense ? "text-xs" : "text-base",
             filled && !filledPerf && "text-white",
           )}
           style={filledPerf ? { color: PERF_ESPRESSO } : undefined}
         >
           {name}
         </p>
-        {/* Class name — its own row. Skipped when it's just the DJ's name
-            again (see showTitleRow). leading-none (rather than leading-snug)
-            so its line-box doesn't pad out the gap to the details row below
-            it — that gap is set explicitly via margin instead.
-            Party tiles skip it entirely: the full-strength letter watermark
-            already names the set's style(s), so spelling it out again would
-            just repeat the letters in words. */}
-        {!isParty && showTitleRow && (
+        {/* Class name — its own row. For workshops this is the class title
+            (skipped only when it just repeats the instructor's name, see
+            showTitleRow). Party/social tiles get the literal label "Social"
+            here instead: it's the party family's equivalent of the class name,
+            so the tile keeps the same name → title → details → room rows as a
+            workshop rather than collapsing a row shorter (which left party
+            tiles visibly stubbier than the classes beside them).
+            leading-none (rather than leading-snug) so its line-box doesn't pad
+            out the gap to the details row below it — that gap is set via margin. */}
+        {(isParty || showTitleRow) && (
           <p
             className={cn(
-              "mt-1 truncate font-medium leading-none",
-              dense ? "text-[11px]" : "text-sm",
+              "mt-0.5 truncate font-medium leading-none",
+              "text-xs",
+              // Kept black (not the level row's muted tint) even though it now
+              // shares that row's size — color is what still separates the
+              // two rows from reading as one merged line.
               filled ? !filledPerf && "text-white/90" : "text-foreground",
             )}
             style={filledPerf ? { color: PERF_ESPRESSO } : undefined}
           >
-            {session.title}
+            {isParty ? "Social" : session.title}
           </p>
         )}
         {/* Level + time share one muted row, deliberately close to the class
@@ -406,7 +415,7 @@ export function SessionCard({
           <p
             className={cn(
               "mt-0.5 truncate leading-none",
-              dense ? "text-[11px]" : "text-xs",
+              "text-xs",
               filled ? !filledPerf && "text-white/70" : "text-[var(--tile-muted-text)]",
             )}
             style={filledPerf ? { color: PERF_MUTED } : undefined}
@@ -419,60 +428,42 @@ export function SessionCard({
               .join(" · ")}
           </p>
         )}
-        {/* Style name — the tint alone isn't enough to name the dance style,
-            so spell it out. Against a solid-filled card the pill stays a
-            translucent white (matching the room pill) so it doesn't fight
-            the fill; against a tinted card it carries the full-strength
-            style color as the one intense accent. Skipped in the dense grid,
-            which already has the style legend above it as a filter. Skipped
-            for parties too — those show the style in the class-name row
-            instead (see showTitleRow above), so a second style tag here
-            would just repeat it. "other" has no useful name to show. */}
-        {(!dense || showRoom) && (session.style !== "other" || showRoom) && (
-          <div className="mt-1.5 flex flex-wrap items-center gap-1">
-            {/* My Picks (softPicked) skips this pill — the style watermark
-                letter (B/S/K/Z) already names the style there, so the pill
-                would just repeat it. */}
-            {session.style !== "other" && !isParty && !softPicked && (
-              <span
-                className={cn(
-                  "inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-medium capitalize",
-                  filled ? "bg-white/20 text-white" : "text-white",
-                )}
-                style={filled ? undefined : { background: color }}
-              >
-                {session.style}
-              </span>
+        {/* Room only — the style itself used to get its own pill here too,
+            but the watermark letter (B/S/K/Z) behind the card already names
+            it, so that pill was pure repetition. Room has no other home on
+            the card, so it's the one thing still worth a pill. */}
+        {showRoom && (
+          <span
+            className={cn(
+              // Half-outdent: the pill has px-2.5 (10px), so -ml-[5px] pulls it
+              // left by *half* its padding. That lands the text column above
+              // midway between the pill's rounded edge and its first letter —
+              // a gentle offset, so the pill neither looks shoved right (edge
+              // flush with the text) nor fully de-indented (text flush).
+              "-ml-[5px] mt-1.5 inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium",
+              filled
+                ? filledPerf
+                  ? "bg-white/70"
+                  : "bg-white/20 text-white"
+                : "bg-card/70 text-[var(--tile-muted-text)]",
             )}
-            {showRoom && (
-              <span
-                className={cn(
-                  "inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-medium",
-                  filled
-                    ? filledPerf
-                      ? "bg-white/70"
-                      : "bg-white/20 text-white"
-                    : "bg-card/70 text-[var(--tile-muted-text)]",
-                )}
-                style={filledPerf ? { color: PERF_MUTED } : undefined}
-              >
-                {session.room}
-              </span>
-            )}
-          </div>
+            style={filledPerf ? { color: PERF_MUTED } : undefined}
+          >
+            {session.room}
+          </span>
         )}
       </div>
 
       {/* Artist photo — fixed top-right, purely decorative. Picking is the
           whole tile's job now; the caret below is the only other control.
-          Inset by the same amount as the card's own padding (p-3, dense
-          px-2.5/py-1.5) so it reads as evenly bordered on every side, not
-          just hugging the left/bottom edges of its content. */}
+          Inset to match the card's own padding (non-dense px-4 py-3 → 16px
+          right / 12px top; dense px-2.5 py-1.5) so it reads as evenly
+          bordered per axis, not just hugging the left/bottom of its content. */}
       <span
         aria-hidden
         className={cn(
           "absolute shrink-0 overflow-hidden rounded-full ring-2 ring-card",
-          dense ? "right-2.5 top-1.5 size-6" : "right-3 top-3 size-11",
+          dense ? "right-2.5 top-1.5 size-6" : "right-4 top-3 size-11",
         )}
       >
         <Avatar artist={artist} name={name} size={avatarPx} tint={anchor} />
@@ -502,7 +493,7 @@ export function SessionCard({
             // Invisible padded hit target (~+16px each side → ~40px) so the
             // deliberate tap is easy while the visible dot stays corner-tucked.
             "before:absolute before:-inset-2 before:content-['']",
-            dense ? "bottom-1.5 right-2.5 size-5" : "bottom-3 right-3 size-6",
+            dense ? "bottom-1.5 right-2.5 size-5" : "bottom-3 right-4 size-6",
           )}
         >
           <Icon icon={CancelIcon} size={dense ? 12 : 13} strokeWidth={2.5} />
@@ -521,7 +512,7 @@ export function SessionCard({
             // Same inset as the photo above (matching the card's own padding),
             // so the caret reads as evenly bordered too, not just tucked into
             // the corner.
-            dense ? "bottom-1.5 right-2.5 size-5" : "bottom-3 right-3 size-6",
+            dense ? "bottom-1.5 right-2.5 size-5" : "bottom-3 right-4 size-6",
           )}
         >
           <Icon icon={ChevronRightIcon} size={dense ? 12 : 14} strokeWidth={2.5} />

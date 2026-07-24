@@ -853,12 +853,17 @@
       "bioUrl": "https://hellodancefest.com/zouk/zouk-lineup/zouk-workshops/mikael-bozon",
       "igLinks": [
         {
+          "label": "Mikael",
           "url": "https://www.instagram.com/mikaboz",
-          "label": "Joint account",
-          "kind": "joint"
+          "kind": "individual"
+        },
+        {
+          "label": "Ana",
+          "url": "https://www.instagram.com/anagomesdance",
+          "kind": "individual"
         }
       ],
-      "socialsFetchedAt": "2026-07-21T06:27:32.890Z"
+      "socialsFetchedAt": "2026-07-24T17:51:17.000Z"
     },
     {
       "id": "LwFVI_Xu",
@@ -1127,6 +1132,21 @@
       "style": "bachata",
       "igLinks": [],
       "socialsFetchedAt": "2026-07-21T06:28:46.756Z"
+    },
+    {
+      "id": "87x9TxyH",
+      "eventId": "hellodancefest-2026",
+      "name": "Melonito",
+      "style": "bachata",
+      "photoUrl": "/artists/melonito.jpg",
+      "igLinks": [
+        {
+          "label": "Melonito",
+          "url": "https://www.instagram.com/melonito7/",
+          "kind": "individual"
+        }
+      ],
+      "socialsFetchedAt": "2026-07-24T17:41:19.000Z"
     }
   ],
   "sessions": [
@@ -1362,7 +1382,9 @@
       "day": "2026-07-24",
       "start": "15:00",
       "end": "16:00",
-      "artistIds": []
+      "artistIds": [
+        "87x9TxyH"
+      ]
     },
     {
       "id": "7BAfO6mf",
@@ -2454,7 +2476,9 @@
       "day": "2026-07-26",
       "start": "12:00",
       "end": "13:00",
-      "artistIds": []
+      "artistIds": [
+        "87x9TxyH"
+      ]
     },
     {
       "id": "woUa6vOe",
@@ -3088,6 +3112,10 @@
         "DJ KRIS KROS"
       ],
       "style": "bachata",
+      "styles": [
+        "salsa",
+        "bachata"
+      ],
       "level": "Bachata & Salsa",
       "room": "Peninsula A-B",
       "day": "2026-07-26",

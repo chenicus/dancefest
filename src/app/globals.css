@@ -49,9 +49,12 @@
 
 
 @theme inline {
-  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-display-face), ui-serif, Georgia, serif;
+  /* Typography: IBM Plex Sans Condensed for all reading text — body, display,
+     and card copy share one family. Only the oversized decorative initial
+     watermarked behind each card keeps its own marker face. */
   --font-condensed: var(--font-condensed-face), "Helvetica Neue Condensed", "Arial Narrow", ui-sans-serif, sans-serif;
+  --font-sans: var(--font-condensed);
+  --font-display: var(--font-condensed);
   --font-marker: var(--font-marker-face), ui-sans-serif, system-ui, sans-serif;
 
   --radius-sm: calc(var(--radius) - 0.5rem);
@@ -122,4 +125,61 @@ body {
 }
 .animate-toast-in {
   animation: toast-in 0.18s ease-out;
+}
+
+/* Pick-count badge reward beat — plays only when the count goes UP.
+   Adding a session is the app's core action, but the badge is small and
+   corner-tucked, so without motion the number just silently ticks over.
+   Classic squash-and-stretch: a frame of anticipation (dips under 1), a
+   generous overshoot, then a small undershoot before it lands — so the
+   count reads as *reacting* rather than re-rendering. */
+@keyframes badge-pop {
+  0% {
+    transform: scale(1);
+  }
+  16% {
+    transform: scale(0.84);
+  }
+  46% {
+    transform: scale(1.4);
+  }
+  70% {
+    transform: scale(0.93);
+  }
+  87% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.animate-badge-pop {
+  animation: badge-pop 0.44s ease-out;
+}
+
+/* The digit itself rolls up into place, so it reads as the number *changing*
+   and not just the badge shaking. Shorter than the pop so it has settled by
+   the time the overshoot lands. */
+@keyframes badge-digit {
+  0% {
+    opacity: 0;
+    transform: translateY(0.4em);
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-badge-digit {
+  animation: badge-digit 0.28s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-badge-pop,
+  .animate-badge-digit {
+    animation: none;
+  }
 }

@@ -80,6 +80,7 @@ const SPECIAL_SESSIONS: Omit<Session, "id" | "eventId">[] = [
     title: "Daytime Dancing",
     instructors: ["DJ WHOMAN", "DJ KRIS KROS"],
     style: "bachata",
+    styles: ["salsa", "bachata"],
     level: "Bachata & Salsa",
     room: "Peninsula A-B",
     day: "2026-07-26",

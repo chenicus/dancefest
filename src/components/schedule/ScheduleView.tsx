@@ -5,6 +5,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import {
   Calendar03Icon,
   FavouriteIcon,
+  InformationCircleIcon,
   MusicNote01Icon,
   Tick01Icon,
 } from "@hugeicons/core-free-icons";
@@ -13,12 +14,12 @@ import { layoutDay } from "@/lib/schedule/layout";
 import { partyArtists, partyToSessions } from "@/lib/schedule/party";
 import { dayDateLabel, dayLabel, hourLabel, to12h, toMinutes } from "@/lib/schedule/time";
 import { usePicksStore } from "@/lib/store/usePicksStore";
-import { STYLE_COLORS, styleTint } from "@/lib/theme";
 import type { DanceStyle, FestivalEvent, Session } from "@/lib/types";
 import { Icon } from "@/components/ui/icon";
 import { Segmented } from "@/components/ui/segmented";
 import { cn } from "@/lib/utils";
 import { ArtistSheet } from "./ArtistSheet";
+import { InfoSheet } from "./InfoSheet";
 import { SessionCard } from "./SessionCard";
 
 // A 1-hour session's typical rendered height (title + time + tags, plus the
@@ -34,9 +35,15 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
   const router = useRouter();
   const search = useSearchParams();
   const [mounted, setMounted] = useState(false);
-  // Multi-select style legend/filter. Empty set = show every style.
-  const [styleFilter, setStyleFilter] = useState<Set<DanceStyle>>(new Set());
+  // Multi-select style legend/filter. Tracks styles the user has tapped OFF
+  // (not the ones shown) — everything starts selected, so an empty set here
+  // means "show every style" with no second state to fall back to. Toggling
+  // a style just adds/removes it from this set directly; the visual "on"
+  // state below is its exact inverse, so what you see is always what tapping
+  // it will do, with no separate "nothing chosen yet" mode to fight through.
+  const [excludedStyles, setExcludedStyles] = useState<Set<DanceStyle>>(new Set());
   const [sheetSession, setSheetSession] = useState<Session | null>(null);
+  const [infoOpen, setInfoOpen] = useState(false);
   const { togglePick, picks } = usePicksStore();
 
   useEffect(() => setMounted(true), []);
@@ -82,6 +89,25 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
     [allSessions, pickedIds],
   );
 
+  // Bumping this remounts the pick-count badge, which restarts its CSS pop
+  // animation — a plain class toggle wouldn't replay on a second pick, since
+  // the class never leaves the element between them. Only counts UP: removing
+  // a pick has the Undo snackbar as its feedback, and a celebratory pop on
+  // delete would read as the wrong emotion.
+  const [pickBump, setPickBump] = useState(0);
+  const prevPickCount = useRef<number | null>(null);
+  useEffect(() => {
+    if (!mounted) return;
+    const count = pickedIds.size;
+    // The first post-hydration run only seeds the baseline: picks restored
+    // from localStorage aren't new, so without this the badge would pop on
+    // every single page load.
+    if (prevPickCount.current !== null && count > prevPickCount.current) {
+      setPickBump((b) => b + 1);
+    }
+    prevPickCount.current = count;
+  }, [mounted, pickedIds.size]);
+
   function setParam(key: string, value: string | null) {
     const params = new URLSearchParams(search.toString());
     if (value === null) params.delete(key);
@@ -91,7 +117,9 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
 
   const daySessions = useMemo(() => {
     const filtered = allSessions.filter(
-      (s) => s.day === day && (styleFilter.size === 0 || styleFilter.has(s.style)),
+      // Styles with no filter chip at all (the catch-all "other") have no way
+      // to be excluded, so they always pass through.
+      (s) => s.day === day && !excludedStyles.has(s.style),
     );
     // "Empty" filler reflects genuinely idle room/time combos (computed off
     // the full, unfiltered day) — it stays put regardless of the style
@@ -108,7 +136,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
           STYLE_ORDER[a.style] - STYLE_ORDER[b.style] ||
           a.room.localeCompare(b.room),
       );
-  }, [allSessions, event.rooms, day, styleFilter]);
+  }, [allSessions, event.rooms, day, excludedStyles]);
 
   const stylesPresent = useMemo(
     () => ALL_STYLES.filter((st) => allSessions.some((s) => s.style === st)),
@@ -167,12 +195,20 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
       className="flex min-h-dvh flex-col md:h-dvh md:overflow-hidden"
       style={{ background: "var(--event-bg)" }}
     >
-      <header ref={headerRef} className="sticky top-0 z-40 border-b border-black/10 bg-background/85 backdrop-blur-md">
-        <div className="mx-auto flex w-full max-w-[800px] items-center justify-center gap-3 px-4 pt-3.5">
+      <header ref={headerRef} className="sticky top-0 z-40 border-b border-black/10 bg-background">
+        <div className="mx-auto flex w-full max-w-[400px] items-center justify-between gap-3 px-4 pt-3.5 md:max-w-[800px]">
           <h1 className="wordmark truncate text-lg">{event.name}</h1>
+          <button
+            type="button"
+            onClick={() => setInfoOpen(true)}
+            aria-label="Festival info"
+            className="-mr-1 flex size-9 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+          >
+            <Icon icon={InformationCircleIcon} size={22} strokeWidth={1.8} />
+          </button>
         </div>
 
-        <div className="mx-auto w-full max-w-[800px] px-4 pb-3 pt-3">
+        <div className="mx-auto w-full max-w-[400px] px-4 pb-3 pt-3 md:max-w-[800px]">
           <Segmented
             fullWidth
             rounded="md"
@@ -187,7 +223,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
                   <span>{dayLabel(d)}</span>
                   <span
                     className={cn(
-                      "text-[11px] font-normal",
+                      "text-xs font-normal",
                       d === day ? "text-neutral-500" : "text-neutral-400",
                     )}
                   >
@@ -203,48 +239,37 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
           <div className="mx-auto w-full max-w-[800px] overflow-x-auto px-4 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             <div className="flex items-center justify-center gap-1.5">
               {stylesPresent.map((st) => {
-                // Legend + multi-select filter in one: the swatch decodes the card
-                // tint, and tapping toggles that style into the view. Empty set
-                // shows everything, so with nothing selected every chip reads
-                // "on" (the full legend); selecting some dims the rest.
-                const anySelected = styleFilter.size > 0;
-                const selected = styleFilter.has(st);
-                const on = !anySelected || selected;
-                const color = STYLE_COLORS[st];
+                // Plain toggle, no separate "nothing chosen" mode: every style
+                // starts on, and tapping its chip removes it from view — the
+                // chip's own checked state (not a style color) is the only
+                // thing marking that.
+                const on = !excludedStyles.has(st);
                 return (
                   <button
                     key={st}
-                    aria-pressed={selected}
+                    aria-pressed={on}
                     onClick={() =>
-                      setStyleFilter((prev) => {
+                      setExcludedStyles((prev) => {
                         const next = new Set(prev);
                         next.has(st) ? next.delete(st) : next.add(st);
                         return next;
                       })
                     }
                     className={cn(
-                      "flex shrink-0 items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-medium capitalize transition-colors",
+                      // Park Daddy's filter-chip pattern: the check isn't faded,
+                      // it's unmounted — the pill itself snaps narrower when a
+                      // style drops out instead of leaving a dimmed icon-shaped
+                      // gap. A quick tap-down scale is the only motion, so the
+                      // toggle reads as a physical press rather than a fade.
+                      "flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium capitalize transition-all active:scale-[0.93]",
                       on
-                        ? "text-foreground"
-                        : "border-transparent text-muted-foreground hover:text-foreground",
+                        ? "border-border bg-card text-foreground"
+                        : "border-border/50 bg-transparent text-muted-foreground hover:text-foreground",
                     )}
-                    style={
-                      on
-                        ? { background: styleTint(st, 0.16), borderColor: styleTint(st, 0.4) }
-                        : undefined
-                    }
                   >
-                    <Icon
-                      icon={Tick01Icon}
-                      aria-hidden
-                      size={18}
-                      strokeWidth={2.5}
-                      className={cn(
-                        "shrink-0 transition-all",
-                        on ? "opacity-100" : "scale-90 text-muted-foreground/70 opacity-70",
-                      )}
-                      style={on ? { color } : undefined}
-                    />
+                    {on && (
+                      <Icon icon={Tick01Icon} aria-hidden size={16} strokeWidth={3} className="-ml-0.5 shrink-0" />
+                    )}
                     {st}
                   </button>
                 );
@@ -341,8 +366,23 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
               )}
             />
             {mounted && pickedIds.size > 0 && (
-              <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[11px] font-semibold leading-none text-primary-foreground ring-2 ring-background">
-                {pickedIds.size}
+              <span
+                // Remount on every added pick so the pop replays (see pickBump).
+                key={pickBump}
+                className={cn(
+                  "absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-xs font-semibold leading-none text-primary-foreground ring-2 ring-background",
+                  // Only dress the badge with the animation once a pick has
+                  // actually been added this session. The classes can't be
+                  // unconditional: the badge also mounts on page load when
+                  // picks are restored from localStorage, and a CSS animation
+                  // fires on mount whether or not anything changed — so it
+                  // would celebrate every time the app opened.
+                  pickBump > 0 && "animate-badge-pop",
+                )}
+              >
+                <span className={cn(pickBump > 0 && "animate-badge-digit")}>
+                  {pickedIds.size}
+                </span>
               </span>
             )}
             <span className="pointer-events-none absolute bottom-full left-1/2 mb-3 -translate-x-1/2 whitespace-nowrap rounded-full bg-foreground/90 px-3 py-1.5 text-xs font-medium text-background opacity-0 transition-opacity group-hover:opacity-100">
@@ -362,11 +402,11 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
             role="status"
             className="animate-toast-in pointer-events-auto flex items-center gap-3 rounded-full bg-foreground/95 py-2 pl-4 pr-2 text-sm text-background shadow-lg ring-1 ring-black/5 backdrop-blur-xl"
           >
-            <span>Removed from picks</span>
+            <span>Removed</span>
             <button
               type="button"
               onClick={undoRemove}
-              className="rounded-full bg-background/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide transition-colors hover:bg-background/25"
+              className="rounded-full bg-background/15 px-3 py-1 text-xs font-semibold tracking-wide transition-colors hover:bg-background/25"
             >
               Undo
             </button>
@@ -390,6 +430,8 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
           onClose={() => setSheetSession(null)}
         />
       )}
+
+      {infoOpen && <InfoSheet event={event} onClose={() => setInfoOpen(false)} />}
     </div>
   );
 }
@@ -439,8 +481,8 @@ function MobileDayList({
     // of sticking to the real (page/main) scrollport.
     <div className="relative mx-auto max-w-[400px] md:hidden" style={{ ["--sticky-top" as string]: `${stickyTop}px` }}>
       {groupByStart(sessions).map((group, gi) => (
-        <div key={group.start} className="flex gap-x-3">
-          <div className="sticky top-[var(--sticky-top)] z-10 w-11 shrink-0 self-start pt-3 text-right text-xs font-medium text-muted-foreground md:top-0">
+        <div key={group.start} className="flex gap-x-1">
+          <div className="sticky top-[var(--sticky-top)] z-10 w-12 shrink-0 self-start pt-3 text-left text-xs font-medium text-muted-foreground md:top-0">
             {to12h(group.start)}
           </div>
           <div className="min-w-0 flex-1">
@@ -575,7 +617,7 @@ function DesktopGrid({
           {hourRows.map((m) => (
             <div
               key={m}
-              className="bg-neutral-100 pr-2 text-right text-[11px] text-muted-foreground"
+              className="bg-neutral-100 pr-2 text-right text-xs text-muted-foreground"
               style={{ gridRow: Math.floor((m - grid.startMinutes) / 15) + 1 }}
             >
               {hourLabel(m)}
@@ -690,10 +732,10 @@ function MySchedule({
     // ancestor of the sticky label with overflow other than visible becomes
     // its containing block, and since that box never scrolls on its own the
     // label would just sit inert instead of sticking to the real scrollport.
-    <div className="relative mx-auto mt-6 max-w-[400px]" style={{ ["--sticky-top" as string]: `${stickyTop}px` }}>
+    <div className="relative mx-auto max-w-[400px]" style={{ ["--sticky-top" as string]: `${stickyTop}px` }}>
       {groups.map((group, gi) => (
-        <div key={group.start} className="flex gap-x-3">
-          <div className="sticky top-[var(--sticky-top)] z-10 w-11 shrink-0 self-start pt-3 text-right text-xs font-medium text-muted-foreground md:top-0">
+        <div key={group.start} className="flex gap-x-1">
+          <div className="sticky top-[var(--sticky-top)] z-10 w-12 shrink-0 self-start pt-3 text-left text-xs font-medium text-muted-foreground md:top-0">
             {to12h(group.start)}
           </div>
           {/* overflow-x-hidden here (not on an ancestor of the sticky label

@@ -32,7 +32,7 @@ export const PARTY_GRADIENT = "linear-gradient(160deg, #eceaf2 0%, #d6d3e2 100%)
 // Performances are the one golden family, and the one picked tile with dark
 // text: a truly yellow gold is too light to ever carry white text.
 export const GOLD_ANCHOR = "#eab308";
-export const PERF_BUTTER = "#fdf6cf";
+export const PERF_BUTTER = "#fbe58f";
 export const PERF_HONEY = "#f1ce5e";
 export const PERF_ESPRESSO = "#4a3305";
 export const PERF_MUTED = "#6d4c08";
