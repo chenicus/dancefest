@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local safety-net backups taken before each sheet sync
+.data/*.pre-sheet-sync-*.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

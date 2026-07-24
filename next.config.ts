@@ -1,10 +1,15 @@
 import type { NextConfig } from "next";
 
-// Static export for GitHub Pages. The site is served from a project subpath
-// (chenicus.github.io/dancefest), so every asset and route is prefixed with
-// basePath. `images.unoptimized` is required because the default image
-// optimizer needs a running server, which Pages does not provide.
-const basePath = process.env.NODE_ENV === "production" ? "/dancefest" : "";
+// Static export, servable from either host:
+// - GitHub Pages serves from a project subpath (chenicus.github.io/dancefest),
+//   so that build needs every asset/route prefixed with basePath. Set only by
+//   the Pages workflow (see .github/workflows) via GITHUB_PAGES=true.
+// - Vercel (hellodancefest.vercel.app) serves from the domain root, so it
+//   must NOT get a basePath — it just builds with NODE_ENV=production like
+//   any other Vercel deploy, with GITHUB_PAGES unset.
+// `images.unoptimized` is required either way because the default image
+// optimizer needs a running server, which a static export does not have.
+const basePath = process.env.GITHUB_PAGES === "true" ? "/dancefest" : "";
 
 const nextConfig: NextConfig = {
   output: "export",

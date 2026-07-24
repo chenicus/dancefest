@@ -88,6 +88,10 @@ export interface FestivalEvent {
   parties?: Party[];
   theme: Theme;
   sourceUrl?: string;
+  /** When the schedule/artists were last synced from the organizers'
+   *  spreadsheet (see scripts/sync-from-sheet.py), and a link to it. */
+  scheduleSyncedAt?: string;
+  scheduleSourceUrl?: string;
   createdAt: string;
   createdBy?: string | null;
 }

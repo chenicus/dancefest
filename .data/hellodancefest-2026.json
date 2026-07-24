@@ -7,14 +7,14 @@
     "end": "2026-07-26"
   },
   "rooms": [
-    "Peninsula D-G",
-    "Peninsula A-B",
     "Harbour",
-    "Regency",
+    "Main Ballroom",
+    "Peninsula A-B",
     "Peninsula C",
+    "Peninsula D-G",
+    "Regency",
     "Sandpebble A-C",
-    "Sandpebble D-E",
-    "Main Ballroom"
+    "Sandpebble D-E"
   ],
   "days": [
     "2026-07-24",
@@ -407,22 +407,22 @@
       "bioUrl": "https://hellodancefest.com/bachata/bachata-lineup/bachata-workshops/patrick-johanna",
       "igLinks": [
         {
+          "label": "Joint account",
+          "url": "https://www.instagram.com/pj.bachatafuze",
+          "kind": "joint"
+        },
+        {
+          "label": "Patrick",
           "url": "https://www.instagram.com/patrick.mozo",
-          "label": "Patrick",
           "kind": "individual"
         },
         {
+          "label": "Johanna",
           "url": "https://www.instagram.com/johannap.official",
-          "label": "Patrick",
-          "kind": "individual"
-        },
-        {
-          "url": "https://www.instagram.com/patrickyjohanna.official",
-          "label": "Patrick",
           "kind": "individual"
         }
       ],
-      "socialsFetchedAt": "2026-07-20T21:05:51.453Z"
+      "socialsFetchedAt": "2026-07-24T18:13:52.000Z"
     },
     {
       "id": "ZQAEHYQr",
@@ -1147,11 +1147,275 @@
         }
       ],
       "socialsFetchedAt": "2026-07-24T17:41:19.000Z"
+    },
+    {
+      "id": "MQIOr2FR",
+      "eventId": "hellodancefest-2026",
+      "name": "Maurico & Serena",
+      "style": "bachata"
+    },
+    {
+      "id": "6NVTYJLf",
+      "eventId": "hellodancefest-2026",
+      "name": "Yolena Kapoli",
+      "style": "salsa"
+    },
+    {
+      "id": "6xSZXkm3",
+      "eventId": "hellodancefest-2026",
+      "name": "Mikael & Ana",
+      "style": "zouk"
+    },
+    {
+      "id": "YHyvQU9H",
+      "eventId": "hellodancefest-2026",
+      "name": "Johanna Pellerin",
+      "style": "bachata"
+    },
+    {
+      "id": "7EZ8Hkrf",
+      "eventId": "hellodancefest-2026",
+      "name": "Joe & Mariah",
+      "style": "kizomba"
+    },
+    {
+      "id": "EFlRFHmI",
+      "eventId": "hellodancefest-2026",
+      "name": "SF Salsa Academy",
+      "style": "salsa"
+    },
+    {
+      "id": "GFwlpRvA",
+      "eventId": "hellodancefest-2026",
+      "name": "Hovsep & Laura",
+      "style": "kizomba"
+    },
+    {
+      "id": "TKEvobbm",
+      "eventId": "hellodancefest-2026",
+      "name": "Nav & Kat",
+      "style": "salsa"
+    },
+    {
+      "id": "qGV4bRgN",
+      "eventId": "hellodancefest-2026",
+      "name": "Atom Cee",
+      "style": "zouk"
+    },
+    {
+      "id": "EUsOMtyc",
+      "eventId": "hellodancefest-2026",
+      "name": "Ngoc Knockout",
+      "style": "bachata"
+    },
+    {
+      "id": "J5C57KSt",
+      "eventId": "hellodancefest-2026",
+      "name": "Pamelita & Mike",
+      "style": "kizomba"
+    },
+    {
+      "id": "1THjFRbf",
+      "eventId": "hellodancefest-2026",
+      "name": "Cristian Vergari",
+      "style": "salsa"
+    },
+    {
+      "id": "e5NMbeVw",
+      "eventId": "hellodancefest-2026",
+      "name": "Nick & Vivi",
+      "style": "bachata"
+    },
+    {
+      "id": "iQSHrhVO",
+      "eventId": "hellodancefest-2026",
+      "name": "Sink & Masha",
+      "style": "kizomba"
+    },
+    {
+      "id": "moZxB7YM",
+      "eventId": "hellodancefest-2026",
+      "name": "Hector & Analiza",
+      "style": "salsa"
+    },
+    {
+      "id": "CKLWajrQ",
+      "eventId": "hellodancefest-2026",
+      "name": "John & Suci",
+      "style": "bachata"
+    },
+    {
+      "id": "nGqddrbq",
+      "eventId": "hellodancefest-2026",
+      "name": "Empire Mambo Ladies",
+      "style": "salsa"
+    },
+    {
+      "id": "2FdP6UdC",
+      "eventId": "hellodancefest-2026",
+      "name": "Ali Loo",
+      "style": "bachata"
+    },
+    {
+      "id": "X5aVMWT7",
+      "eventId": "hellodancefest-2026",
+      "name": "Marisa Craig",
+      "style": "salsa"
+    },
+    {
+      "id": "CnxTPsNb",
+      "eventId": "hellodancefest-2026",
+      "name": "Joshua Barbosa",
+      "style": "salsa"
+    },
+    {
+      "id": "uHJ1RDtV",
+      "eventId": "hellodancefest-2026",
+      "name": "Evelyn Lopez",
+      "style": "zouk"
+    },
+    {
+      "id": "WtG9MCW7",
+      "eventId": "hellodancefest-2026",
+      "name": "Cosan & Helen",
+      "style": "zouk"
+    },
+    {
+      "id": "RKNx0LiS",
+      "eventId": "hellodancefest-2026",
+      "name": "Empire Mambo Pro",
+      "style": "salsa"
+    },
+    {
+      "id": "NKtdZ7lW",
+      "eventId": "hellodancefest-2026",
+      "name": "Yolieth Barragan",
+      "style": "salsa"
+    },
+    {
+      "id": "vtOyO8cp",
+      "eventId": "hellodancefest-2026",
+      "name": "Cassandra Villasenor",
+      "style": "bachata"
+    },
+    {
+      "id": "922JF6pj",
+      "eventId": "hellodancefest-2026",
+      "name": "Antonio Rodrigos",
+      "style": "salsa"
+    },
+    {
+      "id": "EodZCNJF",
+      "eventId": "hellodancefest-2026",
+      "name": "Javier & Kiki",
+      "style": "bachata"
+    },
+    {
+      "id": "aGynQ4zB",
+      "eventId": "hellodancefest-2026",
+      "name": "Ngoc & Tien",
+      "style": "bachata"
+    },
+    {
+      "id": "2zYojTyq",
+      "eventId": "hellodancefest-2026",
+      "name": "Jay Lee",
+      "style": "salsa"
+    },
+    {
+      "id": "zJmE6JRs",
+      "eventId": "hellodancefest-2026",
+      "name": "Bruna K. & Leandro",
+      "style": "zouk"
+    },
+    {
+      "id": "6duD210q",
+      "eventId": "hellodancefest-2026",
+      "name": "Julian Zhu",
+      "style": "bachata"
+    },
+    {
+      "id": "ck20iaMr",
+      "eventId": "hellodancefest-2026",
+      "name": "Guest",
+      "style": "salsa"
+    },
+    {
+      "id": "KyQRmtK1",
+      "eventId": "hellodancefest-2026",
+      "name": "Diego Jarosky & Marika",
+      "style": "salsa"
+    },
+    {
+      "id": "pcQ30lHj",
+      "eventId": "hellodancefest-2026",
+      "name": "Kakah & Guest",
+      "style": "zouk"
+    },
+    {
+      "id": "fBBgK6Di",
+      "eventId": "hellodancefest-2026",
+      "name": "JAS & Hailie",
+      "style": "bachata"
+    },
+    {
+      "id": "wS579XYh",
+      "eventId": "hellodancefest-2026",
+      "name": "Alexia & Zohra",
+      "style": "zouk"
+    },
+    {
+      "id": "A8OxJwl2",
+      "eventId": "hellodancefest-2026",
+      "name": "Alana Puerto",
+      "style": "bachata"
+    },
+    {
+      "id": "sxSaq6vv",
+      "eventId": "hellodancefest-2026",
+      "name": "Gino & Ania",
+      "style": "bachata"
+    },
+    {
+      "id": "YQ8R9Y1r",
+      "eventId": "hellodancefest-2026",
+      "name": "Empire Mambo",
+      "style": "salsa"
+    },
+    {
+      "id": "Gm5MzbuH",
+      "eventId": "hellodancefest-2026",
+      "name": "Linda Tavana",
+      "style": "salsa"
+    },
+    {
+      "id": "p7UF61sR",
+      "eventId": "hellodancefest-2026",
+      "name": "DJ TBA",
+      "style": "zouk"
+    },
+    {
+      "id": "JvCmaZaO",
+      "eventId": "hellodancefest-2026",
+      "name": "DJ WHOMAN",
+      "style": "bachata"
+    },
+    {
+      "id": "rdptR3gl",
+      "eventId": "hellodancefest-2026",
+      "name": "DJ KRIS KROS",
+      "style": "bachata"
+    },
+    {
+      "id": "e6gBcYXP",
+      "eventId": "hellodancefest-2026",
+      "name": "JI",
+      "style": "zouk"
     }
   ],
   "sessions": [
     {
-      "id": "pCPHy1xt",
+      "id": "tu8wA37n",
       "eventId": "hellodancefest-2026",
       "title": "Dominican Vibes Footworks",
       "instructors": [
@@ -1164,11 +1428,11 @@
       "start": "12:00",
       "end": "13:00",
       "artistIds": [
-        "pHhrxLfu"
+        "MQIOr2FR"
       ]
     },
     {
-      "id": "4n7m99QR",
+      "id": "X3NUFOQU",
       "eventId": "hellodancefest-2026",
       "title": "Bachata Fuze - Improvisation",
       "instructors": [
@@ -1185,7 +1449,7 @@
       ]
     },
     {
-      "id": "mqPO1hDL",
+      "id": "km5u0oFV",
       "eventId": "hellodancefest-2026",
       "title": "Bachata Sensual Flow",
       "instructors": [
@@ -1202,7 +1466,7 @@
       ]
     },
     {
-      "id": "uq9GtlqF",
+      "id": "nCJ1Cwca",
       "eventId": "hellodancefest-2026",
       "title": "Intro to Kizomba",
       "instructors": [
@@ -1219,7 +1483,7 @@
       ]
     },
     {
-      "id": "rE2mzVPL",
+      "id": "yOVI03qG",
       "eventId": "hellodancefest-2026",
       "title": "Body Movement",
       "instructors": [
@@ -1232,28 +1496,11 @@
       "start": "13:00",
       "end": "14:00",
       "artistIds": [
-        "O2DCOI-6"
+        "6NVTYJLf"
       ]
     },
     {
-      "id": "UyCg7QMs",
-      "eventId": "hellodancefest-2026",
-      "title": "Salsa On2 Partnerwork",
-      "instructors": [
-        "Luis Aguilar"
-      ],
-      "style": "salsa",
-      "level": "Open Level",
-      "room": "Peninsula C",
-      "day": "2026-07-24",
-      "start": "13:00",
-      "end": "14:00",
-      "artistIds": [
-        "DmVInkIK"
-      ]
-    },
-    {
-      "id": "fwpVsDL0",
+      "id": "0S0WFBlt",
       "eventId": "hellodancefest-2026",
       "title": "The Edge of Movement",
       "instructors": [
@@ -1261,16 +1508,16 @@
       ],
       "style": "zouk",
       "level": "Open Level",
-      "room": "Sandpebble A-C",
+      "room": "Sandpebble D-E",
       "day": "2026-07-24",
       "start": "13:00",
       "end": "14:00",
       "artistIds": [
-        "yBlcMeVR"
+        "6xSZXkm3"
       ]
     },
     {
-      "id": "pDRWKOpc",
+      "id": "PsvfvG2Z",
       "eventId": "hellodancefest-2026",
       "title": "Bachata Fusion",
       "instructors": [
@@ -1287,11 +1534,11 @@
       ]
     },
     {
-      "id": "Y06In9La",
+      "id": "o5HrEvVI",
       "eventId": "hellodancefest-2026",
-      "title": "Modern Bachata Fusion",
+      "title": "Lady Styling",
       "instructors": [
-        "Carlitos & Cece"
+        "Johanna Pellerin"
       ],
       "style": "bachata",
       "level": "Open Level",
@@ -1300,11 +1547,11 @@
       "start": "14:00",
       "end": "15:00",
       "artistIds": [
-        "t6fDwbs2"
+        "YHyvQU9H"
       ]
     },
     {
-      "id": "NMShxOB9",
+      "id": "0f0LrNd2",
       "eventId": "hellodancefest-2026",
       "title": "Tarraxo Connection",
       "instructors": [
@@ -1317,13 +1564,13 @@
       "start": "14:00",
       "end": "15:00",
       "artistIds": [
-        "_px5KtE9"
+        "7EZ8Hkrf"
       ]
     },
     {
-      "id": "Lamty7xK",
+      "id": "o0uTjlh3",
       "eventId": "hellodancefest-2026",
-      "title": "Fadi's Signature: Chacha Musicality",
+      "title": "Fadi's Signature: ChachaCha",
       "instructors": [
         "Fadi Fusion"
       ],
@@ -1338,7 +1585,7 @@
       ]
     },
     {
-      "id": "xFueVdD7",
+      "id": "9xzdcXfF",
       "eventId": "hellodancefest-2026",
       "title": "Salsa On2 Partnerwork",
       "instructors": [
@@ -1350,10 +1597,12 @@
       "day": "2026-07-24",
       "start": "14:00",
       "end": "15:00",
-      "artistIds": []
+      "artistIds": [
+        "EFlRFHmI"
+      ]
     },
     {
-      "id": "L5tnl7-u",
+      "id": "vfEWDts4",
       "eventId": "hellodancefest-2026",
       "title": "Head Movement Found. & Var.",
       "instructors": [
@@ -1361,7 +1610,7 @@
       ],
       "style": "zouk",
       "level": "Open Level",
-      "room": "Sandpebble A-C",
+      "room": "Sandpebble D-E",
       "day": "2026-07-24",
       "start": "14:00",
       "end": "15:00",
@@ -1370,24 +1619,24 @@
       ]
     },
     {
-      "id": "Ho3cEwsA",
+      "id": "XbmB1dd4",
       "eventId": "hellodancefest-2026",
-      "title": "Bachata Fusion with Zouk",
+      "title": "Head Movement Technique",
       "instructors": [
-        "Melonito"
+        "Jovanny & Anatasia"
       ],
       "style": "bachata",
-      "level": "Intermediate-Advance Level",
+      "level": "Intermedia-Advance",
       "room": "Peninsula D-G",
       "day": "2026-07-24",
       "start": "15:00",
       "end": "16:00",
       "artistIds": [
-        "87x9TxyH"
+        "cFY6xM-Q"
       ]
     },
     {
-      "id": "7BAfO6mf",
+      "id": "GF74I60X",
       "eventId": "hellodancefest-2026",
       "title": "Sensual Flow - Partnerwork",
       "instructors": [
@@ -1404,7 +1653,7 @@
       ]
     },
     {
-      "id": "bADDnSlU",
+      "id": "dIIM0pEe",
       "eventId": "hellodancefest-2026",
       "title": "Challenge Your Fundamentals",
       "instructors": [
@@ -1416,10 +1665,12 @@
       "day": "2026-07-24",
       "start": "15:00",
       "end": "16:00",
-      "artistIds": []
+      "artistIds": [
+        "GFwlpRvA"
+      ]
     },
     {
-      "id": "VFFlnFBI",
+      "id": "Q5coABSs",
       "eventId": "hellodancefest-2026",
       "title": "J & L's style on2 Shines",
       "instructors": [
@@ -1436,7 +1687,7 @@
       ]
     },
     {
-      "id": "oJh8n4gq",
+      "id": "hpJh6gZ8",
       "eventId": "hellodancefest-2026",
       "title": "Salsa On2 Fundamentals",
       "instructors": [
@@ -1448,25 +1699,12 @@
       "day": "2026-07-24",
       "start": "15:00",
       "end": "16:00",
-      "artistIds": []
+      "artistIds": [
+        "TKEvobbm"
+      ]
     },
     {
-      "id": "KbkC0ds4",
-      "eventId": "hellodancefest-2026",
-      "title": "6 Must-Have Fund. Moves",
-      "instructors": [
-        "Atom Cee"
-      ],
-      "style": "zouk",
-      "level": "Open Level",
-      "room": "Sandpebble A-C",
-      "day": "2026-07-24",
-      "start": "15:00",
-      "end": "16:00",
-      "artistIds": []
-    },
-    {
-      "id": "791tGa4I",
+      "id": "ZxJLkyXS",
       "eventId": "hellodancefest-2026",
       "title": "3 Cambre Variations",
       "instructors": [
@@ -1474,7 +1712,7 @@
       ],
       "style": "zouk",
       "level": "Intermediate-Advance",
-      "room": "Sandpebble D-E",
+      "room": "Sandpebble A-C",
       "day": "2026-07-24",
       "start": "15:00",
       "end": "16:00",
@@ -1483,7 +1721,24 @@
       ]
     },
     {
-      "id": "LDQVdN-U",
+      "id": "gOC3aWKh",
+      "eventId": "hellodancefest-2026",
+      "title": "6 Must-Have Fund. Moves",
+      "instructors": [
+        "Atom Cee"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-24",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": [
+        "qGV4bRgN"
+      ]
+    },
+    {
+      "id": "bQUDnOjN",
       "eventId": "hellodancefest-2026",
       "title": "Traditional Swag",
       "instructors": [
@@ -1500,7 +1755,7 @@
       ]
     },
     {
-      "id": "Z_ZIecZE",
+      "id": "6EkAZLr4",
       "eventId": "hellodancefest-2026",
       "title": "Modern Bachata Shines",
       "instructors": [
@@ -1513,11 +1768,11 @@
       "start": "16:00",
       "end": "17:00",
       "artistIds": [
-        "6HEXZPgi"
+        "EUsOMtyc"
       ]
     },
     {
-      "id": "BaIdbwX_",
+      "id": "KTHHMyW3",
       "eventId": "hellodancefest-2026",
       "title": "Urban Kiz Connection",
       "instructors": [
@@ -1530,13 +1785,13 @@
       "start": "16:00",
       "end": "17:00",
       "artistIds": [
-        "nE46V29W"
+        "J5C57KSt"
       ]
     },
     {
-      "id": "hGHRUd-L",
+      "id": "3pQRStw5",
       "eventId": "hellodancefest-2026",
-      "title": "Footwork",
+      "title": "Footwork (Mambo Afro)",
       "instructors": [
         "Cristian Vergari"
       ],
@@ -1547,11 +1802,11 @@
       "start": "16:00",
       "end": "17:00",
       "artistIds": [
-        "8GbYSPkn"
+        "1THjFRbf"
       ]
     },
     {
-      "id": "1t7GtT9M",
+      "id": "9k0T4IQx",
       "eventId": "hellodancefest-2026",
       "title": "Mambo Footwork",
       "instructors": [
@@ -1568,24 +1823,7 @@
       ]
     },
     {
-      "id": "bx6WCnpo",
-      "eventId": "hellodancefest-2026",
-      "title": "Simple Turn & Soltinho Variat.",
-      "instructors": [
-        "Gabriel de CB"
-      ],
-      "style": "zouk",
-      "level": "Open Level",
-      "room": "Sandpebble A-C",
-      "day": "2026-07-24",
-      "start": "16:00",
-      "end": "17:00",
-      "artistIds": [
-        "R9pyD4zx"
-      ]
-    },
-    {
-      "id": "3fvHSEI-",
+      "id": "YpXrLBYR",
       "eventId": "hellodancefest-2026",
       "title": "The CODE: M&M Mastery",
       "instructors": [
@@ -1593,7 +1831,7 @@
       ],
       "style": "zouk",
       "level": "Intermediate-Advance",
-      "room": "Sandpebble D-E",
+      "room": "Sandpebble A-C",
       "day": "2026-07-24",
       "start": "16:00",
       "end": "17:00",
@@ -1602,11 +1840,28 @@
       ]
     },
     {
-      "id": "BMeGbCEn",
+      "id": "5xq4B3VP",
       "eventId": "hellodancefest-2026",
-      "title": "Bachata Flow Connection",
+      "title": "Simple Turn & Soltinho Variat.",
       "instructors": [
-        "Jeff & Mayra"
+        "Gabriel de CB"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-24",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "R9pyD4zx"
+      ]
+    },
+    {
+      "id": "0S0UHZka",
+      "eventId": "hellodancefest-2026",
+      "title": "Modern Bachata Fusion",
+      "instructors": [
+        "Carlitos & Cece"
       ],
       "style": "bachata",
       "level": "Open Level",
@@ -1615,11 +1870,11 @@
       "start": "17:00",
       "end": "18:00",
       "artistIds": [
-        "ed__gzDt"
+        "t6fDwbs2"
       ]
     },
     {
-      "id": "1EKnmCwf",
+      "id": "8r39RXrj",
       "eventId": "hellodancefest-2026",
       "title": "NV Style Bachata Fusion",
       "instructors": [
@@ -1632,11 +1887,11 @@
       "start": "17:00",
       "end": "18:00",
       "artistIds": [
-        "YKDtcfic"
+        "e5NMbeVw"
       ]
     },
     {
-      "id": "E3y9GqXW",
+      "id": "1WAWSqF3",
       "eventId": "hellodancefest-2026",
       "title": "Urban Kiz Foundation",
       "instructors": [
@@ -1649,11 +1904,11 @@
       "start": "17:00",
       "end": "18:00",
       "artistIds": [
-        "ijw1OPvQ"
+        "iQSHrhVO"
       ]
     },
     {
-      "id": "z8eSdomW",
+      "id": "X0LjHstC",
       "eventId": "hellodancefest-2026",
       "title": "Mambo Shines & Footwork",
       "instructors": [
@@ -1666,15 +1921,15 @@
       "start": "17:00",
       "end": "18:00",
       "artistIds": [
-        "iM9BfSD7"
+        "moZxB7YM"
       ]
     },
     {
-      "id": "F-B7pNwL",
+      "id": "eUopRfxN",
       "eventId": "hellodancefest-2026",
-      "title": "Zouk Flavor & Turn Variations",
+      "title": "Circularity: Flow & Rotation",
       "instructors": [
-        "Nelly Caldeira"
+        "Leandro & Nayara"
       ],
       "style": "zouk",
       "level": "Intermediate-Advance",
@@ -1683,15 +1938,15 @@
       "start": "17:00",
       "end": "18:00",
       "artistIds": [
-        "LwFVI_Xu"
+        "MxW3haIu"
       ]
     },
     {
-      "id": "ubLsuwAu",
+      "id": "si7gvDbh",
       "eventId": "hellodancefest-2026",
-      "title": "Circularity: Flow & Rotation",
+      "title": "Zouk Flavor & Turn Variations",
       "instructors": [
-        "Leandro & Nayara"
+        "Nelly Caldeira"
       ],
       "style": "zouk",
       "level": "Intermediate-Advance",
@@ -1700,28 +1955,11 @@
       "start": "17:00",
       "end": "18:00",
       "artistIds": [
-        "MxW3haIu"
+        "LwFVI_Xu"
       ]
     },
     {
-      "id": "7Pu91xsd",
-      "eventId": "hellodancefest-2026",
-      "title": "Lady Styling",
-      "instructors": [
-        "Johanna Pellerin"
-      ],
-      "style": "bachata",
-      "level": "Open Level",
-      "room": "Peninsula D-G",
-      "day": "2026-07-24",
-      "start": "18:00",
-      "end": "19:00",
-      "artistIds": [
-        "tzHEhKg3"
-      ]
-    },
-    {
-      "id": "ZcyD8cHJ",
+      "id": "bsxzNJT0",
       "eventId": "hellodancefest-2026",
       "title": "The Convo, Not the Combo",
       "instructors": [
@@ -1738,11 +1976,11 @@
       ]
     },
     {
-      "id": "MPnnoA7t",
+      "id": "G8QFAl9g",
       "eventId": "hellodancefest-2026",
-      "title": "Counter Balance",
+      "title": "Bachata Flow Connection",
       "instructors": [
-        "Carlito & Cece"
+        "Jeff & Mayra"
       ],
       "style": "bachata",
       "level": "Open Level",
@@ -1751,11 +1989,11 @@
       "start": "11:00",
       "end": "12:00",
       "artistIds": [
-        "t6fDwbs2"
+        "ed__gzDt"
       ]
     },
     {
-      "id": "OdrK7E-Q",
+      "id": "4mQG3e4g",
       "eventId": "hellodancefest-2026",
       "title": "Zoukchata movement with Flow",
       "instructors": [
@@ -1767,10 +2005,12 @@
       "day": "2026-07-25",
       "start": "11:00",
       "end": "12:00",
-      "artistIds": []
+      "artistIds": [
+        "CKLWajrQ"
+      ]
     },
     {
-      "id": "04tKR2YU",
+      "id": "jgOHM1dE",
       "eventId": "hellodancefest-2026",
       "title": "Empire Style's Lady Styling",
       "instructors": [
@@ -1782,10 +2022,12 @@
       "day": "2026-07-25",
       "start": "11:00",
       "end": "12:00",
-      "artistIds": []
+      "artistIds": [
+        "nGqddrbq"
+      ]
     },
     {
-      "id": "fZ2g0x5a",
+      "id": "uT07S2nm",
       "eventId": "hellodancefest-2026",
       "title": "Bachata Fusion - Partnerwork",
       "instructors": [
@@ -1802,7 +2044,7 @@
       ]
     },
     {
-      "id": "y6y-dXmb",
+      "id": "HwtSFwBz",
       "eventId": "hellodancefest-2026",
       "title": "Urban Sensual Ladies Styling",
       "instructors": [
@@ -1814,10 +2056,12 @@
       "day": "2026-07-25",
       "start": "12:00",
       "end": "13:00",
-      "artistIds": []
+      "artistIds": [
+        "2FdP6UdC"
+      ]
     },
     {
-      "id": "eBhcpkr8",
+      "id": "rrwvfKO3",
       "eventId": "hellodancefest-2026",
       "title": "Kizomba Fundamental Patterns",
       "instructors": [
@@ -1834,7 +2078,7 @@
       ]
     },
     {
-      "id": "Za_8Eq27",
+      "id": "6F8aiN1C",
       "eventId": "hellodancefest-2026",
       "title": "Creative Partnerwork",
       "instructors": [
@@ -1851,7 +2095,7 @@
       ]
     },
     {
-      "id": "pbOWdpzl",
+      "id": "b5cfw3cy",
       "eventId": "hellodancefest-2026",
       "title": "Alignment & Posture",
       "instructors": [
@@ -1863,10 +2107,12 @@
       "day": "2026-07-25",
       "start": "12:00",
       "end": "13:00",
-      "artistIds": []
+      "artistIds": [
+        "X5aVMWT7"
+      ]
     },
     {
-      "id": "BChnC8kb",
+      "id": "MjoSoYIF",
       "eventId": "hellodancefest-2026",
       "title": "Smooth Bachata Footwork & Ptrwork",
       "instructors": [
@@ -1883,7 +2129,7 @@
       ]
     },
     {
-      "id": "TGcWAx9u",
+      "id": "nkS1K3PW",
       "eventId": "hellodancefest-2026",
       "title": "Urban Bachata Partnerwork",
       "instructors": [
@@ -1900,7 +2146,7 @@
       ]
     },
     {
-      "id": "W46CgBbI",
+      "id": "77vyX8S2",
       "eventId": "hellodancefest-2026",
       "title": "Technical Turns",
       "instructors": [
@@ -1912,12 +2158,14 @@
       "day": "2026-07-25",
       "start": "13:00",
       "end": "14:00",
-      "artistIds": []
+      "artistIds": [
+        "GFwlpRvA"
+      ]
     },
     {
-      "id": "0hiCXu9M",
+      "id": "H47vSHwg",
       "eventId": "hellodancefest-2026",
-      "title": "Fadi's Signature: Chacha Musicality",
+      "title": "Fadi's Signature: Salsa Musicality",
       "instructors": [
         "Fadi Fusion"
       ],
@@ -1932,7 +2180,7 @@
       ]
     },
     {
-      "id": "L1S7DM9J",
+      "id": "53OjS8Ce",
       "eventId": "hellodancefest-2026",
       "title": "On2 Footwork",
       "instructors": [
@@ -1945,28 +2193,11 @@
       "start": "13:00",
       "end": "14:00",
       "artistIds": [
-        "EpvxhX05"
+        "CnxTPsNb"
       ]
     },
     {
-      "id": "31lZ661a",
-      "eventId": "hellodancefest-2026",
-      "title": "Bonus & Inverted Bonus",
-      "instructors": [
-        "Cosan & Helen"
-      ],
-      "style": "zouk",
-      "level": "Open Level",
-      "room": "Sandpebble A-C",
-      "day": "2026-07-25",
-      "start": "13:00",
-      "end": "14:00",
-      "artistIds": [
-        "fF70m68H"
-      ]
-    },
-    {
-      "id": "bTZMvc0W",
+      "id": "XqCg0sIe",
       "eventId": "hellodancefest-2026",
       "title": "Creativity & Flow",
       "instructors": [
@@ -1974,16 +2205,33 @@
       ],
       "style": "zouk",
       "level": "Intermediate-Advance",
+      "room": "Sandpebble A-C",
+      "day": "2026-07-25",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": [
+        "uHJ1RDtV"
+      ]
+    },
+    {
+      "id": "B43n33gq",
+      "eventId": "hellodancefest-2026",
+      "title": "Bonus & Inverted Bonus",
+      "instructors": [
+        "Cosan & Helen"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
       "room": "Sandpebble D-E",
       "day": "2026-07-25",
       "start": "13:00",
       "end": "14:00",
       "artistIds": [
-        "fCA1ROvb"
+        "WtG9MCW7"
       ]
     },
     {
-      "id": "z_R638xT",
+      "id": "Sogxr5AO",
       "eventId": "hellodancefest-2026",
       "title": "Bachata Infinity",
       "instructors": [
@@ -2000,7 +2248,7 @@
       ]
     },
     {
-      "id": "m2eQTumu",
+      "id": "Byu2T18x",
       "eventId": "hellodancefest-2026",
       "title": "Extreme Bachata",
       "instructors": [
@@ -2013,11 +2261,11 @@
       "start": "14:00",
       "end": "15:00",
       "artistIds": [
-        "YKDtcfic"
+        "e5NMbeVw"
       ]
     },
     {
-      "id": "7iM6el1p",
+      "id": "glijI885",
       "eventId": "hellodancefest-2026",
       "title": "Saturday Muscality",
       "instructors": [
@@ -2030,11 +2278,11 @@
       "start": "14:00",
       "end": "15:00",
       "artistIds": [
-        "ijw1OPvQ"
+        "iQSHrhVO"
       ]
     },
     {
-      "id": "3j5KfMHD",
+      "id": "r0QMK3gU",
       "eventId": "hellodancefest-2026",
       "title": "Empire Style Partnerwork",
       "instructors": [
@@ -2046,27 +2294,29 @@
       "day": "2026-07-25",
       "start": "14:00",
       "end": "15:00",
-      "artistIds": []
+      "artistIds": [
+        "RKNx0LiS"
+      ]
     },
     {
-      "id": "i2UBmOus",
+      "id": "gZDzmhs1",
       "eventId": "hellodancefest-2026",
-      "title": "Intro to Counterbalance",
+      "title": "Body Movement On2",
       "instructors": [
-        "Alain & Elijah"
+        "Yolieth Barragan"
       ],
-      "style": "zouk",
-      "level": "Open Level",
-      "room": "Sandpebble A-C",
+      "style": "salsa",
+      "level": "Intermedia-Advance",
+      "room": "Peninsula C",
       "day": "2026-07-25",
       "start": "14:00",
       "end": "15:00",
       "artistIds": [
-        "Tru3Fhw7"
+        "NKtdZ7lW"
       ]
     },
     {
-      "id": "rATAyfpZ",
+      "id": "YFxZKiIx",
       "eventId": "hellodancefest-2026",
       "title": "Gostosinho 3 Variations",
       "instructors": [
@@ -2074,7 +2324,7 @@
       ],
       "style": "zouk",
       "level": "Intermediate-Advance",
-      "room": "Sandpebble D-E",
+      "room": "Sandpebble A-C",
       "day": "2026-07-25",
       "start": "14:00",
       "end": "15:00",
@@ -2083,7 +2333,24 @@
       ]
     },
     {
-      "id": "ug1x3f5L",
+      "id": "oFS3PMJO",
+      "eventId": "hellodancefest-2026",
+      "title": "Intro to Counterbalance",
+      "instructors": [
+        "Alain & Elijah"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-25",
+      "start": "14:00",
+      "end": "15:00",
+      "artistIds": [
+        "Tru3Fhw7"
+      ]
+    },
+    {
+      "id": "nhertxQG",
       "eventId": "hellodancefest-2026",
       "title": "Sensual Bachata Connection",
       "instructors": [
@@ -2100,7 +2367,7 @@
       ]
     },
     {
-      "id": "00uf5K6h",
+      "id": "k0nsuTK7",
       "eventId": "hellodancefest-2026",
       "title": "Dominican - Shines/Footwork",
       "instructors": [
@@ -2112,10 +2379,12 @@
       "day": "2026-07-25",
       "start": "15:00",
       "end": "16:00",
-      "artistIds": []
+      "artistIds": [
+        "vtOyO8cp"
+      ]
     },
     {
-      "id": "IjjWZynU",
+      "id": "8gwop2fX",
       "eventId": "hellodancefest-2026",
       "title": "Musicality vs. Flow",
       "instructors": [
@@ -2128,11 +2397,11 @@
       "start": "15:00",
       "end": "16:00",
       "artistIds": [
-        "nE46V29W"
+        "J5C57KSt"
       ]
     },
     {
-      "id": "rJmXIwLo",
+      "id": "CdLJ3P6z",
       "eventId": "hellodancefest-2026",
       "title": "On2 Partnerwork",
       "instructors": [
@@ -2149,24 +2418,24 @@
       ]
     },
     {
-      "id": "H4bwfZFO",
+      "id": "6wEhd5y9",
       "eventId": "hellodancefest-2026",
-      "title": "Body Waves to Head Motion Flo.",
+      "title": "Salsa On2: Body Movement",
       "instructors": [
-        "Nelly Caldeira"
+        "Antonio Rodrigos"
       ],
-      "style": "zouk",
+      "style": "salsa",
       "level": "Open Level",
-      "room": "Sandpebble A-C",
+      "room": "Peninsula C",
       "day": "2026-07-25",
       "start": "15:00",
       "end": "16:00",
       "artistIds": [
-        "LwFVI_Xu"
+        "922JF6pj"
       ]
     },
     {
-      "id": "86GFoCoL",
+      "id": "OJi3QAYc",
       "eventId": "hellodancefest-2026",
       "title": "Organic Trans. & Movemnt Cont.",
       "instructors": [
@@ -2174,7 +2443,7 @@
       ],
       "style": "zouk",
       "level": "Intermediate-Advance",
-      "room": "Sandpebble D-E",
+      "room": "Sandpebble A-C",
       "day": "2026-07-25",
       "start": "15:00",
       "end": "16:00",
@@ -2183,7 +2452,24 @@
       ]
     },
     {
-      "id": "bxTH89E8",
+      "id": "LzwjilCA",
+      "eventId": "hellodancefest-2026",
+      "title": "Body Waves to Head Motion Flo.",
+      "instructors": [
+        "Nelly Caldeira"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-25",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": [
+        "LwFVI_Xu"
+      ]
+    },
+    {
+      "id": "OCAvFNVu",
       "eventId": "hellodancefest-2026",
       "title": "Traditional Footwork and Pterwork",
       "instructors": [
@@ -2196,11 +2482,11 @@
       "start": "16:00",
       "end": "17:00",
       "artistIds": [
-        "5Y-O-qtH"
+        "EodZCNJF"
       ]
     },
     {
-      "id": "y8-wX9c5",
+      "id": "JdJEtzx1",
       "eventId": "hellodancefest-2026",
       "title": "Sensual Bachata",
       "instructors": [
@@ -2213,11 +2499,11 @@
       "start": "16:00",
       "end": "17:00",
       "artistIds": [
-        "6HEXZPgi"
+        "aGynQ4zB"
       ]
     },
     {
-      "id": "z2qg1Loo",
+      "id": "1iUgyxvq",
       "eventId": "hellodancefest-2026",
       "title": "Tarraxo Vibes",
       "instructors": [
@@ -2230,15 +2516,15 @@
       "start": "16:00",
       "end": "17:00",
       "artistIds": [
-        "_px5KtE9"
+        "7EZ8Hkrf"
       ]
     },
     {
-      "id": "DZdG-KHf",
+      "id": "JvzvUr8i",
       "eventId": "hellodancefest-2026",
-      "title": "On2 Partnerwork",
+      "title": "Salsa Fusion Only",
       "instructors": [
-        "Cristian & Yolieth"
+        "Cristian Vergari"
       ],
       "style": "salsa",
       "level": "Intermediate-Advance",
@@ -2247,11 +2533,11 @@
       "start": "16:00",
       "end": "17:00",
       "artistIds": [
-        "8GbYSPkn"
+        "1THjFRbf"
       ]
     },
     {
-      "id": "w2w38cgD",
+      "id": "YM7ihBdE",
       "eventId": "hellodancefest-2026",
       "title": "Mambo Fusion",
       "instructors": [
@@ -2263,27 +2549,12 @@
       "day": "2026-07-25",
       "start": "16:00",
       "end": "17:00",
-      "artistIds": []
-    },
-    {
-      "id": "FQlYe69c",
-      "eventId": "hellodancefest-2026",
-      "title": "Mastering the Dragon State",
-      "instructors": [
-        "Bruna K. & Leandro"
-      ],
-      "style": "zouk",
-      "level": "Advance",
-      "room": "Sandpebble A-C",
-      "day": "2026-07-25",
-      "start": "16:00",
-      "end": "17:00",
       "artistIds": [
-        "pLNUA7PU"
+        "2zYojTyq"
       ]
     },
     {
-      "id": "-As-y99E",
+      "id": "oPiLd1gN",
       "eventId": "hellodancefest-2026",
       "title": "Raising Momentum",
       "instructors": [
@@ -2291,16 +2562,33 @@
       ],
       "style": "zouk",
       "level": "Advamce",
+      "room": "Sandpebble A-C",
+      "day": "2026-07-25",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "6xSZXkm3"
+      ]
+    },
+    {
+      "id": "KZgdYQv0",
+      "eventId": "hellodancefest-2026",
+      "title": "Mastering the Dragon State",
+      "instructors": [
+        "Bruna K. & Leandro"
+      ],
+      "style": "zouk",
+      "level": "Advance",
       "room": "Sandpebble D-E",
       "day": "2026-07-25",
       "start": "16:00",
       "end": "17:00",
       "artistIds": [
-        "yBlcMeVR"
+        "zJmE6JRs"
       ]
     },
     {
-      "id": "BChPrPoK",
+      "id": "o0lGNIXf",
       "eventId": "hellodancefest-2026",
       "title": "Bachata Elegancia: 3 Styles on 1",
       "instructors": [
@@ -2317,9 +2605,9 @@
       ]
     },
     {
-      "id": "xfnsmojp",
+      "id": "7VheXx6L",
       "eventId": "hellodancefest-2026",
-      "title": "Urban Fusion: The Art of,",
+      "title": "Fusion Bachata Movement",
       "instructors": [
         "Julian Zhu"
       ],
@@ -2329,10 +2617,12 @@
       "day": "2026-07-25",
       "start": "17:00",
       "end": "18:00",
-      "artistIds": []
+      "artistIds": [
+        "6duD210q"
+      ]
     },
     {
-      "id": "McI3eo4V",
+      "id": "He6dlzdq",
       "eventId": "hellodancefest-2026",
       "title": "Body Movement Foundation",
       "instructors": [
@@ -2344,10 +2634,12 @@
       "day": "2026-07-25",
       "start": "17:00",
       "end": "18:00",
-      "artistIds": []
+      "artistIds": [
+        "ck20iaMr"
+      ]
     },
     {
-      "id": "IKiAVFoO",
+      "id": "6yNNbSTa",
       "eventId": "hellodancefest-2026",
       "title": "On2 Footwork & Partnerwork",
       "instructors": [
@@ -2360,26 +2652,11 @@
       "start": "17:00",
       "end": "18:00",
       "artistIds": [
-        "TUvoHUbg"
+        "KyQRmtK1"
       ]
     },
     {
-      "id": "xAi9yrWG",
-      "eventId": "hellodancefest-2026",
-      "title": "Bonus Viarations",
-      "instructors": [
-        "Kakah & Guest"
-      ],
-      "style": "zouk",
-      "level": "Open Level",
-      "room": "Sandpebble A-C",
-      "day": "2026-07-25",
-      "start": "17:00",
-      "end": "18:00",
-      "artistIds": []
-    },
-    {
-      "id": "2UrtDcHi",
+      "id": "CIRxmkQC",
       "eventId": "hellodancefest-2026",
       "title": "The CODE: M&M Signature",
       "instructors": [
@@ -2387,7 +2664,7 @@
       ],
       "style": "zouk",
       "level": "Intermediate-Advance",
-      "room": "Sandpebble D-E",
+      "room": "Sandpebble A-C",
       "day": "2026-07-25",
       "start": "17:00",
       "end": "18:00",
@@ -2396,7 +2673,24 @@
       ]
     },
     {
-      "id": "Y0nh3mDq",
+      "id": "NYYNCvWY",
+      "eventId": "hellodancefest-2026",
+      "title": "Bonus Viarations",
+      "instructors": [
+        "Kakah & Guest"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-25",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": [
+        "pcQ30lHj"
+      ]
+    },
+    {
+      "id": "yVd0nymF",
       "eventId": "hellodancefest-2026",
       "title": "BTO Style Footwork",
       "instructors": [
@@ -2413,7 +2707,7 @@
       ]
     },
     {
-      "id": "PEvujhCm",
+      "id": "KoR3mNFb",
       "eventId": "hellodancefest-2026",
       "title": "Sarrada Variation",
       "instructors": [
@@ -2430,24 +2724,24 @@
       ]
     },
     {
-      "id": "pnoZTPdU",
+      "id": "TG8a8693",
       "eventId": "hellodancefest-2026",
-      "title": "Head Movement Technique",
+      "title": "Bachata Fusion with Zouk",
       "instructors": [
-        "Jovanny & Anatasia"
+        "Melonito"
       ],
       "style": "bachata",
-      "level": "Intermedia-Advance",
+      "level": "Intermediate-Advance Level",
       "room": "Peninsula D-G",
       "day": "2026-07-26",
       "start": "11:00",
       "end": "12:00",
       "artistIds": [
-        "cFY6xM-Q"
+        "87x9TxyH"
       ]
     },
     {
-      "id": "Getol-Vk",
+      "id": "Ni5wrBeF",
       "eventId": "hellodancefest-2026",
       "title": "Sensual Movement - Social Ptrwork",
       "instructors": [
@@ -2464,7 +2758,7 @@
       ]
     },
     {
-      "id": "Cs1Y7A18",
+      "id": "14FKX6Mk",
       "eventId": "hellodancefest-2026",
       "title": "Bachata Soft Connection",
       "instructors": [
@@ -2481,7 +2775,7 @@
       ]
     },
     {
-      "id": "woUa6vOe",
+      "id": "g2msrLnF",
       "eventId": "hellodancefest-2026",
       "title": "Euro-Style Bachata Flow",
       "instructors": [
@@ -2494,28 +2788,28 @@
       "start": "12:00",
       "end": "13:00",
       "artistIds": [
-        "FNFuOQ3j"
+        "fBBgK6Di"
       ]
     },
     {
-      "id": "eG69PQVy",
+      "id": "ZmZue88g",
       "eventId": "hellodancefest-2026",
-      "title": "Salsa On2 Styling & Technique",
+      "title": "Lady Styling",
       "instructors": [
-        "Hector & Annaliza"
+        "Yolieth Barragan"
       ],
       "style": "salsa",
-      "level": "Open Level",
+      "level": "Intermedia-Advance",
       "room": "Regency",
       "day": "2026-07-26",
       "start": "12:00",
       "end": "13:00",
       "artistIds": [
-        "iM9BfSD7"
+        "NKtdZ7lW"
       ]
     },
     {
-      "id": "hOcd7hCn",
+      "id": "tSVty1ZW",
       "eventId": "hellodancefest-2026",
       "title": "Bachata Elegancia",
       "instructors": [
@@ -2532,7 +2826,7 @@
       ]
     },
     {
-      "id": "jsMCAf3j",
+      "id": "PeT8JoK2",
       "eventId": "hellodancefest-2026",
       "title": "Aloha Musicality Lab",
       "instructors": [
@@ -2544,12 +2838,14 @@
       "day": "2026-07-26",
       "start": "13:00",
       "end": "14:00",
-      "artistIds": []
+      "artistIds": [
+        "2FdP6UdC"
+      ]
     },
     {
-      "id": "FbQrDUd7",
+      "id": "rE368ubK",
       "eventId": "hellodancefest-2026",
-      "title": "On2 Footwork",
+      "title": "Fadi's Fusion: Mambo Fusion",
       "instructors": [
         "Fadi Fusion"
       ],
@@ -2564,39 +2860,24 @@
       ]
     },
     {
-      "id": "vmXWXueI",
+      "id": "F3ipn8Ki",
       "eventId": "hellodancefest-2026",
-      "title": "Lady Styling",
+      "title": "Salsa On2 Styling & Technique",
       "instructors": [
-        "Yolieth Barragan"
+        "Hector & Annaliza"
       ],
       "style": "salsa",
-      "level": "Intermedia-Advance",
+      "level": "Open Level",
       "room": "Peninsula C",
       "day": "2026-07-26",
       "start": "13:00",
       "end": "14:00",
-      "artistIds": []
-    },
-    {
-      "id": "pYa-wWmG",
-      "eventId": "hellodancefest-2026",
-      "title": "Lat. & Viradninha and Simp.Turn",
-      "instructors": [
-        "Alexia & Zohra"
-      ],
-      "style": "zouk",
-      "level": "Open Level",
-      "room": "Sandpebble A-C",
-      "day": "2026-07-26",
-      "start": "13:00",
-      "end": "14:00",
       "artistIds": [
-        "Jw-0Izu6"
+        "moZxB7YM"
       ]
     },
     {
-      "id": "4DaQBvit",
+      "id": "5MDeGiEu",
       "eventId": "hellodancefest-2026",
       "title": "Balanco Variations w/ Head Mov",
       "instructors": [
@@ -2604,7 +2885,7 @@
       ],
       "style": "zouk",
       "level": "Open-Beginner-Intermediate",
-      "room": "Sandpebble D-E",
+      "room": "Sandpebble A-C",
       "day": "2026-07-26",
       "start": "13:00",
       "end": "14:00",
@@ -2613,7 +2894,24 @@
       ]
     },
     {
-      "id": "kjfR89IA",
+      "id": "M4mvlAMq",
+      "eventId": "hellodancefest-2026",
+      "title": "Lat. & Viradninha and Simp.Turn",
+      "instructors": [
+        "Alexia & Zohra"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-26",
+      "start": "13:00",
+      "end": "14:00",
+      "artistIds": [
+        "wS579XYh"
+      ]
+    },
+    {
+      "id": "kjgDGzF6",
       "eventId": "hellodancefest-2026",
       "title": "Bachata Social Tricks",
       "instructors": [
@@ -2626,11 +2924,11 @@
       "start": "14:00",
       "end": "15:00",
       "artistIds": [
-        "pHhrxLfu"
+        "MQIOr2FR"
       ]
     },
     {
-      "id": "1o5yKjyR",
+      "id": "4KiVFj6Z",
       "eventId": "hellodancefest-2026",
       "title": "Bachata Heels",
       "instructors": [
@@ -2643,11 +2941,11 @@
       "start": "14:00",
       "end": "15:00",
       "artistIds": [
-        "i6-EI_9c"
+        "A8OxJwl2"
       ]
     },
     {
-      "id": "DIkE5gTZ",
+      "id": "0dgykfGz",
       "eventId": "hellodancefest-2026",
       "title": "Kizomba Combos",
       "instructors": [
@@ -2664,7 +2962,7 @@
       ]
     },
     {
-      "id": "qWHgwUfj",
+      "id": "SdY0cElR",
       "eventId": "hellodancefest-2026",
       "title": "Chiara's Fusion",
       "instructors": [
@@ -2676,10 +2974,29 @@
       "day": "2026-07-26",
       "start": "14:00",
       "end": "15:00",
-      "artistIds": []
+      "artistIds": [
+        "ck20iaMr"
+      ]
     },
     {
-      "id": "ROX6pjuw",
+      "id": "pwioOIED",
+      "eventId": "hellodancefest-2026",
+      "title": "Techniques: Upper Body Flow",
+      "instructors": [
+        "Evelyn Lopez"
+      ],
+      "style": "zouk",
+      "level": "Followers: Intermediate-Advance",
+      "room": "Sandpebble A-C",
+      "day": "2026-07-26",
+      "start": "14:00",
+      "end": "15:00",
+      "artistIds": [
+        "uHJ1RDtV"
+      ]
+    },
+    {
+      "id": "mLwhqpFy",
       "eventId": "hellodancefest-2026",
       "title": "Lambada Intro and Intensive",
       "instructors": [
@@ -2687,7 +3004,7 @@
       ],
       "style": "zouk",
       "level": "Open Level",
-      "room": "Sandpebble A-C",
+      "room": "Sandpebble D-E",
       "day": "2026-07-26",
       "start": "14:00",
       "end": "15:00",
@@ -2696,24 +3013,7 @@
       ]
     },
     {
-      "id": "Ili-Zyxc",
-      "eventId": "hellodancefest-2026",
-      "title": "Techniques: Upper Body Flow",
-      "instructors": [
-        "Evelyn Lopez"
-      ],
-      "style": "zouk",
-      "level": "Followers: Intermediate-Advance",
-      "room": "Sandpebble D-E",
-      "day": "2026-07-26",
-      "start": "14:00",
-      "end": "15:00",
-      "artistIds": [
-        "fCA1ROvb"
-      ]
-    },
-    {
-      "id": "1J5vmwqd",
+      "id": "yGLOaagE",
       "eventId": "hellodancefest-2026",
       "title": "Bachata Fuze - Body Movement",
       "instructors": [
@@ -2730,7 +3030,7 @@
       ]
     },
     {
-      "id": "v4sBZZse",
+      "id": "QhOPwdJb",
       "eventId": "hellodancefest-2026",
       "title": "Bachata Fusion Partnerwork",
       "instructors": [
@@ -2742,10 +3042,12 @@
       "day": "2026-07-26",
       "start": "15:00",
       "end": "16:00",
-      "artistIds": []
+      "artistIds": [
+        "sxSaq6vv"
+      ]
     },
     {
-      "id": "4DIZAR7_",
+      "id": "heyQz1dC",
       "eventId": "hellodancefest-2026",
       "title": "Urban Kiz Connection",
       "instructors": [
@@ -2758,11 +3060,11 @@
       "start": "15:00",
       "end": "16:00",
       "artistIds": [
-        "ijw1OPvQ"
+        "iQSHrhVO"
       ]
     },
     {
-      "id": "mQjReU46",
+      "id": "QHbkctFn",
       "eventId": "hellodancefest-2026",
       "title": "Empire Mambo's Style",
       "instructors": [
@@ -2774,10 +3076,12 @@
       "day": "2026-07-26",
       "start": "15:00",
       "end": "16:00",
-      "artistIds": []
+      "artistIds": [
+        "YQ8R9Y1r"
+      ]
     },
     {
-      "id": "DZYA1usk",
+      "id": "6N5aitV3",
       "eventId": "hellodancefest-2026",
       "title": "Freedom of Expression",
       "instructors": [
@@ -2789,25 +3093,12 @@
       "day": "2026-07-26",
       "start": "15:00",
       "end": "16:00",
-      "artistIds": []
+      "artistIds": [
+        "X5aVMWT7"
+      ]
     },
     {
-      "id": "UPN9KEBr",
-      "eventId": "hellodancefest-2026",
-      "title": "Rhythm/Flow/Swag (Musicality)",
-      "instructors": [
-        "Kakah"
-      ],
-      "style": "zouk",
-      "level": "Open Level",
-      "room": "Sandpebble A-C",
-      "day": "2026-07-26",
-      "start": "15:00",
-      "end": "16:00",
-      "artistIds": []
-    },
-    {
-      "id": "QC0mhI6_",
+      "id": "ZY2aEvdb",
       "eventId": "hellodancefest-2026",
       "title": "Signature Move",
       "instructors": [
@@ -2815,16 +3106,33 @@
       ],
       "style": "zouk",
       "level": "Advance",
+      "room": "Sandpebble A-C",
+      "day": "2026-07-26",
+      "start": "15:00",
+      "end": "16:00",
+      "artistIds": [
+        "6xSZXkm3"
+      ]
+    },
+    {
+      "id": "3cyhUlzq",
+      "eventId": "hellodancefest-2026",
+      "title": "Rhythm/Flow/Swag (Musicality)",
+      "instructors": [
+        "Kakah"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
       "room": "Sandpebble D-E",
       "day": "2026-07-26",
       "start": "15:00",
       "end": "16:00",
       "artistIds": [
-        "yBlcMeVR"
+        "Em2PrVbM"
       ]
     },
     {
-      "id": "cTjEtTgW",
+      "id": "I8k3AJ7o",
       "eventId": "hellodancefest-2026",
       "title": "Sensual - Social Ptrwork",
       "instructors": [
@@ -2841,7 +3149,7 @@
       ]
     },
     {
-      "id": "JFLa7l3X",
+      "id": "SNmsxYgw",
       "eventId": "hellodancefest-2026",
       "title": "Lead & Follow with Your Hips",
       "instructors": [
@@ -2858,7 +3166,7 @@
       ]
     },
     {
-      "id": "qWFExVzX",
+      "id": "qFgfjeuo",
       "eventId": "hellodancefest-2026",
       "title": "Micro Tarraxo",
       "instructors": [
@@ -2871,11 +3179,11 @@
       "start": "16:00",
       "end": "17:00",
       "artistIds": [
-        "_px5KtE9"
+        "7EZ8Hkrf"
       ]
     },
     {
-      "id": "wjhxj9vP",
+      "id": "M4PYH0q2",
       "eventId": "hellodancefest-2026",
       "title": "Lady Styling",
       "instructors": [
@@ -2888,28 +3196,11 @@
       "start": "16:00",
       "end": "17:00",
       "artistIds": [
-        "3YO6oDp3"
+        "Gm5MzbuH"
       ]
     },
     {
-      "id": "4xfGHw9P",
-      "eventId": "hellodancefest-2026",
-      "title": "Embody the Warrior: Choreo Ch.",
-      "instructors": [
-        "Bruna Kazakevic"
-      ],
-      "style": "zouk",
-      "level": "Advance",
-      "room": "Sandpebble A-C",
-      "day": "2026-07-26",
-      "start": "16:00",
-      "end": "17:00",
-      "artistIds": [
-        "pLNUA7PU"
-      ]
-    },
-    {
-      "id": "BkVScPtM",
+      "id": "kgNbb5MR",
       "eventId": "hellodancefest-2026",
       "title": "Cuts & Chicotes",
       "instructors": [
@@ -2917,7 +3208,7 @@
       ],
       "style": "zouk",
       "level": "Intermediate-Advance",
-      "room": "Sandpebble D-E",
+      "room": "Sandpebble A-C",
       "day": "2026-07-26",
       "start": "16:00",
       "end": "17:00",
@@ -2926,7 +3217,24 @@
       ]
     },
     {
-      "id": "1LbOvmV4",
+      "id": "OzOHCwDM",
+      "eventId": "hellodancefest-2026",
+      "title": "Embody the Warrior: Choreo Ch.",
+      "instructors": [
+        "Bruna Kazakevic"
+      ],
+      "style": "zouk",
+      "level": "Advance",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-26",
+      "start": "16:00",
+      "end": "17:00",
+      "artistIds": [
+        "pLNUA7PU"
+      ]
+    },
+    {
+      "id": "Qi3ZJH3V",
       "eventId": "hellodancefest-2026",
       "title": "Playfulness is Fun",
       "instructors": [
@@ -2938,10 +3246,12 @@
       "day": "2026-07-26",
       "start": "17:00",
       "end": "18:00",
-      "artistIds": []
+      "artistIds": [
+        "GFwlpRvA"
+      ]
     },
     {
-      "id": "uqdUD_WO",
+      "id": "GkJF8cUh",
       "eventId": "hellodancefest-2026",
       "title": "Salsa Fusion Shine",
       "instructors": [
@@ -2958,24 +3268,7 @@
       ]
     },
     {
-      "id": "bo-xpVoL",
-      "eventId": "hellodancefest-2026",
-      "title": "Yoyo & Elastico Variations",
-      "instructors": [
-        "Ashe Jordan"
-      ],
-      "style": "zouk",
-      "level": "Open Level",
-      "room": "Sandpebble A-C",
-      "day": "2026-07-26",
-      "start": "17:00",
-      "end": "18:00",
-      "artistIds": [
-        "31NU0cp9"
-      ]
-    },
-    {
-      "id": "8WBPsl4g",
+      "id": "nneYy0V2",
       "eventId": "hellodancefest-2026",
       "title": "Head Move.: Rotisserie X Tilted",
       "instructors": [
@@ -2983,7 +3276,7 @@
       ],
       "style": "zouk",
       "level": "Intermediate-Advance",
-      "room": "Sandpebble D-E",
+      "room": "Sandpebble A-C",
       "day": "2026-07-26",
       "start": "17:00",
       "end": "18:00",
@@ -2992,7 +3285,24 @@
       ]
     },
     {
-      "id": "koEqEVQo",
+      "id": "LsF4KbxW",
+      "eventId": "hellodancefest-2026",
+      "title": "Yoyo & Elastico Variations",
+      "instructors": [
+        "Ashe Jordan"
+      ],
+      "style": "zouk",
+      "level": "Open Level",
+      "room": "Sandpebble D-E",
+      "day": "2026-07-26",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": [
+        "31NU0cp9"
+      ]
+    },
+    {
+      "id": "F1UPywPr",
       "eventId": "hellodancefest-2026",
       "title": "Practical Combinations",
       "instructors": [
@@ -3005,11 +3315,11 @@
       "start": "18:00",
       "end": "19:00",
       "artistIds": [
-        "nE46V29W"
+        "J5C57KSt"
       ]
     },
     {
-      "id": "mlHrtk5S",
+      "id": "3xg9WDPR",
       "eventId": "hellodancefest-2026",
       "title": "Traveling Head Movements",
       "instructors": [
@@ -3026,6 +3336,8 @@
       ]
     },
     {
+      "id": "Ha7E6biB",
+      "eventId": "hellodancefest-2026",
       "title": "Performance Showcase",
       "instructors": [],
       "style": "other",
@@ -3033,11 +3345,11 @@
       "day": "2026-07-24",
       "start": "21:00",
       "end": "23:00",
-      "type": "performance",
-      "id": "ZPCwwU7z",
-      "eventId": "hellodancefest-2026"
+      "type": "performance"
     },
     {
+      "id": "CWkoLGiz",
+      "eventId": "hellodancefest-2026",
       "title": "Battle Royale",
       "instructors": [],
       "style": "bachata",
@@ -3046,11 +3358,11 @@
       "day": "2026-07-25",
       "start": "18:30",
       "end": "19:30",
-      "type": "competition",
-      "id": "T9NafNHW",
-      "eventId": "hellodancefest-2026"
+      "type": "competition"
     },
     {
+      "id": "OmeVZqyd",
+      "eventId": "hellodancefest-2026",
       "title": "Daytime Dancing",
       "instructors": [
         "DJ OLU",
@@ -3063,10 +3375,14 @@
       "start": "17:00",
       "end": "20:00",
       "type": "social",
-      "id": "U-_Wsujv",
-      "eventId": "hellodancefest-2026"
+      "artistIds": [
+        "cSfc8ilm",
+        "ijw1OPvQ"
+      ]
     },
     {
+      "id": "AtoFMlcV",
+      "eventId": "hellodancefest-2026",
       "title": "Practica & Dancing",
       "instructors": [
         "DJ TBA"
@@ -3077,10 +3393,13 @@
       "start": "19:00",
       "end": "20:00",
       "type": "social",
-      "id": "4L6TLt62",
-      "eventId": "hellodancefest-2026"
+      "artistIds": [
+        "p7UF61sR"
+      ]
     },
     {
+      "id": "RFu2L6JP",
+      "eventId": "hellodancefest-2026",
       "title": "JnJ Competition",
       "instructors": [],
       "style": "zouk",
@@ -3089,11 +3408,11 @@
       "day": "2026-07-25",
       "start": "20:00",
       "end": "21:00",
-      "type": "competition",
-      "id": "plx026LK",
-      "eventId": "hellodancefest-2026"
+      "type": "competition"
     },
     {
+      "id": "M1bq4Fk2",
+      "eventId": "hellodancefest-2026",
       "title": "Performance Showcase",
       "instructors": [],
       "style": "other",
@@ -3101,11 +3420,11 @@
       "day": "2026-07-25",
       "start": "21:00",
       "end": "23:00",
-      "type": "performance",
-      "id": "sW5xCr_3",
-      "eventId": "hellodancefest-2026"
+      "type": "performance"
     },
     {
+      "id": "u5qzt9Gb",
+      "eventId": "hellodancefest-2026",
       "title": "Daytime Dancing",
       "instructors": [
         "DJ WHOMAN",
@@ -3122,10 +3441,14 @@
       "start": "17:00",
       "end": "20:00",
       "type": "social",
-      "id": "h79lI6Gw",
-      "eventId": "hellodancefest-2026"
+      "artistIds": [
+        "JvCmaZaO",
+        "rdptR3gl"
+      ]
     },
     {
+      "id": "mH5BVeOR",
+      "eventId": "hellodancefest-2026",
       "title": "Practica & Day Dancing",
       "instructors": [
         "DJ TBA"
@@ -3136,10 +3459,13 @@
       "start": "19:00",
       "end": "20:00",
       "type": "social",
-      "id": "Aez30bcA",
-      "eventId": "hellodancefest-2026"
+      "artistIds": [
+        "p7UF61sR"
+      ]
     },
     {
+      "id": "iUat22JP",
+      "eventId": "hellodancefest-2026",
       "title": "JnJ Competition",
       "instructors": [],
       "style": "zouk",
@@ -3148,11 +3474,11 @@
       "day": "2026-07-26",
       "start": "20:00",
       "end": "21:00",
-      "type": "competition",
-      "id": "RU2Suzxz",
-      "eventId": "hellodancefest-2026"
+      "type": "competition"
     },
     {
+      "id": "skTwjLEI",
+      "eventId": "hellodancefest-2026",
       "title": "Performance Showcase",
       "instructors": [],
       "style": "other",
@@ -3160,12 +3486,10 @@
       "day": "2026-07-26",
       "start": "21:00",
       "end": "23:00",
-      "type": "performance",
-      "id": "2ii4yFzE",
-      "eventId": "hellodancefest-2026"
+      "type": "performance"
     },
     {
-      "id": "ENsLJsN-",
+      "id": "UmHg11S4",
       "eventId": "hellodancefest-2026",
       "title": "MKiZ",
       "instructors": [
@@ -3175,14 +3499,14 @@
       "room": "Harbour",
       "day": "2026-07-24",
       "start": "23:00",
-      "end": "25:00",
+      "end": "01:00",
       "type": "party",
       "artistIds": [
         "urgcxdhZ"
       ]
     },
     {
-      "id": "QgrtXJWG",
+      "id": "q0KwEd3L",
       "eventId": "hellodancefest-2026",
       "title": "SINK",
       "instructors": [
@@ -3191,15 +3515,15 @@
       "style": "kizomba",
       "room": "Harbour",
       "day": "2026-07-24",
-      "start": "25:00",
-      "end": "27:00",
+      "start": "01:00",
+      "end": "03:00",
       "type": "party",
       "artistIds": [
         "R_mhiHgs"
       ]
     },
     {
-      "id": "FS_voyiB",
+      "id": "m44lvHki",
       "eventId": "hellodancefest-2026",
       "title": "OLU",
       "instructors": [
@@ -3208,32 +3532,32 @@
       "style": "kizomba",
       "room": "Harbour",
       "day": "2026-07-24",
-      "start": "27:00",
-      "end": "29:00",
+      "start": "03:00",
+      "end": "04:00",
       "type": "party",
       "artistIds": [
         "cSfc8ilm"
       ]
     },
     {
-      "id": "0vI79tVA",
+      "id": "Ri2uNdYw",
       "eventId": "hellodancefest-2026",
-      "title": "FAB",
+      "title": "JI",
       "instructors": [
-        "FAB"
+        "JI"
       ],
       "style": "zouk",
       "room": "Regency",
       "day": "2026-07-24",
       "start": "23:00",
-      "end": "24:00",
+      "end": "00:00",
       "type": "party",
       "artistIds": [
-        "yhAJB1DG"
+        "e6gBcYXP"
       ]
     },
     {
-      "id": "aok6XL4B",
+      "id": "JrZ3VGQw",
       "eventId": "hellodancefest-2026",
       "title": "TZOUL",
       "instructors": [
@@ -3242,15 +3566,15 @@
       "style": "zouk",
       "room": "Regency",
       "day": "2026-07-24",
-      "start": "24:00",
-      "end": "25:00",
+      "start": "00:00",
+      "end": "01:00",
       "type": "party",
       "artistIds": [
         "Gk-SvxTG"
       ]
     },
     {
-      "id": "ZyDKc0Uf",
+      "id": "PEBtM0jU",
       "eventId": "hellodancefest-2026",
       "title": "FAB",
       "instructors": [
@@ -3259,15 +3583,15 @@
       "style": "zouk",
       "room": "Regency",
       "day": "2026-07-24",
-      "start": "25:00",
-      "end": "26:00",
+      "start": "01:00",
+      "end": "02:00",
       "type": "party",
       "artistIds": [
         "yhAJB1DG"
       ]
     },
     {
-      "id": "JktkkAdF",
+      "id": "ZpkW5JkI",
       "eventId": "hellodancefest-2026",
       "title": "FAB",
       "instructors": [
@@ -3276,15 +3600,15 @@
       "style": "zouk",
       "room": "Regency",
       "day": "2026-07-24",
-      "start": "26:00",
-      "end": "27:00",
+      "start": "02:00",
+      "end": "03:00",
       "type": "party",
       "artistIds": [
         "yhAJB1DG"
       ]
     },
     {
-      "id": "RbM7H3Lg",
+      "id": "bhkTaVJh",
       "eventId": "hellodancefest-2026",
       "title": "KAKAH",
       "instructors": [
@@ -3293,15 +3617,15 @@
       "style": "zouk",
       "room": "Regency",
       "day": "2026-07-24",
-      "start": "27:00",
-      "end": "28:00",
+      "start": "03:00",
+      "end": "04:00",
       "type": "party",
       "artistIds": [
         "Em2PrVbM"
       ]
     },
     {
-      "id": "gD4-G9G5",
+      "id": "LumqixSg",
       "eventId": "hellodancefest-2026",
       "title": "MBRACE",
       "instructors": [
@@ -3310,15 +3634,15 @@
       "style": "zouk",
       "room": "Regency",
       "day": "2026-07-24",
-      "start": "28:00",
-      "end": "29:00",
+      "start": "04:00",
+      "end": "05:00",
       "type": "party",
       "artistIds": [
         "2on4gD83"
       ]
     },
     {
-      "id": "UBKzt6xv",
+      "id": "iGw9HSgZ",
       "eventId": "hellodancefest-2026",
       "title": "KRIS",
       "instructors": [
@@ -3327,15 +3651,15 @@
       "style": "bachata",
       "room": "Main Ballroom",
       "day": "2026-07-24",
-      "start": "24:00",
-      "end": "25:00",
+      "start": "00:00",
+      "end": "01:00",
       "type": "party",
       "artistIds": [
         "LZIuSMKx"
       ]
     },
     {
-      "id": "ohmBW6L8",
+      "id": "f5hclI9k",
       "eventId": "hellodancefest-2026",
       "title": "RELLEO",
       "instructors": [
@@ -3344,15 +3668,15 @@
       "style": "bachata",
       "room": "Main Ballroom",
       "day": "2026-07-24",
-      "start": "25:00",
-      "end": "26:00",
+      "start": "01:00",
+      "end": "02:00",
       "type": "party",
       "artistIds": [
         "qBUQE7Le"
       ]
     },
     {
-      "id": "sz2uWLdW",
+      "id": "AmybaTME",
       "eventId": "hellodancefest-2026",
       "title": "TREY-Z",
       "instructors": [
@@ -3361,15 +3685,15 @@
       "style": "bachata",
       "room": "Main Ballroom",
       "day": "2026-07-24",
-      "start": "26:00",
-      "end": "27:00",
+      "start": "02:00",
+      "end": "03:00",
       "type": "party",
       "artistIds": [
         "J_xro6Uj"
       ]
     },
     {
-      "id": "iu6ziM6c",
+      "id": "rHqF2Lp5",
       "eventId": "hellodancefest-2026",
       "title": "KRIS",
       "instructors": [
@@ -3378,15 +3702,15 @@
       "style": "bachata",
       "room": "Main Ballroom",
       "day": "2026-07-24",
-      "start": "27:00",
-      "end": "28:00",
+      "start": "03:00",
+      "end": "04:00",
       "type": "party",
       "artistIds": [
         "LZIuSMKx"
       ]
     },
     {
-      "id": "4TA7AVsa",
+      "id": "zWl3RuKr",
       "eventId": "hellodancefest-2026",
       "title": "MANGO",
       "instructors": [
@@ -3395,15 +3719,15 @@
       "style": "bachata",
       "room": "Main Ballroom",
       "day": "2026-07-24",
-      "start": "28:00",
-      "end": "29:00",
+      "start": "04:00",
+      "end": "05:00",
       "type": "party",
       "artistIds": [
         "FnYrcij_"
       ]
     },
     {
-      "id": "p6Ry4FxT",
+      "id": "cM6FIRoC",
       "eventId": "hellodancefest-2026",
       "title": "THIENCITO",
       "instructors": [
@@ -3412,15 +3736,15 @@
       "style": "bachata",
       "room": "Main Ballroom",
       "day": "2026-07-24",
-      "start": "29:00",
-      "end": "30:00",
+      "start": "05:00",
+      "end": "06:00",
       "type": "party",
       "artistIds": [
         "rIfHzO3I"
       ]
     },
     {
-      "id": "M3dxS8R1",
+      "id": "GxK5nFSD",
       "eventId": "hellodancefest-2026",
       "title": "FIFI",
       "instructors": [
@@ -3429,15 +3753,15 @@
       "style": "bachata",
       "room": "Main Ballroom",
       "day": "2026-07-24",
-      "start": "30:00",
-      "end": "31:00",
+      "start": "06:00",
+      "end": "07:00",
       "type": "party",
       "artistIds": [
         "ZPUfPQeJ"
       ]
     },
     {
-      "id": "hVeA3mMn",
+      "id": "tUIlEYN6",
       "eventId": "hellodancefest-2026",
       "title": "X",
       "instructors": [
@@ -3446,15 +3770,15 @@
       "style": "salsa",
       "room": "Peninsula A-B",
       "day": "2026-07-24",
-      "start": "24:00",
-      "end": "25:00",
+      "start": "00:00",
+      "end": "01:00",
       "type": "party",
       "artistIds": [
         "SxBLCuxf"
       ]
     },
     {
-      "id": "Hrk4Oys3",
+      "id": "Pz9bU1rP",
       "eventId": "hellodancefest-2026",
       "title": "ALEXIO",
       "instructors": [
@@ -3463,15 +3787,15 @@
       "style": "salsa",
       "room": "Peninsula A-B",
       "day": "2026-07-24",
-      "start": "25:00",
-      "end": "26:00",
+      "start": "01:00",
+      "end": "02:00",
       "type": "party",
       "artistIds": [
         "gQTSycWA"
       ]
     },
     {
-      "id": "x3gjz7VF",
+      "id": "srJ7ue9A",
       "eventId": "hellodancefest-2026",
       "title": "ALEXIO",
       "instructors": [
@@ -3480,15 +3804,15 @@
       "style": "salsa",
       "room": "Peninsula A-B",
       "day": "2026-07-24",
-      "start": "26:00",
-      "end": "27:00",
+      "start": "02:00",
+      "end": "03:00",
       "type": "party",
       "artistIds": [
         "gQTSycWA"
       ]
     },
     {
-      "id": "SVQjN9C6",
+      "id": "jRq1ZhXV",
       "eventId": "hellodancefest-2026",
       "title": "BORI",
       "instructors": [
@@ -3497,15 +3821,15 @@
       "style": "salsa",
       "room": "Peninsula A-B",
       "day": "2026-07-24",
-      "start": "27:00",
-      "end": "28:00",
+      "start": "03:00",
+      "end": "04:00",
       "type": "party",
       "artistIds": [
         "oG-W8bdW"
       ]
     },
     {
-      "id": "tSI308QZ",
+      "id": "RONr2LTh",
       "eventId": "hellodancefest-2026",
       "title": "MUNDO",
       "instructors": [
@@ -3514,15 +3838,15 @@
       "style": "salsa",
       "room": "Peninsula A-B",
       "day": "2026-07-24",
-      "start": "28:00",
-      "end": "29:00",
+      "start": "04:00",
+      "end": "05:00",
       "type": "party",
       "artistIds": [
         "CmliGsg7"
       ]
     },
     {
-      "id": "vDmw4s5H",
+      "id": "blZOxfFG",
       "eventId": "hellodancefest-2026",
       "title": "MKiZ",
       "instructors": [
@@ -3532,31 +3856,14 @@
       "room": "Harbour",
       "day": "2026-07-25",
       "start": "23:00",
-      "end": "25:30",
+      "end": "04:00",
       "type": "party",
       "artistIds": [
         "urgcxdhZ"
       ]
     },
     {
-      "id": "mso7YY8c",
-      "eventId": "hellodancefest-2026",
-      "title": "OLU",
-      "instructors": [
-        "OLU"
-      ],
-      "style": "kizomba",
-      "room": "Harbour",
-      "day": "2026-07-25",
-      "start": "25:30",
-      "end": "28:00",
-      "type": "party",
-      "artistIds": [
-        "cSfc8ilm"
-      ]
-    },
-    {
-      "id": "sl_dFKmn",
+      "id": "ip2xpP8u",
       "eventId": "hellodancefest-2026",
       "title": "SINK",
       "instructors": [
@@ -3565,15 +3872,15 @@
       "style": "kizomba",
       "room": "Harbour",
       "day": "2026-07-25",
-      "start": "28:00",
-      "end": "30:30",
+      "start": "04:00",
+      "end": "05:00",
       "type": "party",
       "artistIds": [
         "R_mhiHgs"
       ]
     },
     {
-      "id": "9SU5PMBh",
+      "id": "wIkkeaBh",
       "eventId": "hellodancefest-2026",
       "title": "X",
       "instructors": [
@@ -3583,14 +3890,14 @@
       "room": "Regency",
       "day": "2026-07-25",
       "start": "23:00",
-      "end": "24:00",
+      "end": "00:00",
       "type": "party",
       "artistIds": [
         "SxBLCuxf"
       ]
     },
     {
-      "id": "vRC0E0Nk",
+      "id": "0nvp9K0I",
       "eventId": "hellodancefest-2026",
       "title": "EDGE",
       "instructors": [
@@ -3599,32 +3906,15 @@
       "style": "salsa",
       "room": "Regency",
       "day": "2026-07-25",
-      "start": "24:00",
-      "end": "25:00",
+      "start": "00:00",
+      "end": "01:00",
       "type": "party",
       "artistIds": [
         "p2PoKFDm"
       ]
     },
     {
-      "id": "0RdJvG8Y",
-      "eventId": "hellodancefest-2026",
-      "title": "BORI",
-      "instructors": [
-        "BORI"
-      ],
-      "style": "salsa",
-      "room": "Regency",
-      "day": "2026-07-25",
-      "start": "25:00",
-      "end": "26:00",
-      "type": "party",
-      "artistIds": [
-        "oG-W8bdW"
-      ]
-    },
-    {
-      "id": "huYN_Yza",
+      "id": "cvB1VEND",
       "eventId": "hellodancefest-2026",
       "title": "BORIQUA",
       "instructors": [
@@ -3633,15 +3923,32 @@
       "style": "salsa",
       "room": "Regency",
       "day": "2026-07-25",
-      "start": "26:00",
-      "end": "27:00",
+      "start": "01:00",
+      "end": "02:00",
       "type": "party",
       "artistIds": [
         "Ux9wRwUc"
       ]
     },
     {
-      "id": "2r-aCVf5",
+      "id": "CnuiHnpm",
+      "eventId": "hellodancefest-2026",
+      "title": "BORI",
+      "instructors": [
+        "BORI"
+      ],
+      "style": "salsa",
+      "room": "Regency",
+      "day": "2026-07-25",
+      "start": "02:00",
+      "end": "03:00",
+      "type": "party",
+      "artistIds": [
+        "oG-W8bdW"
+      ]
+    },
+    {
+      "id": "QGNdb44M",
       "eventId": "hellodancefest-2026",
       "title": "ELDELACLAVESF",
       "instructors": [
@@ -3650,15 +3957,15 @@
       "style": "salsa",
       "room": "Regency",
       "day": "2026-07-25",
-      "start": "27:00",
-      "end": "28:00",
+      "start": "03:00",
+      "end": "04:00",
       "type": "party",
       "artistIds": [
         "gswkcBaK"
       ]
     },
     {
-      "id": "Ul0dm2rv",
+      "id": "Nv9wPQHj",
       "eventId": "hellodancefest-2026",
       "title": "ALEXIO",
       "instructors": [
@@ -3667,15 +3974,15 @@
       "style": "salsa",
       "room": "Regency",
       "day": "2026-07-25",
-      "start": "28:00",
-      "end": "29:00",
+      "start": "04:00",
+      "end": "05:00",
       "type": "party",
       "artistIds": [
         "gQTSycWA"
       ]
     },
     {
-      "id": "nDGjYULk",
+      "id": "xdszcABD",
       "eventId": "hellodancefest-2026",
       "title": "ALEXIO",
       "instructors": [
@@ -3684,32 +3991,32 @@
       "style": "salsa",
       "room": "Regency",
       "day": "2026-07-25",
-      "start": "29:00",
-      "end": "30:00",
+      "start": "05:00",
+      "end": "06:00",
       "type": "party",
       "artistIds": [
         "gQTSycWA"
       ]
     },
     {
-      "id": "qMcq0Qgl",
+      "id": "QVqniJ0W",
       "eventId": "hellodancefest-2026",
-      "title": "FAB",
+      "title": "JI",
       "instructors": [
-        "FAB"
+        "JI"
       ],
       "style": "zouk",
       "room": "Peninsula A-B",
       "day": "2026-07-25",
       "start": "23:00",
-      "end": "24:00",
+      "end": "00:00",
       "type": "party",
       "artistIds": [
-        "yhAJB1DG"
+        "e6gBcYXP"
       ]
     },
     {
-      "id": "BseMbwMh",
+      "id": "xYlrXPrf",
       "eventId": "hellodancefest-2026",
       "title": "TZOUL",
       "instructors": [
@@ -3718,15 +4025,15 @@
       "style": "zouk",
       "room": "Peninsula A-B",
       "day": "2026-07-25",
-      "start": "24:00",
-      "end": "25:00",
+      "start": "00:00",
+      "end": "01:00",
       "type": "party",
       "artistIds": [
         "Gk-SvxTG"
       ]
     },
     {
-      "id": "aOeHBD3g",
+      "id": "83H3Lp22",
       "eventId": "hellodancefest-2026",
       "title": "KAKAH",
       "instructors": [
@@ -3735,32 +4042,15 @@
       "style": "zouk",
       "room": "Peninsula A-B",
       "day": "2026-07-25",
-      "start": "25:00",
-      "end": "26:00",
+      "start": "01:00",
+      "end": "02:00",
       "type": "party",
       "artistIds": [
         "Em2PrVbM"
       ]
     },
     {
-      "id": "L4vxtE4U",
-      "eventId": "hellodancefest-2026",
-      "title": "FAB",
-      "instructors": [
-        "FAB"
-      ],
-      "style": "zouk",
-      "room": "Peninsula A-B",
-      "day": "2026-07-25",
-      "start": "26:00",
-      "end": "27:00",
-      "type": "party",
-      "artistIds": [
-        "yhAJB1DG"
-      ]
-    },
-    {
-      "id": "nq3fv66d",
+      "id": "rp6CEMMt",
       "eventId": "hellodancefest-2026",
       "title": "MBRACE",
       "instructors": [
@@ -3769,15 +4059,15 @@
       "style": "zouk",
       "room": "Peninsula A-B",
       "day": "2026-07-25",
-      "start": "27:00",
-      "end": "28:00",
+      "start": "02:00",
+      "end": "03:00",
       "type": "party",
       "artistIds": [
         "2on4gD83"
       ]
     },
     {
-      "id": "lr8sallT",
+      "id": "wkKPYEE7",
       "eventId": "hellodancefest-2026",
       "title": "FAB",
       "instructors": [
@@ -3786,15 +4076,32 @@
       "style": "zouk",
       "room": "Peninsula A-B",
       "day": "2026-07-25",
-      "start": "28:00",
-      "end": "29:00",
+      "start": "03:00",
+      "end": "04:00",
       "type": "party",
       "artistIds": [
         "yhAJB1DG"
       ]
     },
     {
-      "id": "Lg66YWuR",
+      "id": "An9q908x",
+      "eventId": "hellodancefest-2026",
+      "title": "FAB",
+      "instructors": [
+        "FAB"
+      ],
+      "style": "zouk",
+      "room": "Peninsula A-B",
+      "day": "2026-07-25",
+      "start": "04:00",
+      "end": "05:00",
+      "type": "party",
+      "artistIds": [
+        "yhAJB1DG"
+      ]
+    },
+    {
+      "id": "OhwQaAyk",
       "eventId": "hellodancefest-2026",
       "title": "TRONKY",
       "instructors": [
@@ -3803,15 +4110,15 @@
       "style": "bachata",
       "room": "Main Ballroom",
       "day": "2026-07-25",
-      "start": "24:00",
-      "end": "25:00",
+      "start": "00:00",
+      "end": "01:00",
       "type": "party",
       "artistIds": [
         "_gE8U-Gh"
       ]
     },
     {
-      "id": "OaSS050x",
+      "id": "jKRVfnkO",
       "eventId": "hellodancefest-2026",
       "title": "SHAMA",
       "instructors": [
@@ -3820,15 +4127,15 @@
       "style": "bachata",
       "room": "Main Ballroom",
       "day": "2026-07-25",
-      "start": "25:00",
-      "end": "26:00",
+      "start": "01:00",
+      "end": "02:00",
       "type": "party",
       "artistIds": [
         "rWihBnL0"
       ]
     },
     {
-      "id": "U0fDF0sW",
+      "id": "6eaHM3TX",
       "eventId": "hellodancefest-2026",
       "title": "TRONKY",
       "instructors": [
@@ -3837,15 +4144,32 @@
       "style": "bachata",
       "room": "Main Ballroom",
       "day": "2026-07-25",
-      "start": "26:00",
-      "end": "28:00",
+      "start": "02:00",
+      "end": "03:00",
       "type": "party",
       "artistIds": [
         "_gE8U-Gh"
       ]
     },
     {
-      "id": "V38qyAa0",
+      "id": "r6nC7ahU",
+      "eventId": "hellodancefest-2026",
+      "title": "THIENCITO",
+      "instructors": [
+        "THIENCITO"
+      ],
+      "style": "bachata",
+      "room": "Main Ballroom",
+      "day": "2026-07-25",
+      "start": "03:00",
+      "end": "04:00",
+      "type": "party",
+      "artistIds": [
+        "rIfHzO3I"
+      ]
+    },
+    {
+      "id": "3Qg36xHA",
       "eventId": "hellodancefest-2026",
       "title": "RELLEO",
       "instructors": [
@@ -3854,15 +4178,15 @@
       "style": "bachata",
       "room": "Main Ballroom",
       "day": "2026-07-25",
-      "start": "28:00",
-      "end": "29:00",
+      "start": "04:00",
+      "end": "05:00",
       "type": "party",
       "artistIds": [
         "qBUQE7Le"
       ]
     },
     {
-      "id": "3EbJUfEI",
+      "id": "YEanoOkR",
       "eventId": "hellodancefest-2026",
       "title": "TREYZ",
       "instructors": [
@@ -3871,15 +4195,15 @@
       "style": "bachata",
       "room": "Main Ballroom",
       "day": "2026-07-25",
-      "start": "29:00",
-      "end": "30:00",
+      "start": "05:00",
+      "end": "06:00",
       "type": "party",
       "artistIds": [
         "6FKn6EwH"
       ]
     },
     {
-      "id": "iP_GbEEf",
+      "id": "5KsN27ij",
       "eventId": "hellodancefest-2026",
       "title": "KRIS",
       "instructors": [
@@ -3888,15 +4212,15 @@
       "style": "bachata",
       "room": "Main Ballroom",
       "day": "2026-07-25",
-      "start": "30:00",
-      "end": "31:00",
+      "start": "06:00",
+      "end": "07:00",
       "type": "party",
       "artistIds": [
         "LZIuSMKx"
       ]
     },
     {
-      "id": "D0mffe-d",
+      "id": "p8XCTrnI",
       "eventId": "hellodancefest-2026",
       "title": "MANGO",
       "instructors": [
@@ -3906,14 +4230,14 @@
       "room": "Regency",
       "day": "2026-07-26",
       "start": "23:00",
-      "end": "24:00",
+      "end": "00:00",
       "type": "party",
       "artistIds": [
         "FnYrcij_"
       ]
     },
     {
-      "id": "tZB2NKKj",
+      "id": "9q5MNZ16",
       "eventId": "hellodancefest-2026",
       "title": "RELLEO",
       "instructors": [
@@ -3922,15 +4246,15 @@
       "style": "bachata",
       "room": "Regency",
       "day": "2026-07-26",
-      "start": "24:00",
-      "end": "25:00",
+      "start": "00:00",
+      "end": "01:00",
       "type": "party",
       "artistIds": [
         "qBUQE7Le"
       ]
     },
     {
-      "id": "H93FY8hm",
+      "id": "OZYpT6JA",
       "eventId": "hellodancefest-2026",
       "title": "FIFI",
       "instructors": [
@@ -3939,15 +4263,15 @@
       "style": "bachata",
       "room": "Regency",
       "day": "2026-07-26",
-      "start": "25:00",
-      "end": "26:00",
+      "start": "01:00",
+      "end": "02:00",
       "type": "party",
       "artistIds": [
         "ZPUfPQeJ"
       ]
     },
     {
-      "id": "43qPutTN",
+      "id": "z87YSDUj",
       "eventId": "hellodancefest-2026",
       "title": "TRONKY",
       "instructors": [
@@ -3956,15 +4280,15 @@
       "style": "bachata",
       "room": "Regency",
       "day": "2026-07-26",
-      "start": "26:00",
-      "end": "27:00",
+      "start": "02:00",
+      "end": "03:00",
       "type": "party",
       "artistIds": [
         "_gE8U-Gh"
       ]
     },
     {
-      "id": "wqkryhzS",
+      "id": "bMJ5or2K",
       "eventId": "hellodancefest-2026",
       "title": "TRONKY",
       "instructors": [
@@ -3973,15 +4297,15 @@
       "style": "bachata",
       "room": "Regency",
       "day": "2026-07-26",
-      "start": "27:00",
-      "end": "28:00",
+      "start": "03:00",
+      "end": "04:00",
       "type": "party",
       "artistIds": [
         "_gE8U-Gh"
       ]
     },
     {
-      "id": "eLZb7gfs",
+      "id": "nm4qnBI7",
       "eventId": "hellodancefest-2026",
       "title": "THIENCITO",
       "instructors": [
@@ -3990,15 +4314,15 @@
       "style": "bachata",
       "room": "Regency",
       "day": "2026-07-26",
-      "start": "28:00",
-      "end": "29:00",
+      "start": "04:00",
+      "end": "05:00",
       "type": "party",
       "artistIds": [
         "rIfHzO3I"
       ]
     },
     {
-      "id": "fSsmVFxe",
+      "id": "As61STnI",
       "eventId": "hellodancefest-2026",
       "title": "TREY-Z",
       "instructors": [
@@ -4007,15 +4331,15 @@
       "style": "bachata",
       "room": "Regency",
       "day": "2026-07-26",
-      "start": "29:00",
-      "end": "30:00",
+      "start": "05:00",
+      "end": "06:00",
       "type": "party",
       "artistIds": [
         "J_xro6Uj"
       ]
     },
     {
-      "id": "fVeYC-zi",
+      "id": "HLLHUdOZ",
       "eventId": "hellodancefest-2026",
       "title": "SINK",
       "instructors": [
@@ -4025,14 +4349,14 @@
       "room": "Harbour",
       "day": "2026-07-26",
       "start": "23:00",
-      "end": "25:00",
+      "end": "01:00",
       "type": "party",
       "artistIds": [
         "R_mhiHgs"
       ]
     },
     {
-      "id": "f8AxQry-",
+      "id": "yjI5Gddn",
       "eventId": "hellodancefest-2026",
       "title": "OLU",
       "instructors": [
@@ -4041,15 +4365,15 @@
       "style": "kizomba",
       "room": "Harbour",
       "day": "2026-07-26",
-      "start": "25:00",
-      "end": "27:00",
+      "start": "01:00",
+      "end": "03:00",
       "type": "party",
       "artistIds": [
         "cSfc8ilm"
       ]
     },
     {
-      "id": "nMPEMJ4_",
+      "id": "eOsFe8Mi",
       "eventId": "hellodancefest-2026",
       "title": "MKiZ",
       "instructors": [
@@ -4058,15 +4382,15 @@
       "style": "kizomba",
       "room": "Harbour",
       "day": "2026-07-26",
-      "start": "27:00",
-      "end": "29:00",
+      "start": "03:00",
+      "end": "04:00",
       "type": "party",
       "artistIds": [
         "urgcxdhZ"
       ]
     },
     {
-      "id": "a6eCQBpD",
+      "id": "QHm5VslA",
       "eventId": "hellodancefest-2026",
       "title": "X",
       "instructors": [
@@ -4076,14 +4400,14 @@
       "room": "Peninsula A-B",
       "day": "2026-07-26",
       "start": "23:00",
-      "end": "24:00",
+      "end": "00:00",
       "type": "party",
       "artistIds": [
         "SxBLCuxf"
       ]
     },
     {
-      "id": "uwj667co",
+      "id": "o0zUB1QW",
       "eventId": "hellodancefest-2026",
       "title": "BORIQUA",
       "instructors": [
@@ -4092,15 +4416,15 @@
       "style": "salsa",
       "room": "Peninsula A-B",
       "day": "2026-07-26",
-      "start": "24:00",
-      "end": "25:00",
+      "start": "00:00",
+      "end": "01:00",
       "type": "party",
       "artistIds": [
         "Ux9wRwUc"
       ]
     },
     {
-      "id": "cCbj45Ki",
+      "id": "Hv3C4e3a",
       "eventId": "hellodancefest-2026",
       "title": "ALEXIO",
       "instructors": [
@@ -4109,15 +4433,15 @@
       "style": "salsa",
       "room": "Peninsula A-B",
       "day": "2026-07-26",
-      "start": "25:00",
-      "end": "26:00",
+      "start": "01:00",
+      "end": "02:00",
       "type": "party",
       "artistIds": [
         "gQTSycWA"
       ]
     },
     {
-      "id": "fb6SEWc5",
+      "id": "4nJhQFK0",
       "eventId": "hellodancefest-2026",
       "title": "ALEXIO",
       "instructors": [
@@ -4126,15 +4450,15 @@
       "style": "salsa",
       "room": "Peninsula A-B",
       "day": "2026-07-26",
-      "start": "26:00",
-      "end": "27:00",
+      "start": "02:00",
+      "end": "03:00",
       "type": "party",
       "artistIds": [
         "gQTSycWA"
       ]
     },
     {
-      "id": "MYh86pbh",
+      "id": "tR9R5KYN",
       "eventId": "hellodancefest-2026",
       "title": "BORI",
       "instructors": [
@@ -4143,15 +4467,15 @@
       "style": "salsa",
       "room": "Peninsula A-B",
       "day": "2026-07-26",
-      "start": "27:00",
-      "end": "28:00",
+      "start": "03:00",
+      "end": "04:00",
       "type": "party",
       "artistIds": [
         "oG-W8bdW"
       ]
     },
     {
-      "id": "fsvVzpL4",
+      "id": "oyDlvJeE",
       "eventId": "hellodancefest-2026",
       "title": "MUNDO",
       "instructors": [
@@ -4160,15 +4484,15 @@
       "style": "salsa",
       "room": "Peninsula A-B",
       "day": "2026-07-26",
-      "start": "28:00",
-      "end": "29:00",
+      "start": "04:00",
+      "end": "05:00",
       "type": "party",
       "artistIds": [
         "CmliGsg7"
       ]
     },
     {
-      "id": "CtlW20kx",
+      "id": "6Dz4KdZH",
       "eventId": "hellodancefest-2026",
       "title": "FAB",
       "instructors": [
@@ -4178,14 +4502,14 @@
       "room": "Peninsula C",
       "day": "2026-07-26",
       "start": "23:00",
-      "end": "24:00",
+      "end": "00:00",
       "type": "party",
       "artistIds": [
         "yhAJB1DG"
       ]
     },
     {
-      "id": "hKGGvHb5",
+      "id": "S4LEU1UG",
       "eventId": "hellodancefest-2026",
       "title": "FAB",
       "instructors": [
@@ -4194,15 +4518,15 @@
       "style": "zouk",
       "room": "Peninsula C",
       "day": "2026-07-26",
-      "start": "24:00",
-      "end": "25:00",
+      "start": "00:00",
+      "end": "01:00",
       "type": "party",
       "artistIds": [
         "yhAJB1DG"
       ]
     },
     {
-      "id": "kO6xJZtW",
+      "id": "WojZr69Z",
       "eventId": "hellodancefest-2026",
       "title": "FAB",
       "instructors": [
@@ -4211,15 +4535,15 @@
       "style": "zouk",
       "room": "Peninsula C",
       "day": "2026-07-26",
-      "start": "25:00",
-      "end": "26:00",
+      "start": "01:00",
+      "end": "02:00",
       "type": "party",
       "artistIds": [
         "yhAJB1DG"
       ]
     },
     {
-      "id": "UL-PlzCF",
+      "id": "SQfKIdjW",
       "eventId": "hellodancefest-2026",
       "title": "KAKAH",
       "instructors": [
@@ -4228,15 +4552,15 @@
       "style": "zouk",
       "room": "Peninsula C",
       "day": "2026-07-26",
-      "start": "26:00",
-      "end": "27:00",
+      "start": "02:00",
+      "end": "03:00",
       "type": "party",
       "artistIds": [
         "Em2PrVbM"
       ]
     },
     {
-      "id": "jbxtxib_",
+      "id": "oLPsVtzU",
       "eventId": "hellodancefest-2026",
       "title": "MBRACE",
       "instructors": [
@@ -4245,15 +4569,15 @@
       "style": "zouk",
       "room": "Peninsula C",
       "day": "2026-07-26",
-      "start": "27:00",
-      "end": "28:00",
+      "start": "03:00",
+      "end": "04:00",
       "type": "party",
       "artistIds": [
         "2on4gD83"
       ]
     },
     {
-      "id": "iuI9PfE6",
+      "id": "epWO6rqz",
       "eventId": "hellodancefest-2026",
       "title": "TZOUL",
       "instructors": [
@@ -4262,8 +4586,8 @@
       "style": "zouk",
       "room": "Peninsula C",
       "day": "2026-07-26",
-      "start": "28:00",
-      "end": "29:00",
+      "start": "04:00",
+      "end": "05:00",
       "type": "party",
       "artistIds": [
         "Gk-SvxTG"
@@ -4793,5 +5117,7 @@
         }
       ]
     }
-  ]
+  ],
+  "scheduleSyncedAt": "2026-07-24T18:20:13.074489+00:00",
+  "scheduleSourceUrl": "https://docs.google.com/spreadsheets/d/1Phzou1q71mdtwwct1EoKPW5q_8jDTQhLUEkhlA6_bqY/edit"
 }
