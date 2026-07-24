@@ -5,7 +5,6 @@ import {
   CancelIcon,
   LinkSquare02Icon,
   Location01Icon,
-  RefreshIcon,
 } from "@hugeicons/core-free-icons";
 import { dayLabel } from "@/lib/schedule/time";
 import type { FestivalEvent } from "@/lib/types";
@@ -111,10 +110,7 @@ export function InfoSheet({ event, onClose }: { event: FestivalEvent; onClose: (
         {/* Data provenance + "not official" disclaimer share a card: both are
             meta-notices about the app itself rather than the festival's own
             program, so they read as one aside instead of two. */}
-        <div className="flex items-start gap-3 rounded-2xl border border-border p-3.5">
-          <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-secondary text-foreground">
-            <Icon icon={RefreshIcon} size={17} />
-          </span>
+        <div className="rounded-2xl border border-border p-3.5">
           <div className="min-w-0 space-y-2">
             {event.scheduleSyncedAt && (
               <p className="text-sm leading-snug text-muted-foreground">
@@ -126,10 +122,10 @@ export function InfoSheet({ event, onClose }: { event: FestivalEvent; onClose: (
                     rel="noopener noreferrer"
                     className="font-semibold text-foreground underline underline-offset-2 hover:text-muted-foreground"
                   >
-                    spreadsheet
+                    Official Schedule
                   </a>
                 ) : (
-                  <span className="font-semibold text-foreground">spreadsheet</span>
+                  <span className="font-semibold text-foreground">Official Schedule</span>
                 )}{" "}
                 {new Date(event.scheduleSyncedAt).toLocaleString("en-US", {
                   month: "short",
@@ -150,7 +146,7 @@ export function InfoSheet({ event, onClose }: { event: FestivalEvent; onClose: (
               >
                 @charlotttechen
               </a>{" "}
-              :)
+              :) See y&apos;all on the dance floor!
             </p>
           </div>
         </div>
