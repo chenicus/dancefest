@@ -430,7 +430,10 @@ export function SessionCard({
             would just repeat it. "other" has no useful name to show. */}
         {(!dense || showRoom) && (session.style !== "other" || showRoom) && (
           <div className="mt-1.5 flex flex-wrap items-center gap-1">
-            {session.style !== "other" && !isParty && (
+            {/* My Picks (softPicked) skips this pill — the style watermark
+                letter (B/S/K/Z) already names the style there, so the pill
+                would just repeat it. */}
+            {session.style !== "other" && !isParty && !softPicked && (
               <span
                 className={cn(
                   "inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-medium capitalize",
