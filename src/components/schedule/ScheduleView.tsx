@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { Fragment, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import {
   Calendar03Icon,
   FavouriteIcon,
@@ -143,12 +143,30 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
   // Clear any pending dismiss timer if the view unmounts mid-countdown.
   useEffect(() => () => void (undoTimer.current && clearTimeout(undoTimer.current)), []);
 
+  // Measured so the per-time-slot sticky labels below know exactly how far
+  // to sit from the top — the header's real height varies (the style-filter
+  // row only exists in the "all" view), so a hardcoded offset would leave a
+  // gap or an overlap depending on which tab you're on. useLayoutEffect (not
+  // useEffect) so the correct value is in place before first paint instead
+  // of flashing top:0 for a frame.
+  const headerRef = useRef<HTMLElement>(null);
+  const [headerHeight, setHeaderHeight] = useState(0);
+  useLayoutEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    const measure = () => setHeaderHeight(el.getBoundingClientRect().height);
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
       className="flex min-h-dvh flex-col md:h-dvh md:overflow-hidden"
       style={{ background: "var(--event-bg)" }}
     >
-      <header className="sticky top-0 z-40 border-b border-black/10 bg-background/85 backdrop-blur-md">
+      <header ref={headerRef} className="sticky top-0 z-40 border-b border-black/10 bg-background/85 backdrop-blur-md">
         <div className="mx-auto flex w-full max-w-[800px] items-center justify-center gap-3 px-4 pt-3.5">
           <h1 className="wordmark truncate text-lg">{event.name}</h1>
         </div>
@@ -224,14 +242,6 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
                   </button>
                 );
               })}
-              {styleFilter.size > 0 && (
-                <button
-                  onClick={() => setStyleFilter(new Set())}
-                  className="ml-0.5 shrink-0 rounded-full px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  Clear
-                </button>
-              )}
             </div>
           </div>
         )}
@@ -251,6 +261,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
               pickedIds={pickedIds}
               onToggle={(s) => togglePick(event.id, s.id)}
               onArtistTap={openSheet}
+              stickyTop={headerHeight}
             />
             <DesktopGrid
               sessions={daySessions}
@@ -269,6 +280,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
             hasAnyPicks={pickedIds.size > 0}
             onRemove={commitRemove}
             onArtistTap={openSheet}
+            stickyTop={headerHeight}
           />
         )}
       </main>
@@ -383,40 +395,78 @@ interface ListProps {
   onArtistTap: (s: Session) => void;
 }
 
-function MobileDayList({ sessions, event, pickedIds, onToggle, onArtistTap }: ListProps) {
-  let lastStart = "";
+// Consecutive same-start sessions become one group sharing a single time
+// label — a room's worth of 2pm classes reads as one "2 PM" slot, not six.
+function groupByStart<T extends { start: string }>(items: T[]) {
+  const groups: { start: string; items: T[] }[] = [];
+  for (const item of items) {
+    const last = groups[groups.length - 1];
+    if (last && last.start === item.start) last.items.push(item);
+    else groups.push({ start: item.start, items: [item] });
+  }
+  return groups;
+}
+
+function MobileDayList({
+  sessions,
+  event,
+  pickedIds,
+  onToggle,
+  onArtistTap,
+  stickyTop,
+}: ListProps & { stickyTop: number }) {
   if (!sessions.length) {
     return <p className="py-16 text-center text-sm text-muted-foreground md:hidden">No sessions this day.</p>;
   }
   return (
-    // Same time-gutter layout as My Picks (grid-cols-[44px_1fr]): the time
-    // sits in its own indented column instead of a full-width heading row,
-    // so both lists read as one consistent calendar shape.
-    <div className="relative mx-auto grid max-w-[400px] grid-cols-[44px_1fr] gap-x-3 overflow-x-hidden md:hidden">
-      {sessions.map((s, i) => {
-        const showTime = s.start !== lastStart;
-        lastStart = s.start;
-        return (
-          <Fragment key={s.id}>
-            {showTime && i > 0 && (
-              <div aria-hidden className="relative z-0 col-start-2 border-t border-dashed border-border/60" />
-            )}
-            <div className="relative z-10 pt-3 text-right text-xs font-medium text-muted-foreground">
-              {showTime ? to12h(s.start) : null}
-            </div>
-            <div className="relative z-10 mb-2 min-w-0">
-              <SessionCard
-                session={s}
-                artists={event.artists}
-                picked={pickedIds.has(s.id)}
-                showTimes
-                onToggle={() => onToggle(s)}
-                onArtistTap={() => onArtistTap(s)}
-              />
-            </div>
-          </Fragment>
-        );
-      })}
+    // Same time-gutter layout as My Picks: the time sits in its own indented
+    // column instead of a full-width heading row, so both lists read as one
+    // consistent calendar shape. Each time slot is its own flex row (rather
+    // than one flat grid) so the label can be `sticky` scoped to just that
+    // slot's own height — it pins in place while its sessions scroll past,
+    // then releases the instant the slot's last card clears the sticky line,
+    // handing off to the next slot's label.
+    // No overflow-x-hidden here: any ancestor with overflow other than
+    // visible becomes the sticky label's containing block, and since that
+    // box never scrolls on its own, the label would just sit inert instead
+    // of sticking to the real (page/main) scrollport.
+    <div className="relative mx-auto max-w-[400px] md:hidden" style={{ ["--sticky-top" as string]: `${stickyTop}px` }}>
+      {groupByStart(sessions).map((group, gi) => (
+        <div key={group.start} className="flex gap-x-3">
+          <div className="sticky top-[var(--sticky-top)] z-10 w-11 shrink-0 self-start pt-3 text-right text-xs font-medium text-muted-foreground md:top-0">
+            {to12h(group.start)}
+          </div>
+          <div className="min-w-0 flex-1">
+            {/* Hour-boundary rule, Google Calendar–style: spans only the
+                card column, so the time gutter stays its own clean strip. */}
+            {gi > 0 && <div aria-hidden className="border-t border-dashed border-border/60" />}
+            {group.items.map((s) => (
+              <div
+                key={s.id}
+                style={{
+                  // Cards are content-sized by default, so a 2-hour party/
+                  // performance slot would render the same height as a
+                  // 1-hour workshop. Scale a minimum height off the
+                  // session's real duration (using MIN_CARD_HEIGHT for a
+                  // typical 1-hour session as the baseline, same as My
+                  // Picks below) so longer sessions read as visibly taller.
+                  minHeight: `${Math.max(MIN_CARD_HEIGHT, ((toMinutes(s.end) - toMinutes(s.start)) / 60) * MIN_CARD_HEIGHT)}px`,
+                }}
+                className="mb-2 min-w-0"
+              >
+                <SessionCard
+                  session={s}
+                  artists={event.artists}
+                  picked={pickedIds.has(s.id)}
+                  showTimes
+                  onToggle={() => onToggle(s)}
+                  onArtistTap={() => onArtistTap(s)}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
@@ -563,6 +613,7 @@ function MySchedule({
   hasAnyPicks,
   onRemove,
   onArtistTap,
+  stickyTop,
 }: {
   event: FestivalEvent;
   day: string;
@@ -570,6 +621,7 @@ function MySchedule({
   hasAnyPicks: boolean;
   onRemove: (s: Session) => void;
   onArtistTap: (s: Session) => void;
+  stickyTop: number;
 }) {
   // Removing a pick unmounts its card immediately (it drops out of
   // pickedSessions), which would otherwise just pop out of the list. Track
@@ -605,61 +657,66 @@ function MySchedule({
       </div>
     );
   }
-  let lastStart = "";
+  const groups = groupByStart([...pickedSessions].sort((a, b) => toMinutes(a.start) - toMinutes(b.start)));
   return (
-    <div className="relative mx-auto mt-6 grid max-w-[400px] grid-cols-[44px_1fr] gap-x-3 overflow-x-hidden">
-      {[...pickedSessions]
-        .sort((a, b) => toMinutes(a.start) - toMinutes(b.start))
-        .map((s, i) => {
-          const showTime = s.start !== lastStart;
-          lastStart = s.start;
-          const removing = removingIds.has(s.id);
-          return (
-            <Fragment key={s.id}>
-              {/* Hour-boundary rule, Google Calendar–style: spans only the
-                  card column, same as GCal's lines stopping at the time
-                  gutter, so the time column stays its own clean strip. Its
-                  own grid row sits in the gap between groups rather than
-                  crossing a card; z-0 (with the tiles at their default
-                  stacking) keeps it tucked behind if anything ever overlaps
-                  it. */}
-              {showTime && i > 0 && (
+    // Each time slot is its own flex row so its label can be `sticky`
+    // scoped to just that slot's own height (see MobileDayList above for
+    // the full explanation) — pins while its picks scroll past, then hands
+    // off to the next slot. md:top-0: on desktop <main> scrolls independently
+    // below a static header (they no longer overlap), so the label only
+    // needs to clear the header's height on mobile, where the whole page
+    // scrolls as one and the sticky header stays on screen throughout.
+    // overflow-x-hidden lives on the card column below (not here) — any
+    // ancestor of the sticky label with overflow other than visible becomes
+    // its containing block, and since that box never scrolls on its own the
+    // label would just sit inert instead of sticking to the real scrollport.
+    <div className="relative mx-auto mt-6 max-w-[400px]" style={{ ["--sticky-top" as string]: `${stickyTop}px` }}>
+      {groups.map((group, gi) => (
+        <div key={group.start} className="flex gap-x-3">
+          <div className="sticky top-[var(--sticky-top)] z-10 w-11 shrink-0 self-start pt-3 text-right text-xs font-medium text-muted-foreground md:top-0">
+            {to12h(group.start)}
+          </div>
+          {/* overflow-x-hidden here (not on an ancestor of the sticky label
+              above) clips the remove animation's translate-x-full slide-out
+              without breaking that label's stickiness. */}
+          <div className="min-w-0 flex-1 overflow-x-hidden">
+            {/* Hour-boundary rule, Google Calendar–style: spans only the
+                card column, so the time gutter stays its own clean strip. */}
+            {gi > 0 && <div aria-hidden className="border-t border-dashed border-border/60" />}
+            {group.items.map((s) => {
+              const removing = removingIds.has(s.id);
+              return (
                 <div
-                  aria-hidden
-                  className="relative z-0 col-start-2 border-t border-dashed border-border/60"
-                />
-              )}
-              <div className="relative z-10 pt-3 text-right text-xs font-medium text-muted-foreground">
-                {showTime ? to12h(s.start) : null}
-              </div>
-              <div
-                style={{
-                  transitionDuration: `${REMOVE_DURATION}ms`,
-                  // Cards are content-sized by default, so a 2-hour party
-                  // slot renders the same height as a 1-hour class. Scale a
-                  // minimum height off the session's real duration (using
-                  // MIN_CARD_HEIGHT for a typical 1-hour session as the
-                  // baseline) so longer sessions read as visibly taller.
-                  minHeight: `${Math.max(MIN_CARD_HEIGHT, ((toMinutes(s.end) - toMinutes(s.start)) / 60) * MIN_CARD_HEIGHT)}px`,
-                }}
-                className={cn(
-                  "relative z-10 mb-2 min-w-0 transition-all ease-in",
-                  removing ? "translate-x-full opacity-0" : "translate-x-0 opacity-100",
-                )}
-              >
-                <SessionCard
-                  session={s}
-                  artists={event.artists}
-                  picked
-                  showTimes
-                  softPicked
-                  onRemove={() => handleRemove(s)}
-                  onArtistTap={() => onArtistTap(s)}
-                />
-              </div>
-            </Fragment>
-          );
-        })}
+                  key={s.id}
+                  style={{
+                    transitionDuration: `${REMOVE_DURATION}ms`,
+                    // Cards are content-sized by default, so a 2-hour party
+                    // slot renders the same height as a 1-hour class. Scale a
+                    // minimum height off the session's real duration (using
+                    // MIN_CARD_HEIGHT for a typical 1-hour session as the
+                    // baseline) so longer sessions read as visibly taller.
+                    minHeight: `${Math.max(MIN_CARD_HEIGHT, ((toMinutes(s.end) - toMinutes(s.start)) / 60) * MIN_CARD_HEIGHT)}px`,
+                  }}
+                  className={cn(
+                    "mb-2 min-w-0 transition-all ease-in",
+                    removing ? "translate-x-full opacity-0" : "translate-x-0 opacity-100",
+                  )}
+                >
+                  <SessionCard
+                    session={s}
+                    artists={event.artists}
+                    picked
+                    showTimes
+                    softPicked
+                    onRemove={() => handleRemove(s)}
+                    onArtistTap={() => onArtistTap(s)}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
