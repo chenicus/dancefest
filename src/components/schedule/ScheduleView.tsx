@@ -44,13 +44,33 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
   const view = rawView === "my" ? "my" : "all";
   const day = search.get("day") ?? event.days[0] ?? "";
 
+  // Night DJ lineups live in event.parties as their own PartySet shape (no
+  // per-slot end time, no Artist record) — reshape them into Session/Artist
+  // tiles so they flow through the exact same picking/grid/sheet pipeline as
+  // a workshop. Every DJ room is already one of the event's workshop rooms,
+  // so no new grid columns are needed.
+  const djArtists = useMemo(() => partyArtists(event.parties ?? []), [event.parties]);
+  const partySessions = useMemo(
+    () => (event.parties ?? []).flatMap(partyToSessions),
+    [event.parties],
+  );
+  const allSessions = useMemo(() => [...event.sessions, ...partySessions], [event.sessions, partySessions]);
+  const allArtists = useMemo(() => [...event.artists, ...djArtists], [event.artists, djArtists]);
+  // Subviews (MobileDayList/DesktopGrid/MySchedule) read sessions/artists/
+  // rooms off the `event` they're passed — hand them this merged event so
+  // they need no changes of their own to pick up DJ sets.
+  const scheduleEvent = useMemo(
+    () => ({ ...event, sessions: allSessions, artists: allArtists }),
+    [event, allSessions, allArtists],
+  );
+
   const pickedIds = useMemo(
     () => new Set(mounted ? picks.filter((p) => p.eventId === event.id).map((p) => p.sessionId) : []),
     [mounted, picks, event.id],
   );
   const pickedSessions = useMemo(
-    () => event.sessions.filter((s) => pickedIds.has(s.id)),
-    [event.sessions, pickedIds],
+    () => allSessions.filter((s) => pickedIds.has(s.id)),
+    [allSessions, pickedIds],
   );
 
   function setParam(key: string, value: string | null) {
@@ -61,13 +81,15 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
   }
 
   const daySessions = useMemo(() => {
-    const filtered = event.sessions.filter(
+    const filtered = allSessions.filter(
       (s) => s.day === day && (styleFilter.size === 0 || styleFilter.has(s.style)),
     );
     // "Empty" filler reflects genuinely idle room/time combos (computed off
     // the full, unfiltered day) — it stays put regardless of the style
     // filter, since a room isn't "empty" just because its class got filtered.
-    const empties = fillEmptySlots(event.sessions, event.rooms, day);
+    // fillEmptySlots already excludes "party" sessions from this range/room
+    // computation, so a DJ-only room doesn't get daytime "Empty" filler.
+    const empties = fillEmptySlots(allSessions, event.rooms, day);
     return [...filtered, ...empties]
       // Within each time slot, cluster by style so same-genre classes sit
       // together (e.g. two salsa classes adjacent, not interleaved).
@@ -77,11 +99,11 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
           STYLE_ORDER[a.style] - STYLE_ORDER[b.style] ||
           a.room.localeCompare(b.room),
       );
-  }, [event.sessions, event.rooms, day, styleFilter]);
+  }, [allSessions, event.rooms, day, styleFilter]);
 
   const stylesPresent = useMemo(
-    () => ALL_STYLES.filter((st) => event.sessions.some((s) => s.style === st)),
-    [event.sessions],
+    () => ALL_STYLES.filter((st) => allSessions.some((s) => s.style === st)),
+    [allSessions],
   );
 
   function openSheet(session: Session) {
@@ -217,14 +239,14 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
               // row. Skip it and let the next real session's heading speak
               // for the gap, same as before.
               sessions={daySessions.filter((s) => s.type !== "empty")}
-              event={event}
+              event={scheduleEvent}
               pickedIds={pickedIds}
               onToggle={(s) => togglePick(event.id, s.id)}
               onArtistTap={openSheet}
             />
             <DesktopGrid
               sessions={daySessions}
-              event={event}
+              event={scheduleEvent}
               pickedIds={pickedIds}
               onToggle={(s) => togglePick(event.id, s.id)}
               onArtistTap={openSheet}
@@ -233,7 +255,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
         )}
         {view === "my" && (
           <MySchedule
-            event={event}
+            event={scheduleEvent}
             day={day}
             pickedSessions={pickedSessions.filter((s) => s.day === day)}
             hasAnyPicks={pickedIds.size > 0}
@@ -331,8 +353,8 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
           artists={
             sheetSession.artistIds?.length
               ? sheetSession.artistIds.map((id) => ({
-                  artist: event.artists.find((a) => a.id === id),
-                  name: event.artists.find((a) => a.id === id)?.name ?? sheetSession.instructors[0] ?? "TBA",
+                  artist: allArtists.find((a) => a.id === id),
+                  name: allArtists.find((a) => a.id === id)?.name ?? sheetSession.instructors[0] ?? "TBA",
                 }))
               : sheetSession.instructors.length
                 ? sheetSession.instructors.map((name) => ({ name }))
