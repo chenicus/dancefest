@@ -935,7 +935,7 @@ function MySchedule({
     // its containing block, and since that box never scrolls on its own the
     // label would just sit inert instead of sticking to the real scrollport.
     <div className="relative mx-auto max-w-[400px]">
-      {groups.map((group, gi) => (
+      {groups.map((group) => (
         <div key={group.start} className="flex gap-x-1">
           <div className="sticky top-[var(--sticky-top,0px)] z-10 w-12 shrink-0 self-start pt-3 text-left text-xs font-medium text-muted-foreground md:top-0">
             {to12h(group.start)}
@@ -944,9 +944,6 @@ function MySchedule({
               above) clips the remove animation's translate-x-full slide-out
               without breaking that label's stickiness. */}
           <div className="min-w-0 flex-1 overflow-x-hidden">
-            {/* Hour-boundary rule, Google Calendar–style: spans only the
-                card column, so the time gutter stays its own clean strip. */}
-            {gi > 0 && <div aria-hidden className="border-t border-dashed border-border/60" />}
             {group.items.map((s) => {
               const removing = removingIds.has(s.id);
               return (
