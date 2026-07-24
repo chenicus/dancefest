@@ -4,6 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import {
   Calendar03Icon,
+  CancelIcon,
   FavouriteIcon,
   InformationCircleIcon,
   MusicNote01Icon,
@@ -45,7 +46,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
   const [sheetSession, setSheetSession] = useState<Session | null>(null);
   const [infoOpen, setInfoOpen] = useState(false);
   const [changesOpen, setChangesOpen] = useState(false);
-  const { togglePick, picks, removePick } = usePicksStore();
+  const { togglePick, picks, removePick, dismissedChangeIds, dismissChanges } = usePicksStore();
 
   useEffect(() => setMounted(true), []);
 
@@ -101,6 +102,12 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
         ? picks.filter((p) => p.eventId === event.id && p.snapshot && !allSessionIds.has(p.sessionId))
         : [],
     [mounted, picks, event.id, allSessionIds],
+  );
+  // Dismissing the banner mutes it for these specific changed picks (not a
+  // delete — see PicksState.dismissedChangeIds) until a *new* change appears.
+  const visibleOrphanedPicks = useMemo(
+    () => orphanedPicks.filter((p) => !dismissedChangeIds.includes(p.sessionId)),
+    [orphanedPicks, dismissedChangeIds],
   );
 
   // Bumping this remounts the pick-count badge, which restarts its CSS pop
@@ -414,18 +421,24 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
         )}
         {view === "my" && (
           <>
-            {orphanedPicks.length > 0 && (
-              <button
-                type="button"
-                onClick={() => setChangesOpen(true)}
-                className="mx-auto mb-3 flex w-full max-w-[400px] items-center justify-between gap-2 rounded-2xl border border-amber-300/60 bg-amber-50 px-3.5 py-2.5 text-left text-sm text-amber-900 transition-colors hover:bg-amber-100"
-              >
-                <span>
-                  {orphanedPicks.length} pick{orphanedPicks.length > 1 ? "s" : ""} changed since you picked{" "}
-                  {orphanedPicks.length > 1 ? "them" : "it"}
-                </span>
-                <span className="shrink-0 text-xs font-semibold underline underline-offset-2">See what changed</span>
-              </button>
+            {visibleOrphanedPicks.length > 0 && (
+              <div className="mx-auto mb-3 flex w-full max-w-[400px] items-center gap-1 rounded-2xl border border-amber-300/60 bg-amber-50 py-1 pl-3.5 pr-1.5 text-sm text-amber-900">
+                <button
+                  type="button"
+                  onClick={() => setChangesOpen(true)}
+                  className="flex-1 py-1.5 text-left font-semibold underline underline-offset-2"
+                >
+                  {visibleOrphanedPicks.length} pick{visibleOrphanedPicks.length > 1 ? "s" : ""} changed
+                </button>
+                <button
+                  type="button"
+                  aria-label="Dismiss"
+                  onClick={() => dismissChanges(visibleOrphanedPicks.map((p) => p.sessionId))}
+                  className="flex size-7 shrink-0 items-center justify-center rounded-full text-amber-900/60 transition-colors hover:bg-amber-100 hover:text-amber-900"
+                >
+                  <Icon icon={CancelIcon} size={14} strokeWidth={2.5} />
+                </button>
+              </div>
             )}
             <MySchedule
               event={scheduleEvent}
@@ -557,7 +570,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
 
       {changesOpen && (
         <PickChangesSheet
-          changes={orphanedPicks}
+          changes={visibleOrphanedPicks}
           onDismiss={removePick}
           onClose={() => setChangesOpen(false)}
         />
