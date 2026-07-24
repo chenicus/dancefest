@@ -10,11 +10,14 @@ import {
   MusicNote01Icon,
 } from "@hugeicons/core-free-icons";
 import { fillEmptySlots } from "@/lib/schedule/emptySlots";
+import { nextCollapse } from "@/lib/schedule/headerCollapse";
 import { layoutDay } from "@/lib/schedule/layout";
 import { partyArtists, partyToSessions } from "@/lib/schedule/party";
+import { resolvePicks } from "@/lib/schedule/resolvePicks";
 import { dayDateLabel, dayLabel, dayNumLabel, hourLabel, to12h, toMinutes } from "@/lib/schedule/time";
 import { usePicksStore } from "@/lib/store/usePicksStore";
 import type { DanceStyle, FestivalEvent, Session } from "@/lib/types";
+import { darken, STYLE_COLORS, styleTint } from "@/lib/theme";
 import { CheckIcon, Icon } from "@/components/ui/icon";
 import { Segmented } from "@/components/ui/segmented";
 import { cn } from "@/lib/utils";
@@ -46,7 +49,8 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
   const [sheetSession, setSheetSession] = useState<Session | null>(null);
   const [infoOpen, setInfoOpen] = useState(false);
   const [changesOpen, setChangesOpen] = useState(false);
-  const { togglePick, picks, removePick, dismissedChangeIds, dismissChanges } = usePicksStore();
+  const { togglePick, picks, removePick, relinkPick, dismissedChangeIds, dismissChanges } =
+    usePicksStore();
 
   useEffect(() => setMounted(true), []);
 
@@ -82,44 +86,48 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
     [event, allSessions, allArtists],
   );
 
-  const pickedIds = useMemo(
-    () => new Set(mounted ? picks.filter((p) => p.eventId === event.id).map((p) => p.sessionId) : []),
-    [mounted, picks, event.id],
-  );
-  const pickedSessions = useMemo(
-    () => allSessions.filter((s) => pickedIds.has(s.id)),
-    [allSessions, pickedIds],
-  );
-  // pickedIds includes stale/orphaned sessionIds too (see orphanedPicks
-  // below) — the nav badge and "anything picked?" checks should only ever
-  // count picks that still match a real session, so a schedule change never
-  // makes the badge overcount.
-  const validPickedCount = pickedSessions.length;
-
-  // Picks whose session id no longer matches anything — the class moved,
-  // changed, or got dropped since it was picked (session ids are a content
-  // hash, so any real change mints a new one). Surfaced via PickChangesSheet
-  // instead of just silently vanishing from My Picks.
-  const allSessionIds = useMemo(() => new Set(allSessions.map((s) => s.id)), [allSessions]);
-  const orphanedPicks = useMemo(
+  // Session ids are content hashes, so a class that changes room or time gets
+  // a new one and its pick's stored id goes stale. resolvePicks re-finds those
+  // classes by artist rather than dropping them; only a class that's genuinely
+  // gone comes back orphaned (and gets surfaced via PickChangesSheet).
+  const { resolved, orphaned: orphanedPicks } = useMemo(
     () =>
       mounted
-        ? picks.filter((p) => p.eventId === event.id && p.snapshot && !allSessionIds.has(p.sessionId))
-        : [],
-    [mounted, picks, event.id, allSessionIds],
+        ? resolvePicks(
+            picks.filter((p) => p.eventId === event.id),
+            allSessions,
+          )
+        : { resolved: [], orphaned: [] },
+    [mounted, picks, event.id, allSessions],
   );
+
+  const pickedSessions = useMemo(() => resolved.map((r) => r.session), [resolved]);
+  const pickedIds = useMemo(() => new Set(pickedSessions.map((s) => s.id)), [pickedSessions]);
+  // Only picks still pointing at a real session count toward the nav badge, so
+  // a dropped class never leaves the badge overstating the schedule.
+  const validPickedCount = resolved.length;
+
+  // Persist re-matches so the next sync starts from the class's current
+  // details instead of re-deriving from an increasingly stale snapshot. The
+  // relinked pick then matches by id, so this settles after one pass.
+  useEffect(() => {
+    for (const r of resolved) {
+      if (r.relinked) relinkPick(r.pick.sessionId, r.session);
+    }
+  }, [resolved, relinkPick]);
   // Dismissing the banner mutes it for these specific changed picks (not a
   // delete — see PicksState.dismissedChangeIds) until a *new* change appears.
+  // Picks with no snapshot (saved before snapshots existed) are skipped: the
+  // sheet has nothing to show for them, so counting them would put a number in
+  // the banner that opens onto an empty list.
   const visibleOrphanedPicks = useMemo(
-    () => orphanedPicks.filter((p) => !dismissedChangeIds.includes(p.sessionId)),
+    () => orphanedPicks.filter((p) => p.snapshot && !dismissedChangeIds.includes(p.sessionId)),
     [orphanedPicks, dismissedChangeIds],
   );
 
   // Bumping this remounts the pick-count badge, which restarts its CSS pop
-  // animation — a plain class toggle wouldn't replay on a second pick, since
-  // the class never leaves the element between them. Only counts UP: removing
-  // a pick has the Undo snackbar as its feedback, and a celebratory pop on
-  // delete would read as the wrong emotion.
+  // animation — a plain class toggle wouldn't replay on consecutive changes,
+  // since the class never leaves the element between them.
   const [pickBump, setPickBump] = useState(0);
   const prevPickCount = useRef<number | null>(null);
   useEffect(() => {
@@ -128,7 +136,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
     // The first post-hydration run only seeds the baseline: picks restored
     // from localStorage aren't new, so without this the badge would pop on
     // every single page load.
-    if (prevPickCount.current !== null && count > prevPickCount.current) {
+    if (prevPickCount.current !== null && count !== prevPickCount.current) {
       setPickBump((b) => b + 1);
     }
     prevPickCount.current = count;
@@ -230,55 +238,27 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
   // tabs onto one line, reclaiming ~104px — over a full session card on a
   // phone. Any upward scroll brings the full header straight back.
   //
-  // Direction-driven, so the header is never more than a flick away. The 4px
-  // DIRECTION_DELTA is what keeps that from thrashing: rubber-banding and
-  // sub-pixel scroll noise both emit a constant dribble of tiny deltas, and
-  // reacting to those would strobe the header. Deltas below the threshold
-  // don't reset the baseline, so slow deliberate scrolling still accumulates
-  // past it and registers.
+  // Direction-driven, so the header is never more than a flick away — except
+  // in the zones at either end of the page, where the header's own resizing
+  // moves the scroll ceiling and direction stops meaning anything. See
+  // nextCollapse for why that feeds back on itself and how the zones break it.
   const [collapsed, setCollapsed] = useState(false);
   useEffect(() => {
     let queued = false;
-    const DIRECTION_DELTA = 4;
-    // Anything within this of the top counts as "at the top" and always shows
-    // the full header, whichever way the last movement went.
-    const TOP_ZONE = 48;
-    const maxScroll = () =>
-      Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
     let lastY = window.scrollY;
-    let lastMax = maxScroll();
     const read = () => {
       queued = false;
       // Desktop never collapses: <main> scrolls inside a fixed-height shell
       // there, so window.scrollY is pinned at 0 and there's nothing to react
       // to — and vertical space isn't scarce on a laptop anyway.
       if (window.matchMedia("(min-width: 768px)").matches) return setCollapsed(false);
-      const y = window.scrollY;
-      const max = maxScroll();
-      // How far the scroll ceiling just dropped. The header is in flow, so
-      // collapsing it shortens the document — and at the bottom of the page
-      // there's no slack, so the browser drags the scroll position down to
-      // keep it in range.
-      const ceilingDrop = Math.max(0, lastMax - max);
-      lastMax = max;
-      if (y <= TOP_ZONE) {
-        lastY = y;
-        return setCollapsed(false);
-      }
-      const dy = y - lastY;
-      // That drag looks exactly like an upward scroll, and reacting to it
-      // expands the header, which lengthens the document, which lets the next
-      // frame scroll down again — a loop that strobes the header for as long
-      // as you sit near the bottom. A downward move no larger than the
-      // ceiling drop is the document moving under the viewport, not a finger
-      // moving on it: take the new position, but don't read intent into it.
-      if (dy < 0 && -dy <= ceilingDrop + 1) {
-        lastY = y;
-        return;
-      }
-      if (Math.abs(dy) < DIRECTION_DELTA) return;
-      lastY = y;
-      setCollapsed(dy > 0);
+      const next = nextCollapse({
+        y: window.scrollY,
+        max: Math.max(0, document.documentElement.scrollHeight - window.innerHeight),
+        lastY,
+      });
+      lastY = next.lastY;
+      if (next.collapsed !== null) setCollapsed(next.collapsed);
     };
     const onScroll = () => {
       if (queued) return;
@@ -388,6 +368,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
                 // chip's own checked state (not a style color) is the only
                 // thing marking that.
                 const on = !excludedStyles.has(st);
+                const color = STYLE_COLORS[st];
                 return (
                   <button
                     key={st}
@@ -406,9 +387,17 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
                       // gap. A quick tap-down scale is the only motion, so the
                       // toggle reads as a physical press rather than a fade.
                       // Off state keeps the exact same border/fill/text as on —
-                      // the checkmark's presence is the only signal.
-                      "flex shrink-0 items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium capitalize text-foreground transition-all active:scale-[0.93]",
+                      // the checkmark's presence is the only signal. The chip
+                      // wears its own style color (tint fill, tinted border,
+                      // darkened label) so the row doubles as the legend for
+                      // the card tints, same as the cards themselves.
+                      "flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium capitalize transition-all active:scale-[0.93]",
                     )}
+                    style={{
+                      background: styleTint(st, 0.16),
+                      borderColor: styleTint(st, 0.4),
+                      color: darken(color),
+                    }}
                   >
                     {on && <CheckIcon size={16} className="-ml-0.5" />}
                     {st}
@@ -537,11 +526,11 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
                 className={cn(
                   "absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-xs font-semibold leading-none text-primary-foreground ring-2 ring-background",
                   // Only dress the badge with the animation once a pick has
-                  // actually been added this session. The classes can't be
+                  // actually changed this session. The classes can't be
                   // unconditional: the badge also mounts on page load when
                   // picks are restored from localStorage, and a CSS animation
                   // fires on mount whether or not anything changed — so it
-                  // would celebrate every time the app opened.
+                  // would pop every time the app opened.
                   pickBump > 0 && "animate-badge-pop",
                 )}
               >

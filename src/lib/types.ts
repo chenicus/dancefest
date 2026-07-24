@@ -104,14 +104,18 @@ export interface SchedulePick {
   status: "going" | "interested";
   createdAt: string;
   /** The session's own details at pick time. Session ids are a content hash
-   *  (see scripts/sync-from-sheet.py) — a class that later moves rooms,
-   *  changes instructor, or gets dropped gets a new id, so `sessionId` stops
-   *  matching anything. This snapshot is what lets the app still tell the
-   *  user what they'd picked, instead of the pick just silently vanishing.
+   *  (see scripts/sync-from-sheet.py), so a class that moves room or time gets
+   *  a new id and `sessionId` stops matching. This snapshot is what lets the
+   *  app re-find that class anyway (see resolvePicks) — and, when it truly is
+   *  gone, still say what had been picked instead of silently dropping it.
    *  Optional only so picks saved before this field existed don't break. */
   snapshot?: {
     title: string;
     instructors: string[];
+    /** Artist ids at pick time — the stable identity used to re-find this
+     *  class after a room/time change. Absent on picks saved before this
+     *  field existed, which fall back to matching on instructor names. */
+    artistIds?: string[];
     day: string;
     start: string;
     end: string;
