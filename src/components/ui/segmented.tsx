@@ -48,7 +48,7 @@ export function Segmented<T extends string>({
       role="tablist"
       className={cn(
         "items-center gap-1",
-        tone === "neutral" ? "bg-neutral-100 p-1" : "bg-secondary p-1",
+        tone === "neutral" ? "bg-slate-100 p-1" : "bg-secondary p-1",
         fullWidth ? "flex" : "inline-flex",
         trackRadius,
         className,
@@ -70,8 +70,8 @@ export function Segmented<T extends string>({
               size === "sm" ? "px-3 py-1 text-xs" : "px-4 py-1.5 text-sm",
               tone === "neutral"
                 ? active
-                  ? "bg-white text-neutral-900 shadow-[0_1px_4px_rgba(0,0,0,0.12)]"
-                  : "text-neutral-500 hover:text-neutral-700"
+                  ? "bg-white text-slate-900 shadow-[0_1px_4px_rgba(0,0,0,0.12)]"
+                  : "text-slate-500 hover:text-slate-700"
                 : active
                   ? "bg-primary text-primary-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground",

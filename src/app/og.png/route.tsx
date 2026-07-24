@@ -49,7 +49,7 @@ export async function GET() {
             fontSize: 34,
             fontWeight: 600,
             letterSpacing: 5,
-            color: "#737373",
+            color: "#64748b",
           }}
         >
           HELLO! DANCE FEST 2026
@@ -64,13 +64,13 @@ export async function GET() {
             fontWeight: 600,
             lineHeight: 1.02,
             letterSpacing: -2,
-            color: "#171717",
+            color: "#0f172a",
           }}
         >
           <div style={{ display: "flex" }}>Build your own</div>
           <div style={{ display: "flex" }}>schedule</div>
         </div>
-        <div style={{ display: "flex", fontSize: 40, color: "#525252", marginTop: 30 }}>
+        <div style={{ display: "flex", fontSize: 40, color: "#475569", marginTop: 30 }}>
           July 24–26
         </div>
         <div style={{ display: "flex", gap: 14, marginTop: 40 }}>

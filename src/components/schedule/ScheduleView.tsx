@@ -381,7 +381,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
                     className={cn(
                       "block overflow-hidden text-xs font-normal transition-[max-height,opacity] duration-200 ease-out",
                       collapsed ? "max-h-0 opacity-0" : "max-h-6 opacity-100",
-                      d === day ? "text-neutral-500" : "text-neutral-400",
+                      d === day ? "text-slate-500" : "text-slate-400",
                     )}
                   >
                     {dayDateLabel(d)}
@@ -451,7 +451,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
           (~5rem incl. its own bottom offset) plus a card's worth of slack also
           gives the collapsing header somewhere to give back the height it
           takes, so reaching the bottom doesn't fight the scroll ceiling. */}
-      <main className="mx-auto w-full flex-1 bg-neutral-100 px-4 pb-[calc(env(safe-area-inset-bottom)+9rem)] pt-4 md:min-h-0 md:overflow-y-auto">
+      <main className="mx-auto w-full flex-1 bg-background px-4 pb-[calc(env(safe-area-inset-bottom)+9rem)] pt-4 md:min-h-0 md:overflow-y-auto md:pb-4">
         {view === "all" && (
           <>
             <MobileDayList
@@ -793,7 +793,7 @@ function DesktopGrid({
     >
       {/* Corner: fixed, never scrolls — the one truly static piece. */}
       <div
-        className={cn("bg-neutral-100 transition-colors", scrolled && "border-b border-border")}
+        className={cn("bg-background transition-colors", scrolled && "border-b border-border")}
         style={{ gridColumn: 1, gridRow: 1 }}
       />
 
@@ -804,7 +804,7 @@ function DesktopGrid({
             <div
               key={r}
               className={cn(
-                "bg-neutral-100 py-2 text-center text-xs font-medium text-muted-foreground transition-colors",
+                "bg-background py-2 text-center text-xs font-medium text-muted-foreground transition-colors",
                 scrolled && "border-b border-border",
               )}
               style={{ gridColumn: i + 1 }}
@@ -821,7 +821,7 @@ function DesktopGrid({
           {hourRows.map((m) => (
             <div
               key={m}
-              className="bg-neutral-100 pr-2 text-right text-xs text-muted-foreground"
+              className="bg-background pr-2 text-right text-xs text-muted-foreground"
               style={{ gridRow: Math.floor((m - grid.startMinutes) / 15) + 1 }}
             >
               {hourLabel(m)}
