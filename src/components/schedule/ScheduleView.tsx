@@ -148,7 +148,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
       className="flex min-h-dvh flex-col md:h-dvh md:overflow-hidden"
       style={{ background: "var(--event-bg)" }}
     >
-      <header className="sticky top-0 z-40 border-b border-black/10 bg-background/85 backdrop-blur-md dark:border-white/10">
+      <header className="sticky top-0 z-40 border-b border-black/10 bg-background/85 backdrop-blur-md">
         <div className="mx-auto flex w-full max-w-[800px] items-center justify-center gap-3 px-4 pt-3.5">
           <h1 className="wordmark truncate text-lg">{event.name}</h1>
         </div>
@@ -169,7 +169,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
                   <span
                     className={cn(
                       "text-[11px] font-normal",
-                      d === day ? "text-neutral-500 dark:text-neutral-300" : "text-neutral-400 dark:text-neutral-500",
+                      d === day ? "text-neutral-500" : "text-neutral-400",
                     )}
                   >
                     {dayDateLabel(d)}
@@ -237,7 +237,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
         )}
       </header>
 
-      <main className="mx-auto w-full flex-1 bg-neutral-100 px-4 pt-2 md:min-h-0 md:overflow-y-auto dark:bg-neutral-900">
+      <main className="mx-auto w-full flex-1 bg-neutral-100 px-4 pt-2 md:min-h-0 md:overflow-y-auto">
         {view === "all" && (
           <>
             <MobileDayList
@@ -274,7 +274,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
       </main>
 
       <nav className="fixed inset-x-0 bottom-0 z-40 flex justify-center px-4 pb-[calc(env(safe-area-inset-bottom)+1.5rem)]">
-        <div className="flex items-center gap-2 rounded-full border border-black/[0.06] bg-background/70 p-1.5 shadow-[0_2px_10px_rgba(0,0,0,0.06)] backdrop-blur-xl backdrop-saturate-150 dark:border-white/10">
+        <div className="flex items-center gap-2 rounded-full border border-black/[0.06] bg-background/70 p-1.5 shadow-[0_2px_10px_rgba(0,0,0,0.06)] backdrop-blur-xl backdrop-saturate-150">
           <button
             onClick={() => setParam("view", null)}
             aria-label="Schedule"
@@ -473,7 +473,7 @@ function DesktopGrid({
     >
       {/* Corner: fixed, never scrolls — the one truly static piece. */}
       <div
-        className={cn("bg-neutral-100 transition-colors dark:bg-neutral-900", scrolled && "border-b border-border")}
+        className={cn("bg-neutral-100 transition-colors", scrolled && "border-b border-border")}
         style={{ gridColumn: 1, gridRow: 1 }}
       />
 
@@ -484,7 +484,7 @@ function DesktopGrid({
             <div
               key={r}
               className={cn(
-                "bg-neutral-100 py-2 text-center text-xs font-medium text-muted-foreground transition-colors dark:bg-neutral-900",
+                "bg-neutral-100 py-2 text-center text-xs font-medium text-muted-foreground transition-colors",
                 scrolled && "border-b border-border",
               )}
               style={{ gridColumn: i + 1 }}
@@ -501,7 +501,7 @@ function DesktopGrid({
           {hourRows.map((m) => (
             <div
               key={m}
-              className="bg-neutral-100 pr-2 text-right text-[11px] text-muted-foreground dark:bg-neutral-900"
+              className="bg-neutral-100 pr-2 text-right text-[11px] text-muted-foreground"
               style={{ gridRow: Math.floor((m - grid.startMinutes) / 15) + 1 }}
             >
               {hourLabel(m)}

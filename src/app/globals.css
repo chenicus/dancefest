@@ -6,6 +6,11 @@
  * shadcn/ui variable convention, Tailwind v4 (@theme inline).
  * ------------------------------------------------------------------ */
 :root {
+  /* The festival design is light-only: every card tint, party gradient, and
+     gold is a hand-tuned light pastel. Pin the scheme so OS dark mode gets
+     the intended design instead of a half-dark hybrid. */
+  color-scheme: light;
+
   --radius: 1rem;
 
   --background: #ffffff;
@@ -42,28 +47,6 @@
   --event-bg: #ffffff;
 }
 
-.dark {
-  --background: #171717;
-  --foreground: #fafafa;
-  --card: #212121;
-  --card-foreground: #fafafa;
-  --popover: #212121;
-  --popover-foreground: #fafafa;
-  --primary: #fafafa;
-  --primary-foreground: #171717;
-  --secondary: #262626;
-  --secondary-foreground: #fafafa;
-  --muted: #262626;
-  --muted-foreground: #a3a3a3;
-  --accent: #262626;
-  --accent-foreground: #fafafa;
-  --destructive: #f87171;
-  --destructive-foreground: #171717;
-  --border: #404040;
-  --input: #404040;
-  --ring: #d4d4d4;
-  --event-bg: #171717;
-}
 
 @theme inline {
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
