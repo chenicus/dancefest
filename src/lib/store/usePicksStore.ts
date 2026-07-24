@@ -25,6 +25,10 @@ interface PicksState {
    *  the "N picks changed" banner stops calling them out). A pick dropping
    *  off this list (e.g. after being cleared) is harmless; it's just a mute. */
   dismissedChangeIds: string[];
+  /** Whether the "Saved here" coach tip (pointing at the My picks heart) has
+   *  already been shown. It fires once ever, on the first pick made from an
+   *  empty list, so a returning user with picks already saved never sees it. */
+  coachSeen: boolean;
   /** Toggling on snapshots the session's own details (see SchedulePick.snapshot)
    *  so a later sync that changes/drops this session can still show what was
    *  picked instead of the pick just disappearing. */
@@ -35,6 +39,7 @@ interface PicksState {
    *  so later matching works from current data rather than ever-staler values. */
   relinkPick: (oldSessionId: string, session: Session) => void;
   dismissChanges: (sessionIds: string[]) => void;
+  markCoachSeen: () => void;
   isPicked: (sessionId: string) => boolean;
   picksForEvent: (eventId: string) => SchedulePick[];
 }
@@ -44,6 +49,7 @@ export const usePicksStore = create<PicksState>()(
     (set, get) => ({
       picks: [],
       dismissedChangeIds: [],
+      coachSeen: false,
       togglePick: (eventId, session) =>
         set((state) => {
           const exists = state.picks.some((p) => p.sessionId === session.id);
@@ -87,6 +93,7 @@ export const usePicksStore = create<PicksState>()(
         set((state) => ({
           dismissedChangeIds: [...new Set([...state.dismissedChangeIds, ...sessionIds])],
         })),
+      markCoachSeen: () => set({ coachSeen: true }),
       isPicked: (sessionId) => get().picks.some((p) => p.sessionId === sessionId),
       picksForEvent: (eventId) => get().picks.filter((p) => p.eventId === eventId),
     }),

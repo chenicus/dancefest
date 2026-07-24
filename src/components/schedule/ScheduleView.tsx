@@ -24,6 +24,7 @@ import { cn } from "@/lib/utils";
 import { ArtistSheet } from "./ArtistSheet";
 import { InfoSheet } from "./InfoSheet";
 import { PickChangesSheet } from "./PickChangesSheet";
+import { PickCoachTip } from "./PickCoachTip";
 import { SessionCard } from "./SessionCard";
 
 // A 1-hour session's typical rendered height (title + time + tags, plus the
@@ -49,8 +50,16 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
   const [sheetSession, setSheetSession] = useState<Session | null>(null);
   const [infoOpen, setInfoOpen] = useState(false);
   const [changesOpen, setChangesOpen] = useState(false);
-  const { togglePick, picks, removePick, relinkPick, dismissedChangeIds, dismissChanges } =
-    usePicksStore();
+  const {
+    togglePick,
+    picks,
+    removePick,
+    relinkPick,
+    dismissedChangeIds,
+    dismissChanges,
+    coachSeen,
+    markCoachSeen,
+  } = usePicksStore();
 
   useEffect(() => setMounted(true), []);
 
@@ -125,6 +134,11 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
     [orphanedPicks, dismissedChangeIds],
   );
 
+  // The one-time "Saved here" tip is anchored to the measured nav heart, so
+  // the nav needs a ref for the tip to point at.
+  const navHeartRef = useRef<HTMLButtonElement>(null);
+  const [coachAnchor, setCoachAnchor] = useState<{ x: number; top: number } | null>(null);
+
   // Bumping this remounts the pick-count badge, which restarts its CSS pop
   // animation — a plain class toggle wouldn't replay on consecutive changes,
   // since the class never leaves the element between them.
@@ -141,6 +155,29 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
     }
     prevPickCount.current = count;
   }, [mounted, validPickedCount]);
+
+  // Acting on the tip retires it: once you're in My picks, a bubble still
+  // pointing at the heart is telling you to do what you just did.
+  useEffect(() => {
+    if (view === "my") setCoachAnchor(null);
+  }, [view]);
+
+  function handleToggle(session: Session) {
+    const adding = !pickedIds.has(session.id);
+    togglePick(event.id, session);
+    if (!adding) return;
+
+    // Their very first pick anywhere — not just their first this session, so
+    // someone returning with a saved schedule is never re-taught.
+    if (coachSeen || picks.length > 0) return;
+    markCoachSeen();
+
+    // The tip's tail points at the heart icon itself, centred — measured
+    // rather than assumed, since the nav pill holds two buttons and its own
+    // centre lands in the gap between them.
+    const r = navHeartRef.current?.getBoundingClientRect();
+    if (r) setCoachAnchor({ x: r.left + r.width / 2, top: r.top });
+  }
 
   function setParam(key: string, value: string | null) {
     const params = new URLSearchParams(search.toString());
@@ -426,14 +463,14 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
               sessions={daySessions.filter((s) => s.type !== "empty")}
               event={scheduleEvent}
               pickedIds={pickedIds}
-              onToggle={(s) => togglePick(event.id, s)}
+              onToggle={handleToggle}
               onArtistTap={openSheet}
             />
             <DesktopGrid
               sessions={daySessions}
               event={scheduleEvent}
               pickedIds={pickedIds}
-              onToggle={(s) => togglePick(event.id, s)}
+              onToggle={handleToggle}
               onArtistTap={openSheet}
             />
           </>
@@ -500,6 +537,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
           </button>
           <button
             onClick={() => setParam("view", "my")}
+            ref={navHeartRef}
             aria-label="My picks"
             aria-current={view === "my" ? "page" : undefined}
             className="group relative flex size-11 items-center justify-center rounded-full transition-transform hover:-translate-y-0.5"
@@ -550,6 +588,10 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
           The outer layer is click-through (pointer-events-none) so it doesn't
           swallow taps on the list beneath; only the pill itself is
           interactive. */}
+      {/* Rendered here (a sibling of the nav, outside the scrolling main) so
+          it isn't clipped by the feed's overflow on desktop. */}
+      {coachAnchor && <PickCoachTip anchor={coachAnchor} onDone={() => setCoachAnchor(null)} />}
+
       {undoSession && (
         <div className="pointer-events-none fixed inset-x-0 bottom-[calc(env(safe-area-inset-bottom)+6rem)] z-50 flex justify-center px-4">
           <div

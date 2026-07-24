@@ -318,11 +318,12 @@ export function SessionCard({
       // whole tile toggles the pick and only the corner caret opens details.
       // In My Picks (remove mode) that's flipped: the tile opens details and
       // the corner × removes, so an accidental tap can't drop a saved pick.
-      onClick={onRemove ? onArtistTap : onToggle}
+      onClick={() => (onRemove ? onArtistTap() : onToggle?.())}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
-          (onRemove ? onArtistTap : onToggle)?.();
+          if (onRemove) onArtistTap();
+          else onToggle?.();
         }
       }}
       className={cn(
