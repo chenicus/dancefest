@@ -108,36 +108,52 @@ export function InfoSheet({ event, onClose }: { event: FestivalEvent; onClose: (
       {/* Sized to fit without scrolling on a typical phone; overflow-y-auto is
           only a fallback for very short viewports. */}
       <div className="flex flex-1 flex-col gap-4 overflow-y-auto px-5 py-4 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        {/* Data provenance — sits above Venue since it's about the schedule
-            itself, not the festival's own program. */}
-        {event.scheduleSyncedAt && (
-          <div className="flex items-center gap-3 rounded-2xl border border-border p-3.5">
-            <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-secondary text-foreground">
-              <Icon icon={RefreshIcon} size={17} />
-            </span>
-            <p className="min-w-0 text-sm leading-snug text-muted-foreground">
-              Schedule last synced from{" "}
-              {event.scheduleSourceUrl ? (
-                <a
-                  href={event.scheduleSourceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold text-foreground underline underline-offset-2 hover:text-muted-foreground"
-                >
-                  spreadsheet
-                </a>
-              ) : (
-                <span className="font-semibold text-foreground">spreadsheet</span>
-              )}{" "}
-              {new Date(event.scheduleSyncedAt).toLocaleString("en-US", {
-                month: "short",
-                day: "numeric",
-                hour: "numeric",
-                minute: "2-digit",
-              })}
+        {/* Data provenance + "not official" disclaimer share a card: both are
+            meta-notices about the app itself rather than the festival's own
+            program, so they read as one aside instead of two. */}
+        <div className="flex items-start gap-3 rounded-2xl border border-border p-3.5">
+          <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-secondary text-foreground">
+            <Icon icon={RefreshIcon} size={17} />
+          </span>
+          <div className="min-w-0 space-y-2">
+            {event.scheduleSyncedAt && (
+              <p className="text-sm leading-snug text-muted-foreground">
+                Schedule last synced from{" "}
+                {event.scheduleSourceUrl ? (
+                  <a
+                    href={event.scheduleSourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-foreground underline underline-offset-2 hover:text-muted-foreground"
+                  >
+                    spreadsheet
+                  </a>
+                ) : (
+                  <span className="font-semibold text-foreground">spreadsheet</span>
+                )}{" "}
+                {new Date(event.scheduleSyncedAt).toLocaleString("en-US", {
+                  month: "short",
+                  day: "numeric",
+                  hour: "numeric",
+                  minute: "2-digit",
+                })}
+              </p>
+            )}
+            <p className="text-xs leading-relaxed text-muted-foreground/70">
+              This isn&apos;t an official festival website — just a passionate dancer&apos;s
+              side project. Feedback? DM{" "}
+              <a
+                href="https://instagram.com/charlotttechen"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-muted-foreground underline underline-offset-2 hover:text-foreground"
+              >
+                @charlotttechen
+              </a>{" "}
+              :)
             </p>
           </div>
-        )}
+        </div>
 
         {/* Venue + directions */}
         <section>
