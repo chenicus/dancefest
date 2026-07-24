@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, IBM_Plex_Sans_Condensed, Permanent_Marker, Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
+import { OG_ALT, OG_SIZE } from "./og.png/route";
 
 const body = Schibsted_Grotesk({ variable: "--font-body", subsets: ["latin"] });
 const display = Fraunces({
@@ -22,13 +23,37 @@ const marker = Permanent_Marker({
   weight: ["400"],
 });
 
+const TITLE = "Hello! Dance Fest 2026 — Build your own schedule";
+const DESCRIPTION = "Every workshop across all three days, with times, rooms and artists.";
+
+// Link unfurlers (iMessage, WhatsApp, Slack, X) reject relative image URLs, so
+// og:image has to be absolute. metadataBase carries the Pages project subpath
+// and the image below is relative to it, giving …/dancefest/og.png.
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://chenicus.github.io/dancefest/";
+const OG_IMAGE = {
+  url: "og.png",
+  width: OG_SIZE.width,
+  height: OG_SIZE.height,
+  alt: OG_ALT,
+};
+
 export const metadata: Metadata = {
-  title: "Hello! Dance Fest 2026 — Schedule",
-  description: "The full Hello! Dance Fest 2026 workshop timetable, made tappable — browse by day and star your picks.",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
   openGraph: {
-    title: "Hello! Dance Fest 2026 — Schedule",
-    description: "Browse the full workshop timetable by day and star your picks.",
+    title: TITLE,
+    description: DESCRIPTION,
     type: "website",
+    siteName: "Hello! Dance Fest 2026",
+    url: SITE_URL,
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
   },
 };
 
