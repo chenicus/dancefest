@@ -684,15 +684,12 @@ function MobileDayList({
     // box never scrolls on its own, the label would just sit inert instead
     // of sticking to the real (page/main) scrollport.
     <div className="relative mx-auto max-w-[400px] md:hidden">
-      {groupByStart(sessions).map((group, gi) => (
+      {groupByStart(sessions).map((group) => (
         <div key={group.start} className="flex gap-x-1">
           <div className="sticky top-[var(--sticky-top,0px)] z-10 w-12 shrink-0 self-start pt-3 text-left text-xs font-medium text-muted-foreground md:top-0">
             {to12h(group.start)}
           </div>
           <div className="min-w-0 flex-1">
-            {/* Hour-boundary rule, Google Calendar–style: spans only the
-                card column, so the time gutter stays its own clean strip. */}
-            {gi > 0 && <div aria-hidden className="border-t border-dashed border-border/60" />}
             {group.items.map((s) => (
               <div
                 key={s.id}
