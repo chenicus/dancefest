@@ -10,8 +10,17 @@ Pass --apply to back up the current file and write the rebuilt one.
 Re-run this whenever the organizers update the sheet. New artist names that
 don't fuzzy-match an existing artist are created without a photo/bioUrl —
 same as any brand-new instructor added through the normal import flow.
+
+Session ids are a deterministic hash of a session's own content (day, room,
+start time, title, instructors) — NOT randomly regenerated each run. Users'
+saved picks are stored client-side as {sessionId}, matched by exact id, so a
+session that is byte-identical to last sync must keep the same id or every
+saved pick in the wild silently vanishes on the next sync. A session whose
+content actually changed gets a new id on purpose — the old pick correctly
+stops matching anything, rather than silently pointing at different content.
 """
 import csv
+import hashlib
 import io
 import json
 import re
@@ -191,6 +200,13 @@ def nanoid(n=8):
     return "".join(random.choice(alphabet) for _ in range(n))
 
 
+def stable_session_id(*parts):
+    """Content-addressed id: same content -> same id, every run, forever.
+    Deliberately NOT random — see the module docstring for why."""
+    digest = hashlib.sha1("|".join(parts).encode("utf-8")).hexdigest()
+    return digest[:12]
+
+
 def norm(name):
     s = name.lower()
     s = re.sub(r"[^a-z0-9&,]+", " ", s).replace("&", " and ")
@@ -264,8 +280,10 @@ def main():
     final_sessions = []
     for s in workshop_sessions:
         ids = [resolve_artist(n, s["style"]) for n in s["instructors"] if n]
+        sid = stable_session_id("workshop", s["day"], s["room"], s["start"], s["end"],
+                                 s["title"], ", ".join(s["instructors"]))
         final_sessions.append({
-            "id": nanoid(), "eventId": EVENT_ID, "title": s["title"], "instructors": s["instructors"],
+            "id": sid, "eventId": EVENT_ID, "title": s["title"], "instructors": s["instructors"],
             "style": s["style"], **({"level": s["level"]} if s.get("level") else {}),
             "room": s["room"], "day": s["day"], "start": s["start"], "end": s["end"],
             **({"artistIds": ids} if ids else {}),
@@ -274,11 +292,14 @@ def main():
         sp2 = copy.deepcopy(sp)
         if sp2["instructors"]:
             sp2["artistIds"] = [resolve_artist(n, sp2["style"]) for n in sp2["instructors"]]
-        final_sessions.append({"id": nanoid(), "eventId": EVENT_ID, **sp2})
+        sid = stable_session_id("special", sp2["day"], sp2["room"], sp2["start"], sp2["end"],
+                                 sp2["title"], ", ".join(sp2["instructors"]))
+        final_sessions.append({"id": sid, "eventId": EVENT_ID, **sp2})
     for p in party_sets:
         dj_id = resolve_artist(p["dj"], p["style"])
+        sid = stable_session_id("party", p["day"], p["room"], p["start"], p["end"], p["dj"])
         final_sessions.append({
-            "id": nanoid(), "eventId": EVENT_ID, "title": p["dj"], "instructors": [p["dj"]],
+            "id": sid, "eventId": EVENT_ID, "title": p["dj"], "instructors": [p["dj"]],
             "style": p["style"], "room": p["room"], "day": p["day"], "start": p["start"], "end": p["end"],
             "type": "party", "artistIds": [dj_id],
         })
