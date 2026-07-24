@@ -54,7 +54,15 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
     () => (event.parties ?? []).flatMap(partyToSessions),
     [event.parties],
   );
-  const allSessions = useMemo(() => [...event.sessions, ...partySessions], [event.sessions, partySessions]);
+  // Drop any pre-existing "party" sessions baked into event.sessions: the
+  // canonical night lineup now comes from event.parties (synthesized above,
+  // with DJ headshots + Instagram wired in). Without this filter every DJ set
+  // renders twice — once from the legacy baked-in copy, once synthesized —
+  // stacking two overlapping cards in the same grid cell.
+  const allSessions = useMemo(
+    () => [...event.sessions.filter((s) => s.type !== "party"), ...partySessions],
+    [event.sessions, partySessions],
+  );
   const allArtists = useMemo(() => [...event.artists, ...djArtists], [event.artists, djArtists]);
   // Subviews (MobileDayList/DesktopGrid/MySchedule) read sessions/artists/
   // rooms off the `event` they're passed — hand them this merged event so
@@ -140,7 +148,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
       className="flex min-h-dvh flex-col md:h-dvh md:overflow-hidden"
       style={{ background: "var(--event-bg)" }}
     >
-      <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur-md">
+      <header className="sticky top-0 z-40 border-b border-black/10 bg-background/85 backdrop-blur-md dark:border-white/10">
         <div className="mx-auto flex w-full max-w-[800px] items-center justify-center gap-3 px-4 pt-3.5">
           <h1 className="wordmark truncate text-lg">{event.name}</h1>
         </div>
@@ -161,7 +169,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
                   <span
                     className={cn(
                       "text-[11px] font-normal",
-                      d === day ? "text-white/80 dark:text-neutral-900/80" : "text-neutral-400 dark:text-neutral-500",
+                      d === day ? "text-neutral-500 dark:text-neutral-300" : "text-neutral-400 dark:text-neutral-500",
                     )}
                   >
                     {dayDateLabel(d)}
@@ -229,7 +237,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
         )}
       </header>
 
-      <main className="mx-auto w-full flex-1 px-4 pt-2 md:min-h-0 md:overflow-y-auto">
+      <main className="mx-auto w-full flex-1 bg-neutral-100 px-4 pt-2 md:min-h-0 md:overflow-y-auto dark:bg-neutral-900">
         {view === "all" && (
           <>
             <MobileDayList
@@ -465,7 +473,7 @@ function DesktopGrid({
     >
       {/* Corner: fixed, never scrolls — the one truly static piece. */}
       <div
-        className={cn("bg-background transition-colors", scrolled && "border-b border-border")}
+        className={cn("bg-neutral-100 transition-colors dark:bg-neutral-900", scrolled && "border-b border-border")}
         style={{ gridColumn: 1, gridRow: 1 }}
       />
 
@@ -476,7 +484,7 @@ function DesktopGrid({
             <div
               key={r}
               className={cn(
-                "bg-background py-2 text-center text-xs font-medium text-muted-foreground transition-colors",
+                "bg-neutral-100 py-2 text-center text-xs font-medium text-muted-foreground transition-colors dark:bg-neutral-900",
                 scrolled && "border-b border-border",
               )}
               style={{ gridColumn: i + 1 }}
@@ -493,7 +501,7 @@ function DesktopGrid({
           {hourRows.map((m) => (
             <div
               key={m}
-              className="bg-background pr-2 text-right text-[11px] text-muted-foreground"
+              className="bg-neutral-100 pr-2 text-right text-[11px] text-muted-foreground dark:bg-neutral-900"
               style={{ gridRow: Math.floor((m - grid.startMinutes) / 15) + 1 }}
             >
               {hourLabel(m)}
