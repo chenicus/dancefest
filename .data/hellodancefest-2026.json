@@ -627,11 +627,6 @@
       "bioUrl": "https://hellodancefest.com/kizomba/kizomba-lineup/kizomba-workshops/pam-mike",
       "igLinks": [
         {
-          "url": "https://www.instagram.com/hellokizombafest",
-          "label": "Joint account",
-          "kind": "joint"
-        },
-        {
           "url": "https://www.instagram.com/pamelita.all.love",
           "label": "Pamelita",
           "kind": "individual"
@@ -656,11 +651,6 @@
           "url": "https://www.instagram.com/dj_sink",
           "label": "DJ",
           "kind": "individual"
-        },
-        {
-          "url": "https://www.instagram.com/hellokizombafest",
-          "label": "@hellokizombafest",
-          "kind": "individual"
         }
       ],
       "socialsFetchedAt": "2026-07-20T19:28:37.025Z"
@@ -676,11 +666,6 @@
         {
           "url": "https://www.instagram.com/ift_tyler",
           "label": "Tyler",
-          "kind": "individual"
-        },
-        {
-          "url": "https://www.instagram.com/hellokizombafest",
-          "label": "@hellokizombafest",
           "kind": "individual"
         }
       ],
@@ -1321,11 +1306,6 @@
       "photoUrl": "https://hellodancefest.com/images/lineup-kizomba/2026/pam-mike1.jpg",
       "bioUrl": "https://hellodancefest.com/kizomba/kizomba-lineup/kizomba-workshops/pam-mike",
       "igLinks": [
-        {
-          "url": "https://www.instagram.com/hellokizombafest",
-          "label": "Joint account",
-          "kind": "joint"
-        },
         {
           "url": "https://www.instagram.com/pamelita.all.love",
           "label": "Pamelita",

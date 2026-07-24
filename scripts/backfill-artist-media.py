@@ -28,12 +28,19 @@ Instagram. This script fills those in from sources the sync can't reach:
      you're logged into — that's the one source that can't be reached from a
      cloud session.
 
-Only ever fills a field that is empty — re-running after a sheet sync is safe,
-and hand-edits to .data survive. Without --apply it just prints what it would
-fill in.
+It also strips the organizers' own Instagram accounts out of artist links —
+the one thing here that removes rather than fills. Bio pages link the festival
+from every page, and it posts under one handle per style, so @hellokizombafest
+arrived on three artists' cards (once labelled as a couple's "Joint account").
+An artist card should list the artist, not the promoter.
+
+Beyond that it only fills fields that are empty — re-running after a sheet sync
+is safe, and hand-edits to .data survive. Without --apply it just prints what
+it would change.
 """
 import copy
 import json
+import re
 import shutil
 import sys
 from datetime import datetime, timezone
@@ -103,6 +110,26 @@ def handle_of(url):
     return url.rstrip("/").rsplit("/", 1)[-1].lower()
 
 
+def is_organiser_account(event_name, url):
+    """The organizers' own handle, not an artist's.
+
+    Same rule as isOrganiserAccount in src/lib/extraction/socials.ts: the event
+    slug itself, or the brand word plus a style/fest word, which catches the
+    per-style sibling accounts (@hellokizombafest) without touching an artist
+    handle that merely names a style (@bachatasensualorlando).
+    """
+    handle = re.sub(r"[^a-z]", "", (url.rstrip("/").rsplit("/", 1)[-1] or "").lower())
+    if not handle:
+        return False
+    slug = re.sub(r"[^a-z]", "", event_name.lower())
+    if slug and (slug in handle or handle in slug):
+        return True
+    first_word = re.search(r"[a-z]+", event_name.lower())
+    brand = first_word.group(0) if first_word else ""
+    return (len(brand) >= 4 and handle.startswith(brand)
+            and bool(re.search(r"fest|bachata|salsa|kizomba|zouk|dance", handle)))
+
+
 def approved_handles():
     """Artist name -> igLinks, from .data/ig-handles.json (see its _note)."""
     if not HANDLES_FILE.exists():
@@ -150,6 +177,18 @@ def main():
             added.append(f"ig({len(links)})")
         if added:
             filled.append((artist["name"], "+".join(added), source))
+
+    # 0. Drop the organizers' own accounts, wherever they came from — the bio
+    #    page scrape, or a fill below inheriting links from a record that has
+    #    one. Runs first so the inheritance in step 2 never copies one onward.
+    removed = []
+    for artist in artists:
+        keep = [l for l in artist.get("igLinks") or []
+                if not is_organiser_account(event["name"], l["url"])]
+        if len(keep) != len(artist.get("igLinks") or []):
+            dropped = [handle_of(l["url"]) for l in artist["igLinks"] if l not in keep]
+            artist["igLinks"] = keep
+            removed.append((artist["name"], dropped))
 
     # 1. DJs — headshot and handle already sitting on their party sets.
     for name, media in djs.items():
@@ -205,12 +244,14 @@ def main():
             continue
         fill(artist, links=links, source=HANDLES_FILE.name)
 
+    for name, dropped in removed:
+        print(f"  {name:26} dropped      -> @{', @'.join(dropped)} (organizers' own account)")
     for name, added, source in filled:
         print(f"  {name:26} {added:12} <- {source}")
 
     missing = [a for a in artists
                if a["name"] not in PLACEHOLDERS and (not a.get("photoUrl") or not a.get("igLinks"))]
-    print(f"\nFilled {len(filled)} artist(s).")
+    print(f"\nFilled {len(filled)} artist(s), dropped organizer links from {len(removed)}.")
     print(f"Still incomplete: {len(missing)} of {len(artists)} "
           f"({sum(1 for a in missing if not a.get('photoUrl'))} without a photo, "
           f"{sum(1 for a in missing if not a.get('igLinks'))} without Instagram)")
