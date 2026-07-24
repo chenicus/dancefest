@@ -7,7 +7,6 @@ import {
   FavouriteIcon,
   InformationCircleIcon,
   MusicNote01Icon,
-  Tick01Icon,
 } from "@hugeicons/core-free-icons";
 import { fillEmptySlots } from "@/lib/schedule/emptySlots";
 import { layoutDay } from "@/lib/schedule/layout";
@@ -15,7 +14,7 @@ import { partyArtists, partyToSessions } from "@/lib/schedule/party";
 import { dayDateLabel, dayLabel, hourLabel, to12h, toMinutes } from "@/lib/schedule/time";
 import { usePicksStore } from "@/lib/store/usePicksStore";
 import type { DanceStyle, FestivalEvent, Session } from "@/lib/types";
-import { Icon } from "@/components/ui/icon";
+import { CheckIcon, Icon } from "@/components/ui/icon";
 import { Segmented } from "@/components/ui/segmented";
 import { cn } from "@/lib/utils";
 import { ArtistSheet } from "./ArtistSheet";
@@ -159,7 +158,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
     togglePick(event.id, session.id);
     setUndoSession(session);
     if (undoTimer.current) clearTimeout(undoTimer.current);
-    undoTimer.current = setTimeout(() => setUndoSession(null), 5000);
+    undoTimer.current = setTimeout(() => setUndoSession(null), 3000);
   }
 
   function undoRemove() {
@@ -261,15 +260,12 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
                       // style drops out instead of leaving a dimmed icon-shaped
                       // gap. A quick tap-down scale is the only motion, so the
                       // toggle reads as a physical press rather than a fade.
-                      "flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium capitalize transition-all active:scale-[0.93]",
-                      on
-                        ? "border-border bg-card text-foreground"
-                        : "border-border/50 bg-transparent text-muted-foreground hover:text-foreground",
+                      // Off state keeps the exact same border/fill/text as on —
+                      // the checkmark's presence is the only signal.
+                      "flex shrink-0 items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium capitalize text-foreground transition-all active:scale-[0.93]",
                     )}
                   >
-                    {on && (
-                      <Icon icon={Tick01Icon} aria-hidden size={16} strokeWidth={3} className="-ml-0.5 shrink-0" />
-                    )}
+                    {on && <CheckIcon size={16} className="-ml-0.5" />}
                     {st}
                   </button>
                 );
