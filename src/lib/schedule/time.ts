@@ -40,6 +40,15 @@ export function dayLabel(day: string): string {
   return d.toLocaleDateString("en-US", { weekday: "short" });
 }
 
+/** Bare day-of-month ("26") for an ISO date; empty if unparseable. Used by the
+ *  condensed header, where "Fri 26" has to fit on one line across four tabs and
+ *  the full "July 26th" would not. */
+export function dayNumLabel(day: string): string {
+  const d = new Date(`${day}T12:00:00`);
+  if (Number.isNaN(d.getTime())) return "";
+  return String(d.getDate());
+}
+
 /** Full date with ordinal suffix ("July 26th") for an ISO date; empty if unparseable. */
 export function dayDateLabel(day: string): string {
   const d = new Date(`${day}T12:00:00`);

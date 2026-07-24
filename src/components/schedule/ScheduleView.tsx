@@ -11,7 +11,7 @@ import {
 import { fillEmptySlots } from "@/lib/schedule/emptySlots";
 import { layoutDay } from "@/lib/schedule/layout";
 import { partyArtists, partyToSessions } from "@/lib/schedule/party";
-import { dayDateLabel, dayLabel, hourLabel, to12h, toMinutes } from "@/lib/schedule/time";
+import { dayDateLabel, dayLabel, dayNumLabel, hourLabel, to12h, toMinutes } from "@/lib/schedule/time";
 import { usePicksStore } from "@/lib/store/usePicksStore";
 import type { DanceStyle, FestivalEvent, Session } from "@/lib/types";
 import { CheckIcon, Icon } from "@/components/ui/icon";
@@ -19,6 +19,7 @@ import { Segmented } from "@/components/ui/segmented";
 import { cn } from "@/lib/utils";
 import { ArtistSheet } from "./ArtistSheet";
 import { InfoSheet } from "./InfoSheet";
+import { PickChangesSheet } from "./PickChangesSheet";
 import { SessionCard } from "./SessionCard";
 
 // A 1-hour session's typical rendered height (title + time + tags, plus the
@@ -43,7 +44,8 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
   const [excludedStyles, setExcludedStyles] = useState<Set<DanceStyle>>(new Set());
   const [sheetSession, setSheetSession] = useState<Session | null>(null);
   const [infoOpen, setInfoOpen] = useState(false);
-  const { togglePick, picks } = usePicksStore();
+  const [changesOpen, setChangesOpen] = useState(false);
+  const { togglePick, picks, removePick } = usePicksStore();
 
   useEffect(() => setMounted(true), []);
 
@@ -86,6 +88,19 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
   const pickedSessions = useMemo(
     () => allSessions.filter((s) => pickedIds.has(s.id)),
     [allSessions, pickedIds],
+  );
+
+  // Picks whose session id no longer matches anything — the class moved,
+  // changed, or got dropped since it was picked (session ids are a content
+  // hash, so any real change mints a new one). Surfaced via PickChangesSheet
+  // instead of just silently vanishing from My Picks.
+  const allSessionIds = useMemo(() => new Set(allSessions.map((s) => s.id)), [allSessions]);
+  const orphanedPicks = useMemo(
+    () =>
+      mounted
+        ? picks.filter((p) => p.eventId === event.id && p.snapshot && !allSessionIds.has(p.sessionId))
+        : [],
+    [mounted, picks, event.id, allSessionIds],
   );
 
   // Bumping this remounts the pick-count badge, which restarts its CSS pop
@@ -155,7 +170,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
   const undoTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   function commitRemove(session: Session) {
-    togglePick(event.id, session.id);
+    togglePick(event.id, session);
     setUndoSession(session);
     if (undoTimer.current) clearTimeout(undoTimer.current);
     undoTimer.current = setTimeout(() => setUndoSession(null), 3000);
@@ -163,7 +178,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
 
   function undoRemove() {
     if (!undoSession) return;
-    togglePick(event.id, undoSession.id);
+    togglePick(event.id, undoSession);
     setUndoSession(null);
     if (undoTimer.current) clearTimeout(undoTimer.current);
   }
@@ -173,21 +188,73 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
 
   // Measured so the per-time-slot sticky labels below know exactly how far
   // to sit from the top — the header's real height varies (the style-filter
-  // row only exists in the "all" view), so a hardcoded offset would leave a
-  // gap or an overlap depending on which tab you're on. useLayoutEffect (not
-  // useEffect) so the correct value is in place before first paint instead
-  // of flashing top:0 for a frame.
+  // row only exists in the "all" view, and the whole thing condenses on
+  // scroll), so a hardcoded offset would leave a gap or an overlap depending
+  // on which tab you're on. useLayoutEffect (not useEffect) so the correct
+  // value is in place before first paint instead of flashing top:0.
+  //
+  // The measurement is pushed straight onto :root as a CSS variable rather
+  // than held in React state: the condense animation resizes the header on
+  // every frame it runs, and routing that through setState would re-render
+  // the entire session list ~12 times per collapse. A custom property
+  // inherits down to the sticky labels for free, so the labels track the
+  // header exactly with zero React work.
   const headerRef = useRef<HTMLElement>(null);
-  const [headerHeight, setHeaderHeight] = useState(0);
   useLayoutEffect(() => {
     const el = headerRef.current;
     if (!el) return;
-    const measure = () => setHeaderHeight(el.getBoundingClientRect().height);
+    const measure = () =>
+      document.documentElement.style.setProperty(
+        "--sticky-top",
+        `${el.getBoundingClientRect().height}px`,
+      );
     measure();
     const observer = new ResizeObserver(measure);
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
+
+  // Condensed header, iOS large-title style: past a threshold the wordmark
+  // row (and the style chips, when nothing is filtered) collapse away and the
+  // day tabs drop to a single line, reclaiming ~110px — over a full session
+  // card on a phone.
+  //
+  // Deliberately position-based, not scroll-direction-based: a schedule gets
+  // scanned up and down constantly, and a direction trigger would slam the
+  // full-height header back over the content on every small upward flick.
+  // The two thresholds (collapse at 48, expand at 8) are a dead zone —
+  // collapsing shortens the document, which nudges scrollY, and a single
+  // threshold would let that nudge oscillate the header across it.
+  const [collapsed, setCollapsed] = useState(false);
+  useEffect(() => {
+    let queued = false;
+    const read = () => {
+      queued = false;
+      // Desktop never collapses: <main> scrolls inside a fixed-height shell
+      // there, so window.scrollY is pinned at 0 and there's nothing to react
+      // to — and vertical space isn't scarce on a laptop anyway.
+      if (window.matchMedia("(min-width: 768px)").matches) return setCollapsed(false);
+      const y = window.scrollY;
+      setCollapsed((c) => (c ? y > 8 : y > 48));
+    };
+    const onScroll = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(read);
+    };
+    read();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
+  // Filters stay on screen even when condensed: a hidden style with a hidden
+  // chip row reads as "the festival has no salsa today", not "you filtered it
+  // out". Only the majority case — nothing excluded — buys back the space.
+  const chipsCollapsed = collapsed && excludedStyles.size === 0;
 
   return (
     <div
@@ -195,20 +262,46 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
       style={{ background: "var(--event-bg)" }}
     >
       <header ref={headerRef} className="sticky top-0 z-40 border-b border-black/10 bg-background">
-        <div className="mx-auto flex w-full max-w-[400px] items-center justify-between gap-3 px-4 pt-3.5 md:max-w-[800px]">
-          <h1 className="wordmark truncate text-lg">{event.name}</h1>
-          <button
-            type="button"
-            onClick={() => setInfoOpen(true)}
-            aria-label="Festival info"
-            className="-mr-1 flex size-9 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-          >
-            <Icon icon={InformationCircleIcon} size={22} strokeWidth={1.8} />
-          </button>
+        {/* Collapsing rows animate max-height, not grid-template-rows 1fr→0fr.
+            The grid trick is tidier on paper but `fr` distributes *free* space,
+            and an auto-height grid has none — the row can resolve to 0px and
+            stay there, so the header collapses fine and never comes back.
+            (Observed in Chrome; Safari's grid-row interpolation is shakier
+            still, and iOS Safari is the primary target here.)
+
+            The ceilings below sit just above each row's real content height —
+            loose enough that a padding tweak can't clip the row, tight enough
+            that little of the 200ms is spent animating empty space. */}
+        <div
+          className={cn(
+            "overflow-hidden transition-[max-height,opacity] duration-200 ease-out",
+            collapsed ? "max-h-0 opacity-0" : "max-h-[56px] opacity-100",
+          )}
+        >
+          <div>
+            <div className="mx-auto flex w-full max-w-[400px] items-center justify-between gap-3 px-4 pt-3.5 md:max-w-[800px]">
+              <h1 className="wordmark truncate text-lg">{event.name}</h1>
+              <button
+                type="button"
+                onClick={() => setInfoOpen(true)}
+                aria-label="Festival info"
+                tabIndex={collapsed ? -1 : undefined}
+                className="-mr-1 flex size-9 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              >
+                <Icon icon={InformationCircleIcon} size={22} strokeWidth={1.8} />
+              </button>
+            </div>
+          </div>
         </div>
 
-        <div className="mx-auto w-full max-w-[400px] px-4 pb-3 pt-3 md:max-w-[800px]">
+        <div
+          className={cn(
+            "mx-auto flex w-full max-w-[400px] items-center gap-2 px-4 transition-[padding] duration-200 ease-out md:max-w-[800px]",
+            collapsed ? "pb-2 pt-2" : "pb-3 pt-3",
+          )}
+        >
           <Segmented
+            className="min-w-0 flex-1"
             fullWidth
             rounded="md"
             tone="neutral"
@@ -219,10 +312,14 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
               "aria-label": `${dayLabel(d)}, ${dayDateLabel(d)}`,
               label: (
                 <span className="flex flex-col items-center gap-0.5 py-0.5">
-                  <span>{dayLabel(d)}</span>
+                  {/* Condensed, the date rejoins the weekday on one line as a
+                      bare number — losing it entirely would strand anyone who
+                      navigates by date rather than by day name. */}
+                  <span>{collapsed ? `${dayLabel(d)} ${dayNumLabel(d)}` : dayLabel(d)}</span>
                   <span
                     className={cn(
-                      "text-xs font-normal",
+                      "block overflow-hidden text-xs font-normal transition-[max-height,opacity] duration-200 ease-out",
+                      collapsed ? "max-h-0 opacity-0" : "max-h-6 opacity-100",
                       d === day ? "text-neutral-500" : "text-neutral-400",
                     )}
                   >
@@ -232,10 +329,29 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
               ),
             }))}
           />
+          {/* With the wordmark row gone the day row has spare width, so info
+              moves here rather than becoming unreachable mid-scroll. Mobile
+              only — desktop never condenses, so its copy up top always shows. */}
+          {collapsed && (
+            <button
+              type="button"
+              onClick={() => setInfoOpen(true)}
+              aria-label="Festival info"
+              className="-mr-1 flex size-9 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground md:hidden"
+            >
+              <Icon icon={InformationCircleIcon} size={22} strokeWidth={1.8} />
+            </button>
+          )}
         </div>
 
         {view === "all" && stylesPresent.length > 1 && (
-          <div className="mx-auto w-full max-w-[800px] overflow-x-auto px-4 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div
+            className={cn(
+              "overflow-hidden transition-[max-height,opacity] duration-200 ease-out",
+              chipsCollapsed ? "max-h-0 opacity-0" : "max-h-[52px] opacity-100",
+            )}
+          >
+          <div className="mx-auto w-full max-w-[800px] overflow-x-auto overflow-y-hidden px-4 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             <div className="flex items-center justify-center gap-1.5">
               {stylesPresent.map((st) => {
                 // Plain toggle, no separate "nothing chosen" mode: every style
@@ -272,6 +388,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
               })}
             </div>
           </div>
+          </div>
         )}
       </header>
 
@@ -287,29 +404,42 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
               sessions={daySessions.filter((s) => s.type !== "empty")}
               event={scheduleEvent}
               pickedIds={pickedIds}
-              onToggle={(s) => togglePick(event.id, s.id)}
+              onToggle={(s) => togglePick(event.id, s)}
               onArtistTap={openSheet}
-              stickyTop={headerHeight}
             />
             <DesktopGrid
               sessions={daySessions}
               event={scheduleEvent}
               pickedIds={pickedIds}
-              onToggle={(s) => togglePick(event.id, s.id)}
+              onToggle={(s) => togglePick(event.id, s)}
               onArtistTap={openSheet}
             />
           </>
         )}
         {view === "my" && (
-          <MySchedule
-            event={scheduleEvent}
-            day={day}
-            pickedSessions={pickedSessions.filter((s) => s.day === day)}
-            hasAnyPicks={pickedIds.size > 0}
-            onRemove={commitRemove}
-            onArtistTap={openSheet}
-            stickyTop={headerHeight}
-          />
+          <>
+            {orphanedPicks.length > 0 && (
+              <button
+                type="button"
+                onClick={() => setChangesOpen(true)}
+                className="mx-auto mb-3 flex w-full max-w-[400px] items-center justify-between gap-2 rounded-2xl border border-amber-300/60 bg-amber-50 px-3.5 py-2.5 text-left text-sm text-amber-900 transition-colors hover:bg-amber-100"
+              >
+                <span>
+                  {orphanedPicks.length} pick{orphanedPicks.length > 1 ? "s" : ""} changed since you picked{" "}
+                  {orphanedPicks.length > 1 ? "them" : "it"}
+                </span>
+                <span className="shrink-0 text-xs font-semibold underline underline-offset-2">See what changed</span>
+              </button>
+            )}
+            <MySchedule
+              event={scheduleEvent}
+              day={day}
+              pickedSessions={pickedSessions.filter((s) => s.day === day)}
+              hasAnyPicks={pickedIds.size > 0}
+              onRemove={commitRemove}
+              onArtistTap={openSheet}
+            />
+          </>
         )}
       </main>
 
@@ -428,6 +558,14 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
       )}
 
       {infoOpen && <InfoSheet event={event} onClose={() => setInfoOpen(false)} />}
+
+      {changesOpen && (
+        <PickChangesSheet
+          changes={orphanedPicks}
+          onDismiss={removePick}
+          onClose={() => setChangesOpen(false)}
+        />
+      )}
     </div>
   );
 }
@@ -458,8 +596,7 @@ function MobileDayList({
   pickedIds,
   onToggle,
   onArtistTap,
-  stickyTop,
-}: ListProps & { stickyTop: number }) {
+}: ListProps) {
   if (!sessions.length) {
     return <p className="py-16 text-center text-sm text-muted-foreground md:hidden">No sessions this day.</p>;
   }
@@ -475,10 +612,10 @@ function MobileDayList({
     // visible becomes the sticky label's containing block, and since that
     // box never scrolls on its own, the label would just sit inert instead
     // of sticking to the real (page/main) scrollport.
-    <div className="relative mx-auto max-w-[400px] md:hidden" style={{ ["--sticky-top" as string]: `${stickyTop}px` }}>
+    <div className="relative mx-auto max-w-[400px] md:hidden">
       {groupByStart(sessions).map((group, gi) => (
         <div key={group.start} className="flex gap-x-1">
-          <div className="sticky top-[var(--sticky-top)] z-10 w-12 shrink-0 self-start pt-3 text-left text-xs font-medium text-muted-foreground md:top-0">
+          <div className="sticky top-[var(--sticky-top,0px)] z-10 w-12 shrink-0 self-start pt-3 text-left text-xs font-medium text-muted-foreground md:top-0">
             {to12h(group.start)}
           </div>
           <div className="min-w-0 flex-1">
@@ -671,7 +808,6 @@ function MySchedule({
   hasAnyPicks,
   onRemove,
   onArtistTap,
-  stickyTop,
 }: {
   event: FestivalEvent;
   day: string;
@@ -679,7 +815,6 @@ function MySchedule({
   hasAnyPicks: boolean;
   onRemove: (s: Session) => void;
   onArtistTap: (s: Session) => void;
-  stickyTop: number;
 }) {
   // Removing a pick unmounts its card immediately (it drops out of
   // pickedSessions), which would otherwise just pop out of the list. Track
@@ -728,10 +863,10 @@ function MySchedule({
     // ancestor of the sticky label with overflow other than visible becomes
     // its containing block, and since that box never scrolls on its own the
     // label would just sit inert instead of sticking to the real scrollport.
-    <div className="relative mx-auto max-w-[400px]" style={{ ["--sticky-top" as string]: `${stickyTop}px` }}>
+    <div className="relative mx-auto max-w-[400px]">
       {groups.map((group, gi) => (
         <div key={group.start} className="flex gap-x-1">
-          <div className="sticky top-[var(--sticky-top)] z-10 w-12 shrink-0 self-start pt-3 text-left text-xs font-medium text-muted-foreground md:top-0">
+          <div className="sticky top-[var(--sticky-top,0px)] z-10 w-12 shrink-0 self-start pt-3 text-left text-xs font-medium text-muted-foreground md:top-0">
             {to12h(group.start)}
           </div>
           {/* overflow-x-hidden here (not on an ancestor of the sticky label
