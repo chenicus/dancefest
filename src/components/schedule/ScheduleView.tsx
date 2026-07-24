@@ -459,7 +459,20 @@ function MobileDayList({
                   // Picks below) so longer sessions read as visibly taller.
                   minHeight: `${Math.max(MIN_CARD_HEIGHT, ((toMinutes(s.end) - toMinutes(s.start)) / 60) * MIN_CARD_HEIGHT)}px`,
                 }}
-                className="mb-2 min-w-0"
+                // grid (not a plain block box): SessionCard fills this box
+                // with `h-full`, same as it does inside DesktopGrid's actual
+                // CSS grid cells — but a percentage height only resolves
+                // against a parent with a *definite* height, and `minHeight`
+                // alone leaves a block box's used height "auto" as far as
+                // that child percentage is concerned. On sparse cards
+                // (parties/DJ sets) the tint collapsed to content height and
+                // the reserved space below rendered as a blank gap. Grid
+                // track sizing resolves a definite pixel size up front, so a
+                // single-cell grid here gives `h-full` something real to
+                // fill — and unlike swapping to a fixed `height`, content
+                // taller than the minimum still grows the row instead of
+                // getting clipped.
+                className="mb-2 grid min-w-0"
               >
                 <SessionCard
                   session={s}
@@ -704,8 +717,12 @@ function MySchedule({
                     // baseline) so longer sessions read as visibly taller.
                     minHeight: `${Math.max(MIN_CARD_HEIGHT, ((toMinutes(s.end) - toMinutes(s.start)) / 60) * MIN_CARD_HEIGHT)}px`,
                   }}
+                  // grid, not a plain block box — see MobileDayList above for
+                  // why: SessionCard fills this box with `h-full`, which
+                  // only resolves against a parent with a *definite* height,
+                  // and a single-cell grid is what gives it one here.
                   className={cn(
-                    "mb-2 min-w-0 transition-all ease-in",
+                    "mb-2 grid min-w-0 transition-all ease-in",
                     removing ? "translate-x-full opacity-0" : "translate-x-0 opacity-100",
                   )}
                 >
