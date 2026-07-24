@@ -9,7 +9,8 @@ on:
     - cron: "17 * * * *"
   workflow_dispatch:
 
-# Needed to push the updated .data file back to main when the sheet changed.
+# Needed to push the updated .data file back to main every run, since the
+# sync timestamp advances even when the sheet itself didn't change.
 permissions:
   contents: write
 
@@ -38,19 +39,24 @@ jobs:
             echo "changed=false" >> "$GITHUB_OUTPUT"
           fi
 
+      # Always applied, even with no content changes: --apply also stamps
+      # scheduleSyncedAt with the current time, which is what the info page
+      # shows as "last synced" — that should read as "just checked", not
+      # freeze at whenever the sheet last actually changed.
       - name: Apply the sync
-        if: steps.check.outputs.changed == 'true'
         run: python3 scripts/sync-from-sheet.py --apply
 
       - name: Run tests
-        if: steps.check.outputs.changed == 'true'
         run: npm run test
 
       - name: Commit and push
-        if: steps.check.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .data/hellodancefest-2026.json
-          git commit -m "Sync schedule from spreadsheet (automated)"
+          if [ "${{ steps.check.outputs.changed }}" = "true" ]; then
+            git commit -m "Sync schedule from spreadsheet (automated)"
+          else
+            git commit -m "Refresh schedule sync timestamp (automated)"
+          fi
           git push
