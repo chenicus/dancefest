@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 /**
  * The one-time "Saved here" tip, shown on the very first pick and never again
@@ -20,13 +20,23 @@ export function PickCoachTip({
   anchor: { x: number; top: number };
   onDone: () => void;
 }) {
+  // The countdown must run from mount, not from the latest render: the parent
+  // passes `onDone` as an inline arrow, so every re-render (a scroll collapsing
+  // the header, a second pick) hands us a new function identity. Depending on
+  // it would tear down and restart the timer each time, stretching two seconds
+  // into however long the user keeps interacting. Hold it in a ref instead so
+  // the effect below can be mount-only while still calling the current one.
+  const done = useRef(onDone);
+  done.current = onDone;
+
   // Self-dismissing: a tip with a close button invites a decision, and this
-  // one is a label, not a question. Long enough to read six characters and
-  // follow the tail down to the icon.
+  // one is a label, not a question. Two seconds — long enough to read six
+  // characters and follow the tail down to the icon, short enough that it's
+  // gone before it starts feeling like something you have to deal with.
   useEffect(() => {
-    const t = setTimeout(onDone, 3600);
+    const t = setTimeout(() => done.current(), 2000);
     return () => clearTimeout(t);
-  }, [onDone]);
+  }, []);
 
   return (
     <div
