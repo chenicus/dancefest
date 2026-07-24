@@ -9,10 +9,11 @@ import {
 } from "@hugeicons/core-free-icons";
 import { fillEmptySlots } from "@/lib/schedule/emptySlots";
 import { layoutDay } from "@/lib/schedule/layout";
+import { partyArtists, partyToSessions } from "@/lib/schedule/party";
 import { dayDateLabel, dayLabel, hourLabel, to12h, toMinutes } from "@/lib/schedule/time";
 import { usePicksStore } from "@/lib/store/usePicksStore";
 import { STYLE_COLORS, styleTint } from "@/lib/theme";
-import type { DanceStyle, FestivalEvent, Party, Session } from "@/lib/types";
+import type { DanceStyle, FestivalEvent, Session } from "@/lib/types";
 import { Icon } from "@/components/ui/icon";
 import { Segmented } from "@/components/ui/segmented";
 import { cn } from "@/lib/utils";
