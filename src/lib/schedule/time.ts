@@ -4,6 +4,25 @@ export function toMinutes(t: string): number {
   return (h || 0) * 60 + (m || 0);
 }
 
+/** Today's date in the visitor's local timezone, as "2026-07-25". Deliberately
+ *  built from local getters (not toISOString, which is UTC and can land on
+ *  the wrong side of midnight) so it lines up with the local "HH:mm" session
+ *  times it gets compared against. */
+export function todayISODate(): string {
+  const d = new Date();
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
+/** Minutes since local midnight, right now — the same unit toMinutes()
+ *  produces, so a session's start/end can be compared against it directly. */
+export function nowMinutes(): number {
+  const d = new Date();
+  return d.getHours() * 60 + d.getMinutes();
+}
+
 export function fromMinutes(mins: number): string {
   const h = Math.floor(mins / 60) % 24;
   const m = mins % 60;
