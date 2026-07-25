@@ -11,10 +11,19 @@ import {
 } from "@hugeicons/core-free-icons";
 import { fillEmptySlots } from "@/lib/schedule/emptySlots";
 import { nextCollapse } from "@/lib/schedule/headerCollapse";
-import { layoutDay } from "@/lib/schedule/layout";
+import { layoutDay, SLOT_MINUTES } from "@/lib/schedule/layout";
 import { partyArtists, partyToSessions } from "@/lib/schedule/party";
 import { resolvePicks } from "@/lib/schedule/resolvePicks";
-import { dayDateLabel, dayLabel, dayNumLabel, hourLabel, to12h, toMinutes } from "@/lib/schedule/time";
+import {
+  dayDateLabel,
+  dayLabel,
+  dayNumLabel,
+  hourLabel,
+  nowMinutes,
+  to12h,
+  todayISODate,
+  toMinutes,
+} from "@/lib/schedule/time";
 import { usePicksStore } from "@/lib/store/usePicksStore";
 import type { DanceStyle, FestivalEvent, Session } from "@/lib/types";
 import { darken, STYLE_COLORS, styleTint } from "@/lib/theme";
@@ -63,9 +72,20 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
 
   useEffect(() => setMounted(true), []);
 
+  // Resolved client-side only (via useLayoutEffect, before paint) so the
+  // server-rendered/first-paint markup — which has no notion of "today" — is
+  // never visibly shown before flipping to the real default; see headerRef's
+  // measurement effect below for the same before-paint reasoning.
+  const [todayDay, setTodayDay] = useState<string | null>(null);
+  useLayoutEffect(() => setTodayDay(todayISODate()), []);
+
   const rawView = search.get("view");
   const view = rawView === "my" ? "my" : "all";
-  const day = search.get("day") ?? event.days[0] ?? "";
+  // Land on today's day if the festival is running today; otherwise keep the
+  // original fallback to the first day. An explicit ?day= always wins.
+  const day =
+    search.get("day") ?? (todayDay && event.days.includes(todayDay) ? todayDay : event.days[0]) ?? "";
+  const viewingToday = todayDay !== null && day === todayDay;
 
   // Night DJ lineups live in event.parties as their own PartySet shape (no
   // per-slot end time, no Artist record) — reshape them into Session/Artist
@@ -465,6 +485,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
               pickedIds={pickedIds}
               onToggle={handleToggle}
               onArtistTap={openSheet}
+              autoScrollToNow={viewingToday}
             />
             <DesktopGrid
               sessions={daySessions}
@@ -472,6 +493,7 @@ export function ScheduleView({ event }: { event: FestivalEvent }) {
               pickedIds={pickedIds}
               onToggle={handleToggle}
               onArtistTap={openSheet}
+              autoScrollToNow={viewingToday}
             />
           </>
         )}
@@ -647,6 +669,10 @@ interface ListProps {
   pickedIds: Set<string>;
   onToggle: (s: Session) => void;
   onArtistTap: (s: Session) => void;
+  /** True only when the day on screen is today — the one case where "already
+   *  passed" means anything. Drives the once-per-load auto-scroll past
+   *  elapsed workshop slots. */
+  autoScrollToNow: boolean;
 }
 
 // Consecutive same-start sessions become one group sharing a single time
@@ -667,7 +693,26 @@ function MobileDayList({
   pickedIds,
   onToggle,
   onArtistTap,
+  autoScrollToNow,
 }: ListProps) {
+  const groups = useMemo(() => groupByStart(sessions), [sessions]);
+  const slotRefs = useRef(new Map<string, HTMLDivElement>());
+  // Fires at most once per page load: refiring on every re-render (e.g. a
+  // style-filter toggle) would yank the user back down mid-browse.
+  const didAutoScroll = useRef(false);
+
+  useEffect(() => {
+    if (!autoScrollToNow || didAutoScroll.current || !groups.length) return;
+    const now = nowMinutes();
+    // "Already passed" means ended, not merely started — a class still in
+    // progress is exactly the one we want to land on.
+    const target = groups.find((g) => g.items.some((s) => toMinutes(s.end) > now));
+    const el = target && slotRefs.current.get(target.start);
+    if (!el) return;
+    didAutoScroll.current = true;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [autoScrollToNow, groups]);
+
   if (!sessions.length) {
     return <p className="py-16 text-center text-sm text-muted-foreground md:hidden">No sessions this day.</p>;
   }
@@ -684,8 +729,18 @@ function MobileDayList({
     // box never scrolls on its own, the label would just sit inert instead
     // of sticking to the real (page/main) scrollport.
     <div className="relative mx-auto max-w-[400px] md:hidden">
-      {groupByStart(sessions).map((group) => (
-        <div key={group.start} className="flex gap-x-1">
+      {groups.map((group) => (
+        <div
+          key={group.start}
+          ref={(el) => {
+            if (el) slotRefs.current.set(group.start, el);
+            else slotRefs.current.delete(group.start);
+          }}
+          // Offsets the scroll-into-view landing spot by the sticky header's
+          // real height, same variable the time label above pins to — without
+          // it the header covers the very slot we just scrolled to.
+          className="flex scroll-mt-[var(--sticky-top,0px)] gap-x-1"
+        >
           <div className="sticky top-[var(--sticky-top,0px)] z-10 w-12 shrink-0 self-start pt-3 text-left text-xs font-medium text-muted-foreground md:top-0">
             {to12h(group.start)}
           </div>
@@ -740,6 +795,7 @@ function DesktopGrid({
   pickedIds,
   onToggle,
   onArtistTap,
+  autoScrollToNow,
 }: ListProps) {
   // Columns = event rooms that have at least one session somewhere (stable
   // across days), so genuinely-empty rooms never render a blank column.
@@ -771,6 +827,23 @@ function DesktopGrid({
     if (timeRef.current) timeRef.current.scrollTop = body.scrollTop;
     setScrolled(body.scrollTop > 0);
   }
+
+  // Mirrors MobileDayList's auto-scroll: land the body pane on the first
+  // room-grid row that hasn't ended yet, once per load. There's no per-slot
+  // DOM node to target here (sessions are placed individually, not grouped
+  // into rows), so the target is computed straight from the same 15min/19px
+  // grid math the rows below are rendered with.
+  const didAutoScroll = useRef(false);
+  useEffect(() => {
+    if (!autoScrollToNow || didAutoScroll.current || !sessions.length) return;
+    const now = nowMinutes();
+    const upcoming = sessions.filter((s) => s.type !== "empty" && toMinutes(s.end) > now);
+    if (!upcoming.length) return;
+    const targetStart = Math.min(...upcoming.map((s) => toMinutes(s.start)));
+    const rowIndex = Math.floor((targetStart - grid.startMinutes) / SLOT_MINUTES);
+    didAutoScroll.current = true;
+    bodyRef.current?.scrollTo({ top: Math.max(0, rowIndex * 19), behavior: "smooth" });
+  }, [autoScrollToNow, sessions, grid.startMinutes]);
 
   if (!sessions.length) {
     return <p className="hidden py-16 text-center text-sm text-muted-foreground md:block">No sessions this day.</p>;
