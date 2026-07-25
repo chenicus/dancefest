@@ -1411,6 +1411,12 @@
       "eventId": "hellodancefest-2026",
       "name": "JI",
       "style": "zouk"
+    },
+    {
+      "id": "5612acPE",
+      "eventId": "hellodancefest-2026",
+      "name": "Chiara Tofani",
+      "style": "salsa"
     }
   ],
   "sessions": [
@@ -2622,11 +2628,11 @@
       ]
     },
     {
-      "id": "83bbe4baea79",
+      "id": "e6dc6149879e",
       "eventId": "hellodancefest-2026",
       "title": "Body Movement Foundation",
       "instructors": [
-        "Guest"
+        "Chiara Tofani"
       ],
       "style": "salsa",
       "level": "Intermediate-Advance",
@@ -2635,7 +2641,7 @@
       "start": "17:00",
       "end": "18:00",
       "artistIds": [
-        "ck20iaMr"
+        "5612acPE"
       ]
     },
     {
@@ -2962,11 +2968,11 @@
       ]
     },
     {
-      "id": "f6ca56297f52",
+      "id": "8c92e758ebfb",
       "eventId": "hellodancefest-2026",
       "title": "Chiara's Fusion",
       "instructors": [
-        "Guest"
+        "Chiara Tofani"
       ],
       "style": "salsa",
       "level": "Intermedia-Advance",
@@ -2975,7 +2981,7 @@
       "start": "14:00",
       "end": "15:00",
       "artistIds": [
-        "ck20iaMr"
+        "5612acPE"
       ]
     },
     {
@@ -5118,6 +5124,6 @@
       ]
     }
   ],
-  "scheduleSyncedAt": "2026-07-25T03:43:46.709412+00:00",
+  "scheduleSyncedAt": "2026-07-25T06:35:58.544172+00:00",
   "scheduleSourceUrl": "https://docs.google.com/spreadsheets/d/1Phzou1q71mdtwwct1EoKPW5q_8jDTQhLUEkhlA6_bqY/edit"
 }
