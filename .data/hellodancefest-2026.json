@@ -1417,6 +1417,12 @@
       "eventId": "hellodancefest-2026",
       "name": "Chiara Tofani",
       "style": "salsa"
+    },
+    {
+      "id": "IBKwqurR",
+      "eventId": "hellodancefest-2026",
+      "name": "Julian & Cristina",
+      "style": "bachata"
     }
   ],
   "sessions": [
@@ -2033,11 +2039,11 @@
       ]
     },
     {
-      "id": "ded532975f23",
+      "id": "c2f80eabefcd",
       "eventId": "hellodancefest-2026",
       "title": "Bachata Fusion - Partnerwork",
       "instructors": [
-        "Alan & Cristina"
+        "Julian & Cristina"
       ],
       "style": "bachata",
       "level": "Intermediate-Advance",
@@ -2046,7 +2052,7 @@
       "start": "12:00",
       "end": "13:00",
       "artistIds": [
-        "yXETxBLO"
+        "IBKwqurR"
       ]
     },
     {
@@ -3852,7 +3858,7 @@
       ]
     },
     {
-      "id": "4d8865e22e1b",
+      "id": "a307004cdfdb",
       "eventId": "hellodancefest-2026",
       "title": "MKiZ",
       "instructors": [
@@ -3862,10 +3868,27 @@
       "room": "Harbour",
       "day": "2026-07-25",
       "start": "23:00",
-      "end": "04:00",
+      "end": "01:00",
       "type": "party",
       "artistIds": [
         "urgcxdhZ"
+      ]
+    },
+    {
+      "id": "db01be6f90fc",
+      "eventId": "hellodancefest-2026",
+      "title": "OLU",
+      "instructors": [
+        "OLU"
+      ],
+      "style": "kizomba",
+      "room": "Harbour",
+      "day": "2026-07-25",
+      "start": "01:00",
+      "end": "04:00",
+      "type": "party",
+      "artistIds": [
+        "cSfc8ilm"
       ]
     },
     {
@@ -5124,6 +5147,6 @@
       ]
     }
   ],
-  "scheduleSyncedAt": "2026-07-25T06:35:58.544172+00:00",
+  "scheduleSyncedAt": "2026-07-25T09:13:40.202195+00:00",
   "scheduleSourceUrl": "https://docs.google.com/spreadsheets/d/1Phzou1q71mdtwwct1EoKPW5q_8jDTQhLUEkhlA6_bqY/edit"
 }
