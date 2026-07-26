@@ -3031,23 +3031,6 @@
       ]
     },
     {
-      "id": "5b07f743e9f5",
-      "eventId": "hellodancefest-2026",
-      "title": "Bachata Fusion Partnerwork",
-      "instructors": [
-        "Gino & Ania"
-      ],
-      "style": "bachata",
-      "level": "Open Level",
-      "room": "Peninsula A-B",
-      "day": "2026-07-26",
-      "start": "15:00",
-      "end": "16:00",
-      "artistIds": [
-        "sxSaq6vv"
-      ]
-    },
-    {
       "id": "69a5a2ed690c",
       "eventId": "hellodancefest-2026",
       "title": "Urban Kiz Connection",
@@ -3133,11 +3116,11 @@
       ]
     },
     {
-      "id": "1be54ada55db",
+      "id": "f5c6115a99c7",
       "eventId": "hellodancefest-2026",
       "title": "Sensual - Social Ptrwork",
       "instructors": [
-        "Nick & Cristina"
+        "Julian & Cristina"
       ],
       "style": "bachata",
       "level": "Open Level",
@@ -3146,7 +3129,7 @@
       "start": "16:00",
       "end": "17:00",
       "artistIds": [
-        "fa7Lvclg"
+        "IBKwqurR"
       ]
     },
     {
@@ -5153,6 +5136,6 @@
       ]
     }
   ],
-  "scheduleSyncedAt": "2026-07-26T21:13:20.127767+00:00",
+  "scheduleSyncedAt": "2026-07-26T22:14:59.365992+00:00",
   "scheduleSourceUrl": "https://docs.google.com/spreadsheets/d/1Phzou1q71mdtwwct1EoKPW5q_8jDTQhLUEkhlA6_bqY/edit"
 }
