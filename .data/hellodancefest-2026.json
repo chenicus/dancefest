@@ -3140,7 +3140,7 @@
         "Nick & Cristina"
       ],
       "style": "bachata",
-      "level": "Level",
+      "level": "Open Level",
       "room": "Peninsula D-G",
       "day": "2026-07-26",
       "start": "16:00",
@@ -3232,6 +3232,23 @@
       "end": "17:00",
       "artistIds": [
         "pLNUA7PU"
+      ]
+    },
+    {
+      "id": "0144e67a28d2",
+      "eventId": "hellodancefest-2026",
+      "title": "Counter Balance",
+      "instructors": [
+        "Carlitos & Cece"
+      ],
+      "style": "bachata",
+      "level": "Open Level",
+      "room": "Peninsula D-G",
+      "day": "2026-07-26",
+      "start": "17:00",
+      "end": "18:00",
+      "artistIds": [
+        "t6fDwbs2"
       ]
     },
     {
@@ -5136,6 +5153,6 @@
       ]
     }
   ],
-  "scheduleSyncedAt": "2026-07-25T23:14:54.355508+00:00",
+  "scheduleSyncedAt": "2026-07-26T00:16:25.674035+00:00",
   "scheduleSourceUrl": "https://docs.google.com/spreadsheets/d/1Phzou1q71mdtwwct1EoKPW5q_8jDTQhLUEkhlA6_bqY/edit"
 }
