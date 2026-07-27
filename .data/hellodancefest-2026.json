@@ -1429,6 +1429,12 @@
       "eventId": "hellodancefest-2026",
       "name": "Nick & Cristina",
       "style": "bachata"
+    },
+    {
+      "id": "b2QYjfXK",
+      "eventId": "hellodancefest-2026",
+      "name": "11:30 START TIME",
+      "style": "kizomba"
     }
   ],
   "sessions": [
@@ -4357,11 +4363,11 @@
       ]
     },
     {
-      "id": "fd716cbe255d",
+      "id": "3b45fbb7346f",
       "eventId": "hellodancefest-2026",
-      "title": "SINK",
+      "title": "11:30 START TIME",
       "instructors": [
-        "SINK"
+        "11:30 START TIME"
       ],
       "style": "kizomba",
       "room": "Harbour",
@@ -4370,11 +4376,11 @@
       "end": "01:00",
       "type": "party",
       "artistIds": [
-        "R_mhiHgs"
+        "b2QYjfXK"
       ]
     },
     {
-      "id": "86a72da54ffe",
+      "id": "75986bfe1f7d",
       "eventId": "hellodancefest-2026",
       "title": "OLU",
       "instructors": [
@@ -4384,27 +4390,44 @@
       "room": "Harbour",
       "day": "2026-07-26",
       "start": "01:00",
-      "end": "03:00",
+      "end": "02:30",
       "type": "party",
       "artistIds": [
         "cSfc8ilm"
       ]
     },
     {
-      "id": "5add65f99c71",
+      "id": "8f77bd99f351",
       "eventId": "hellodancefest-2026",
-      "title": "MKiZ",
+      "title": "SINK",
       "instructors": [
-        "MKiZ"
+        "SINK"
       ],
       "style": "kizomba",
       "room": "Harbour",
       "day": "2026-07-26",
-      "start": "03:00",
+      "start": "02:30",
       "end": "04:00",
       "type": "party",
       "artistIds": [
-        "urgcxdhZ"
+        "R_mhiHgs"
+      ]
+    },
+    {
+      "id": "28065704e5e1",
+      "eventId": "hellodancefest-2026",
+      "title": "OLU",
+      "instructors": [
+        "OLU"
+      ],
+      "style": "kizomba",
+      "room": "Harbour",
+      "day": "2026-07-26",
+      "start": "04:00",
+      "end": "05:00",
+      "type": "party",
+      "artistIds": [
+        "cSfc8ilm"
       ]
     },
     {
@@ -5136,6 +5159,6 @@
       ]
     }
   ],
-  "scheduleSyncedAt": "2026-07-27T04:09:02.813459+00:00",
+  "scheduleSyncedAt": "2026-07-27T07:54:17.666917+00:00",
   "scheduleSourceUrl": "https://docs.google.com/spreadsheets/d/1Phzou1q71mdtwwct1EoKPW5q_8jDTQhLUEkhlA6_bqY/edit"
 }
