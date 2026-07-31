@@ -3581,7 +3581,7 @@
       ]
     },
     {
-      "id": "2725f13d3ee5",
+      "id": "136ec699155a",
       "eventId": "hellodancefest-2026",
       "title": "FAB",
       "instructors": [
@@ -3591,31 +3591,14 @@
       "room": "Regency",
       "day": "2026-07-24",
       "start": "01:00",
-      "end": "02:00",
+      "end": "02:30",
       "type": "party",
       "artistIds": [
         "yhAJB1DG"
       ]
     },
     {
-      "id": "13ac10ea991b",
-      "eventId": "hellodancefest-2026",
-      "title": "FAB",
-      "instructors": [
-        "FAB"
-      ],
-      "style": "zouk",
-      "room": "Regency",
-      "day": "2026-07-24",
-      "start": "02:00",
-      "end": "03:00",
-      "type": "party",
-      "artistIds": [
-        "yhAJB1DG"
-      ]
-    },
-    {
-      "id": "05a994e19236",
+      "id": "b1d6d6aeec41",
       "eventId": "hellodancefest-2026",
       "title": "KAKAH",
       "instructors": [
@@ -3624,7 +3607,7 @@
       "style": "zouk",
       "room": "Regency",
       "day": "2026-07-24",
-      "start": "03:00",
+      "start": "02:30",
       "end": "04:00",
       "type": "party",
       "artistIds": [
@@ -4057,7 +4040,7 @@
       ]
     },
     {
-      "id": "9418202b2981",
+      "id": "cf3dd31ed584",
       "eventId": "hellodancefest-2026",
       "title": "KAKAH",
       "instructors": [
@@ -4067,14 +4050,14 @@
       "room": "Peninsula A-B",
       "day": "2026-07-25",
       "start": "01:00",
-      "end": "02:00",
+      "end": "02:30",
       "type": "party",
       "artistIds": [
         "Em2PrVbM"
       ]
     },
     {
-      "id": "a33320fe4123",
+      "id": "1bd4cad924f8",
       "eventId": "hellodancefest-2026",
       "title": "MBRACE",
       "instructors": [
@@ -4083,15 +4066,15 @@
       "style": "zouk",
       "room": "Peninsula A-B",
       "day": "2026-07-25",
-      "start": "02:00",
-      "end": "03:00",
+      "start": "02:30",
+      "end": "03:30",
       "type": "party",
       "artistIds": [
         "2on4gD83"
       ]
     },
     {
-      "id": "487de21affa2",
+      "id": "933046220823",
       "eventId": "hellodancefest-2026",
       "title": "FAB",
       "instructors": [
@@ -4100,25 +4083,8 @@
       "style": "zouk",
       "room": "Peninsula A-B",
       "day": "2026-07-25",
-      "start": "03:00",
-      "end": "04:00",
-      "type": "party",
-      "artistIds": [
-        "yhAJB1DG"
-      ]
-    },
-    {
-      "id": "def79bb69a21",
-      "eventId": "hellodancefest-2026",
-      "title": "FAB",
-      "instructors": [
-        "FAB"
-      ],
-      "style": "zouk",
-      "room": "Peninsula A-B",
-      "day": "2026-07-25",
-      "start": "04:00",
-      "end": "05:00",
+      "start": "03:30",
+      "end": "04:30",
       "type": "party",
       "artistIds": [
         "yhAJB1DG"
@@ -4550,58 +4516,7 @@
       ]
     },
     {
-      "id": "8bda3acf33c7",
-      "eventId": "hellodancefest-2026",
-      "title": "FAB",
-      "instructors": [
-        "FAB"
-      ],
-      "style": "zouk",
-      "room": "Peninsula C",
-      "day": "2026-07-26",
-      "start": "00:00",
-      "end": "01:00",
-      "type": "party",
-      "artistIds": [
-        "yhAJB1DG"
-      ]
-    },
-    {
-      "id": "8118c92fb6b4",
-      "eventId": "hellodancefest-2026",
-      "title": "FAB",
-      "instructors": [
-        "FAB"
-      ],
-      "style": "zouk",
-      "room": "Peninsula C",
-      "day": "2026-07-26",
-      "start": "01:00",
-      "end": "02:00",
-      "type": "party",
-      "artistIds": [
-        "yhAJB1DG"
-      ]
-    },
-    {
-      "id": "2faa7c563b1d",
-      "eventId": "hellodancefest-2026",
-      "title": "KAKAH",
-      "instructors": [
-        "KAKAH"
-      ],
-      "style": "zouk",
-      "room": "Peninsula C",
-      "day": "2026-07-26",
-      "start": "02:00",
-      "end": "03:00",
-      "type": "party",
-      "artistIds": [
-        "Em2PrVbM"
-      ]
-    },
-    {
-      "id": "20e0c10f56f3",
+      "id": "2a774b986e46",
       "eventId": "hellodancefest-2026",
       "title": "MBRACE",
       "instructors": [
@@ -4610,15 +4525,32 @@
       "style": "zouk",
       "room": "Peninsula C",
       "day": "2026-07-26",
-      "start": "03:00",
-      "end": "04:00",
+      "start": "00:00",
+      "end": "01:30",
       "type": "party",
       "artistIds": [
         "2on4gD83"
       ]
     },
     {
-      "id": "d547954de671",
+      "id": "1bf03b607912",
+      "eventId": "hellodancefest-2026",
+      "title": "MBRACE",
+      "instructors": [
+        "MBRACE"
+      ],
+      "style": "zouk",
+      "room": "Peninsula C",
+      "day": "2026-07-26",
+      "start": "01:30",
+      "end": "03:30",
+      "type": "party",
+      "artistIds": [
+        "2on4gD83"
+      ]
+    },
+    {
+      "id": "775dbcfdef35",
       "eventId": "hellodancefest-2026",
       "title": "TZOUL",
       "instructors": [
@@ -4627,8 +4559,8 @@
       "style": "zouk",
       "room": "Peninsula C",
       "day": "2026-07-26",
-      "start": "04:00",
-      "end": "05:00",
+      "start": "03:30",
+      "end": "04:30",
       "type": "party",
       "artistIds": [
         "Gk-SvxTG"
@@ -5159,6 +5091,6 @@
       ]
     }
   ],
-  "scheduleSyncedAt": "2026-07-31T12:19:22.973507+00:00",
+  "scheduleSyncedAt": "2026-07-31T15:30:08.232884+00:00",
   "scheduleSourceUrl": "https://docs.google.com/spreadsheets/d/1Phzou1q71mdtwwct1EoKPW5q_8jDTQhLUEkhlA6_bqY/edit"
 }
